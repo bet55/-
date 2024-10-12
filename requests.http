@@ -1,3 +1,7 @@
 ### GET request with a header
 GET http://localhost:8000
-Accept: application/json
+Accept: text/html
+
+###
+GET https://api.kinopoisk.dev//v1.4/movie/4626783
+X-API-KEY: FCE2VJ9-C2K4Z3C-MVJGV8V-XEGG0AW

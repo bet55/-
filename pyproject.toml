@@ -1,0 +1,21 @@
+[project]
+name = "filmoclub"
+version = "0.0.1"
+description = "Cinephiles with tea"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "django>=5.1.2",
+    "djangorestframework>=3.15.2",
+    "markdown>=3.7",
+    "django-filter>=24.3",
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.uv]
+dev-dependencies = [
+    "icecream>=2.1.3",
+]
