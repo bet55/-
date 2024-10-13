@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    {% load static %}
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="{% static 'img/icon.png' %}">
+    <link rel="stylesheet" href="{% static 'lists/css/index.css' %}">
+    <title>Киноклуб</title>
+</head>
+<body>
+        <header class="title">movieVerse</header>
+        <section class="watchlist-container">
+            <h3 class="watchlist">watchList</h3>
+            <ul class="list">
+            </ul>
+        </section>
+        <section class="movie-posters">
+                <!-- create div for each image poster with the same length/width -->
+        </section>
+        <section class="movie-card"> <!-- movie information -->
+        </section>
+        <script type="text/javascript" src="{% static 'lists/js/index.js' %}"></script>
+
+    </body>
+</html>
