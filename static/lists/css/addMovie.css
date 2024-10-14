@@ -1,0 +1,82 @@
+.container-eg-btn-4 {
+    font-family: sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    flex-wrap: wrap;
+    margin: 0 auto 10px;
+    padding: .5em;
+    line-height: normal;
+}
+
+.container-eg-btn-4 .button {
+    background: #af40ff;
+    margin: 15px;
+    padding: 18px 22px;
+    text-align: center;
+    text-transform: uppercase;
+    position: relative;
+    transition: .3s;
+    z-index: 1;
+    color: #fff;
+    cursor: pointer;
+    border-radius: 12px;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    font-weight: 700;
+}
+
+.container-eg-btn-4 .button-8:before {
+    content: '';
+    background: linear-gradient(225deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-size: 400%;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    transition: opacity .3s ease-in-out;
+    border-radius: 12px;
+}
+
+.container-eg-btn-4 .button-8:hover:before {
+    animation: glowing 20s linear infinite;
+}
+
+.container-eg-btn-4 .button-8:active:before {
+    background: #000137;
+}
+
+@keyframes glowing {
+    0% {
+        background-position: 0 0;
+    }
+    50% {
+        background-position: 400% 0;
+    }
+    100% {
+        background-position: 0 0;
+    }
+}
+
+form {
+    margin-top: 15%;
+}
+
+input {
+    width: 50%;
+    height: 25px;
+    font-family: sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    flex-wrap: wrap;
+    margin: 0 auto 10px;
+    padding: .5em;
+    line-height: normal;
+
+}

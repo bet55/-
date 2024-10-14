@@ -3,5 +3,19 @@ GET http://localhost:8000
 Accept: text/html
 
 ###
-GET https://api.kinopoisk.dev//v1.4/movie/4626783
-X-API-KEY:
+GET https://api.kinopoisk.dev//v1.4/movie/274730
+X-API-KEY: FCE2VJ9-C2K4Z3C-MVJGV8V-XEGG0AW
+
+
+###
+GET http://localhost:8000/list?format=json&archive=True
+
+
+###
+POST http://localhost:8000/add
+Content-Type: application/json
+
+{
+  "id": 999,
+  "value": "content"
+}

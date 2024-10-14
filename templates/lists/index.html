@@ -11,7 +11,7 @@
     <title>Киноклуб</title>
 </head>
 <body>
-        <header class="title">movieVerse</header>
+        <header class="title">Киноклуб</header>
 {#        <section class="watchlist-container">#}
 {#            <h3 class="watchlist">watchList</h3>#}
 {#            <ul class="list">#}
@@ -22,6 +22,13 @@
         </section>
         <section class="movie-card"> <!-- movie information -->
         </section>
+
+        {% if archive %}
+            <div id="pageType" style="display: none">archive</div>
+        {% else %}
+            <div id="pageType" style="display: none">movies</div>
+        {% endif %}
+
         <script type="text/javascript" src="{% static 'lists/js/index.js' %}"></script>
 
     </body>

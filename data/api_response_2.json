@@ -1,0 +1,1212 @@
+{
+  "fees": {
+    "world": {
+      "value": 16934270,
+      "currency": "$"
+    },
+    "russia": {
+      "value": 1035451,
+      "currency": "$"
+    },
+    "usa": {
+      "value": 10352,
+      "currency": "$"
+    }
+  },
+  "status": null,
+  "externalId": {
+    "imdb": "tt0808339",
+    "tmdb": 14400,
+    "kpHD": "4d774cb167b248e0bc0e8703c7487a03"
+  },
+  "rating": {
+    "kp": 7.03,
+    "imdb": 6.4,
+    "filmCritics": 5.2,
+    "russianFilmCritics": 0,
+    "await": null
+  },
+  "votes": {
+    "kp": 67562,
+    "imdb": 14848,
+    "filmCritics": 18,
+    "russianFilmCritics": 0,
+    "await": 0
+  },
+  "backdrop": {
+    "url": "https://image.openmoviedb.com/kinopoisk-ott-images/239697/2a00000161d2a33a75fe9e7c94dde5bd6363/orig",
+    "previewUrl": "https://image.openmoviedb.com/kinopoisk-ott-images/239697/2a00000161d2a33a75fe9e7c94dde5bd6363/x1000"
+  },
+  "movieLength": 108,
+  "images": {
+    "framesCount": 32
+  },
+  "productionCompanies": [
+    {
+      "name": "Pan-Européenne",
+      "url": null,
+      "previewUrl": null
+    },
+    {
+      "name": "Wild Bunch",
+      "url": "https://www.themoviedb.org/t/p/original/3tfzS2CrX6Ntbu927XzHXEPDA6y.png",
+      "previewUrl": "https://www.themoviedb.org/t/p/w500/3tfzS2CrX6Ntbu927XzHXEPDA6y.png"
+    },
+    {
+      "name": "TF1 Films Production",
+      "url": "https://www.themoviedb.org/t/p/original/9tW5wZEGotn1Ei5pErA88m47XiD.png",
+      "previewUrl": "https://www.themoviedb.org/t/p/w500/9tW5wZEGotn1Ei5pErA88m47XiD.png"
+    },
+    {
+      "name": "Araneo",
+      "url": null,
+      "previewUrl": null
+    }
+  ],
+  "spokenLanguages": [
+    {
+      "name": "Français",
+      "nameEn": "French"
+    },
+    {
+      "name": "English",
+      "nameEn": "English"
+    },
+    {
+      "name": "Srpski",
+      "nameEn": "Serbian"
+    },
+    {
+      "name": "Português",
+      "nameEn": "Portuguese"
+    }
+  ],
+  "id": 274730,
+  "type": "movie",
+  "name": "Ларго Винч: Начало",
+  "description": "Ларго Винч - сирота, усыновленный миллиардером, его приемный отец погибает при загадочных обстоятельствах. В 26 лет Ларго наследует огромную корпорацию и миллиардное состояние. Теперь он - владелец заводов, газет, пароходов. Но большие деньги – большие проблемы. Ларго Винч попадает в первые списки Форбс, и в черные списки конкурентов, на него точат зуб компаньоны и даже самые верные друзья готовы предать. Ларго Винч - принимает бой. Красавец, бунтарь, воин-одиночка - готов пройти огонь, воду и медные трубы, чтобы противостоять заговору и восстановить справедливость.",
+  "distributors": {
+    "distributor": "Люксор",
+    "distributorRelease": "Мистерия Звука"
+  },
+  "premiere": {
+    "world": "2008-11-12T00:00:00.000Z",
+    "russia": "2009-03-19T00:00:00.000Z",
+    "bluray": "2009-12-10T00:00:00.000Z",
+    "dvd": "2009-04-07T00:00:00.000Z",
+    "cinema": null,
+    "digital": null
+  },
+  "slogan": null,
+  "year": 2008,
+  "budget": {
+    "value": 24000000,
+    "currency": "€"
+  },
+  "poster": {
+    "url": "https://image.openmoviedb.com/kinopoisk-images/1777765/0d25436c-fc18-494c-bb30-fded76247749/orig",
+    "previewUrl": "https://image.openmoviedb.com/kinopoisk-images/1777765/0d25436c-fc18-494c-bb30-fded76247749/x1000"
+  },
+  "facts": [
+    {
+      "value": "Двоим братьям-близнецам из Бразилии, исполнявшим эпизодические роли в этом фильме, пришлось продать машину, чтобы купить себе билеты на самолёт до Гонкона, где должны были продолжиться съёмки.",
+      "type": "FACT",
+      "spoiler": false
+    },
+    {
+      "value": "Для съёмок <a href=\"/name/240762/\" class=\"all\">Томер Сисле</a> научился говорить по-сербски, а во время съёмок множество трюков выполнил самостоятельно.",
+      "type": "FACT",
+      "spoiler": false
+    },
+    {
+      "value": "Сцены в Гонконге снимали без разрешения, так что некоторым участникам съёмочного процесса постоянно приходилось, что называется, «стоять на шухере».",
+      "type": "FACT",
+      "spoiler": false
+    },
+    {
+      "value": "Права на экранизацию были проданы двадцатью годами ранее продюсеру <a href=\"/name/153138/\" class=\"all\">Сержу Зильберману</a>, который планировал начать франшизу уровня «бондианы». К сожалению, ещё до начала работы над этим фильмом он скончался.",
+      "type": "FACT",
+      "spoiler": false
+    },
+    {
+      "value": "Когда Ларго с Гораном выходят из полицейского участка в Хорватии, там висит флаг Боснии и Герцоговины.",
+      "type": "BLOOPER",
+      "spoiler": true
+    }
+  ],
+  "genres": [
+    {
+      "name": "боевик"
+    },
+    {
+      "name": "триллер"
+    }
+  ],
+  "countries": [
+    {
+      "name": "Франция"
+    },
+    {
+      "name": "Бельгия"
+    },
+    {
+      "name": "Гонконг"
+    }
+  ],
+  "seasonsInfo": [],
+  "persons": [
+    {
+      "id": 240762,
+      "photo": "https://image.openmoviedb.com/kinopoisk-st-images//actor_iphone/iphone360_240762.jpg",
+      "name": "Томер Сисле",
+      "enName": "Tomer Sisley",
+      "description": "Largo Winch",
+      "profession": "актеры",
+      "enProfession": "actor"
+    },
+    {
+      "id": 13397,
+      "photo": "https://image.openmoviedb.com/kinopoisk-st-images//actor_iphone/iphone360_13397.jpg",
+      "name": "Кристин Скотт Томас",
+      "enName": "Kristin Scott Thomas",
+      "description": "Ann Ferguson",
+      "profession": "актеры",
+      "enProfession": "actor"
+    },
+    {
+      "id": 62965,
+      "photo": "https://image.openmoviedb.com/kinopoisk-st-images//actor_iphone/iphone360_62965.jpg",
+      "name": "Мики Манойлович",
+      "enName": "Miki Manojlovic",
+      "description": "Nerio Winch (в титрах: Miki Manojlovic)",
+      "profession": "актеры",
+      "enProfession": "actor"
+    },
+    {
+      "id": 69088,
+      "photo": "https://image.openmoviedb.com/kinopoisk-st-images//actor_iphone/iphone360_69088.jpg",
+      "name": "Мелани Тьерри",
+      "enName": "Mélanie Thierry",
+      "description": "Léa / Naomi",
+      "profession": "актеры",
+      "enProfession": "actor"
+    },
+    {
+      "id": 29490,
+      "photo": "https://image.openmoviedb.com/kinopoisk-st-images//actor_iphone/iphone360_29490.jpg",
+      "name": "Жильбер Мелки",
+      "enName": "Gilbert Melki",
+      "description": "Freddy",
+      "profession": "актеры",
+      "enProfession": "actor"
+    },
+    {
+      "id": 723,
+      "photo": "https://image.openmoviedb.com/kinopoisk-st-images//actor_iphone/iphone360_723.jpg",
+      "name": "Карел Роден",
+      "enName": "Karel Roden",
+      "description": "Mikhail Korsky",
+      "profession": "актеры",
+      "enProfession": "actor"
+    },
+    {
+      "id": 21471,
+      "photo": "https://image.openmoviedb.com/kinopoisk-st-images//actor_iphone/iphone360_21471.jpg",
+      "name": "Стивен Уоддингтон",
+      "enName": "Steven Waddington",
+      "description": "Stephan Marcus",
+      "profession": "актеры",
+      "enProfession": "actor"
+    },
+    {
+      "id": 1959486,
+      "photo": "https://image.openmoviedb.com/kinopoisk-st-images//actor_iphone/iphone360_1959486.jpg",
+      "name": "Анн Косиньи",
+      "enName": "Anne Consigny",
+      "description": "Hannah",
+      "profession": "актеры",
+      "enProfession": "actor"
+    },
+    {
+      "id": 487602,
+      "photo": "https://image.openmoviedb.com/kinopoisk-st-images//actor_iphone/iphone360_487602.jpg",
+      "name": "Радивойе Буквич",
+      "enName": "Radivoje Bukvic",
+      "description": "Goran",
+      "profession": "актеры",
+      "enProfession": "actor"
+    },
+    {
+      "id": 51950,
+      "photo": "https://image.openmoviedb.com/kinopoisk-st-images//actor_iphone/iphone360_51950.jpg",
+      "name": "Николя Вод",
+      "enName": "Nicolas Vaude",
+      "description": "Gauthier",
+      "profession": "актеры",
+      "enProfession": "actor"
+    },
+    {
+      "id": 249803,
+      "photo": "https://image.openmoviedb.com/kinopoisk-st-images//actor_iphone/iphone360_249803.jpg",
+      "name": "Александр Деспла",
+      "enName": "Alexandre Desplat",
+      "description": null,
+      "profession": "композиторы",
+      "enProfession": "composer"
+    },
+    {
+      "id": 1996291,
+      "photo": "https://image.openmoviedb.com/kinopoisk-st-images//actor_iphone/iphone360_1996291.jpg",
+      "name": "Янн Мегар",
+      "enName": "Yann Mégard",
+      "description": null,
+      "profession": "художники",
+      "enProfession": "designer"
+    },
+    {
+      "id": 1987662,
+      "photo": "https://image.openmoviedb.com/kinopoisk-st-images//actor_iphone/iphone360_1987662.jpg",
+      "name": "Хадиджа Зеггай",
+      "enName": "Khadija Zeggaï",
+      "description": null,
+      "profession": "художники",
+      "enProfession": "designer"
+    },
+    {
+      "id": 2128899,
+      "photo": "https://image.openmoviedb.com/kinopoisk-st-images//actor_iphone/iphone360_2128899.jpg",
+      "name": null,
+      "enName": "Gwenaëlle Cormec",
+      "description": null,
+      "profession": "художники",
+      "enProfession": "designer"
+    },
+    {
+      "id": 1375479,
+      "photo": "https://image.openmoviedb.com/kinopoisk-st-images//actor_iphone/iphone360_1375479.jpg",
+      "name": "Патрик Дешен",
+      "enName": "Patrick Dechesne",
+      "description": null,
+      "profession": "художники",
+      "enProfession": "designer"
+    },
+    {
+      "id": 2034633,
+      "photo": "https://image.openmoviedb.com/kinopoisk-st-images//actor_iphone/iphone360_2034633.jpg",
+      "name": "Сесиль Делю",
+      "enName": "Cécile Deleu",
+      "description": null,
+      "profession": "художники",
+      "enProfession": "designer"
+    },
+    {
+      "id": 10161593,
+      "photo": "https://image.openmoviedb.com/kinopoisk-st-images//actor_iphone/iphone360_10161593.jpg",
+      "name": "Молли Сиу",
+      "enName": "Molly Siu",
+      "description": null,
+      "profession": "художники",
+      "enProfession": "designer"
+    },
+    {
+      "id": 387560,
+      "photo": "https://image.openmoviedb.com/kinopoisk-st-images//actor_iphone/iphone360_387560.jpg",
+      "name": "Жером Салль",
+      "enName": "Jérôme Salle",
+      "description": null,
+      "profession": "режиссеры",
+      "enProfession": "director"
+    },
+    {
+      "id": 2000352,
+      "photo": "https://image.openmoviedb.com/kinopoisk-st-images//actor_iphone/iphone360_2000352.jpg",
+      "name": "Ричард Марици",
+      "enName": "Richard Marizy",
+      "description": null,
+      "profession": "монтажеры",
+      "enProfession": "editor"
+    },
+    {
+      "id": 442108,
+      "photo": "https://image.openmoviedb.com/kinopoisk-st-images//actor_iphone/iphone360_442108.jpg",
+      "name": "Дени Руден",
+      "enName": "Denis Rouden",
+      "description": null,
+      "profession": "операторы",
+      "enProfession": "operator"
+    },
+    {
+      "id": 234020,
+      "photo": "https://image.openmoviedb.com/kinopoisk-st-images//actor_iphone/iphone360_234020.jpg",
+      "name": "Натали Гастальдо",
+      "enName": "Nathalie Gastaldo",
+      "description": null,
+      "profession": "продюсеры",
+      "enProfession": "producer"
+    },
+    {
+      "id": 1150842,
+      "photo": "https://image.openmoviedb.com/kinopoisk-st-images//actor_iphone/iphone360_1150842.jpg",
+      "name": "Чу Чен Он",
+      "enName": "Chu Chen On",
+      "description": null,
+      "profession": "продюсеры",
+      "enProfession": "producer"
+    },
+    {
+      "id": 1477522,
+      "photo": "https://image.openmoviedb.com/kinopoisk-st-images//actor_iphone/iphone360_1477522.jpg",
+      "name": "Жофруа де Буассезон",
+      "enName": "Geoffroy de Boissezon",
+      "description": null,
+      "profession": "продюсеры",
+      "enProfession": "producer"
+    },
+    {
+      "id": 19649,
+      "photo": "https://image.openmoviedb.com/kinopoisk-st-images//actor_iphone/iphone360_19649.jpg",
+      "name": "Филипп Годо",
+      "enName": "Philippe Godeau",
+      "description": null,
+      "profession": "продюсеры",
+      "enProfession": "producer"
+    },
+    {
+      "id": 266245,
+      "photo": "https://image.openmoviedb.com/kinopoisk-st-images//actor_iphone/iphone360_266245.jpg",
+      "name": "Виктор Раков",
+      "enName": null,
+      "description": null,
+      "profession": "актеры дубляжа",
+      "enProfession": "voice_actor"
+    },
+    {
+      "id": 1646297,
+      "photo": "https://image.openmoviedb.com/kinopoisk-st-images//actor_iphone/iphone360_1646297.jpg",
+      "name": "Ольга Зубкова",
+      "enName": null,
+      "description": null,
+      "profession": "актеры дубляжа",
+      "enProfession": "voice_actor"
+    },
+    {
+      "id": 273560,
+      "photo": "https://image.openmoviedb.com/kinopoisk-st-images//actor_iphone/iphone360_273560.jpg",
+      "name": "Вадим Андреев",
+      "enName": null,
+      "description": null,
+      "profession": "актеры дубляжа",
+      "enProfession": "voice_actor"
+    },
+    {
+      "id": 269650,
+      "photo": "https://image.openmoviedb.com/kinopoisk-st-images//actor_iphone/iphone360_269650.jpg",
+      "name": "Любовь Германова",
+      "enName": null,
+      "description": null,
+      "profession": "актеры дубляжа",
+      "enProfession": "voice_actor"
+    },
+    {
+      "id": 1159780,
+      "photo": "https://image.openmoviedb.com/kinopoisk-st-images//actor_iphone/iphone360_1159780.jpg",
+      "name": "Александр Груздев",
+      "enName": null,
+      "description": null,
+      "profession": "актеры дубляжа",
+      "enProfession": "voice_actor"
+    },
+    {
+      "id": 227225,
+      "photo": "https://image.openmoviedb.com/kinopoisk-st-images//actor_iphone/iphone360_227225.jpg",
+      "name": "Жюльен Рапно",
+      "enName": "Julien Rappeneau",
+      "description": null,
+      "profession": "сценаристы",
+      "enProfession": "writer"
+    },
+    {
+      "id": 387560,
+      "photo": "https://image.openmoviedb.com/kinopoisk-st-images//actor_iphone/iphone360_387560.jpg",
+      "name": "Жером Салль",
+      "enName": "Jérôme Salle",
+      "description": null,
+      "profession": "сценаристы",
+      "enProfession": "writer"
+    },
+    {
+      "id": 468396,
+      "photo": "https://image.openmoviedb.com/kinopoisk-st-images//actor_iphone/iphone360_468396.jpg",
+      "name": "Жан Ван Хамме",
+      "enName": "Jean Van Hamme",
+      "description": null,
+      "profession": "сценаристы",
+      "enProfession": "writer"
+    },
+    {
+      "id": 1179479,
+      "photo": "https://image.openmoviedb.com/kinopoisk-st-images//actor_iphone/iphone360_1179479.jpg",
+      "name": "Филипп Франк",
+      "enName": "Philippe Francq",
+      "description": null,
+      "profession": "сценаристы",
+      "enProfession": "writer"
+    },
+    {
+      "id": 40398,
+      "photo": "https://image.openmoviedb.com/kinopoisk-st-images//actor_iphone/iphone360_40398.jpg",
+      "name": "Бенедикт Вонг",
+      "enName": "Benedict Wong",
+      "description": null,
+      "profession": "актеры",
+      "enProfession": "actor"
+    },
+    {
+      "id": 132435,
+      "photo": "https://image.openmoviedb.com/kinopoisk-st-images//actor_iphone/iphone360_132435.jpg",
+      "name": "Жерар Уоткинс",
+      "enName": "Gérard Watkins",
+      "description": null,
+      "profession": "актеры",
+      "enProfession": "actor"
+    },
+    {
+      "id": 16813,
+      "photo": "https://image.openmoviedb.com/kinopoisk-st-images//actor_iphone/iphone360_16813.jpg",
+      "name": "Вольфганг Писсорс",
+      "enName": "Wolfgang Pissors",
+      "description": null,
+      "profession": "актеры",
+      "enProfession": "actor"
+    },
+    {
+      "id": 3428107,
+      "photo": "https://image.openmoviedb.com/kinopoisk-st-images//actor_iphone/iphone360_3428107.jpg",
+      "name": "Тед Томас",
+      "enName": "Ted Thomas",
+      "description": null,
+      "profession": "актеры",
+      "enProfession": "actor"
+    },
+    {
+      "id": 39932,
+      "photo": "https://image.openmoviedb.com/kinopoisk-st-images//actor_iphone/iphone360_39932.jpg",
+      "name": "Дэвид Гасман",
+      "enName": "David Gasman",
+      "description": null,
+      "profession": "актеры",
+      "enProfession": "actor"
+    },
+    {
+      "id": 145964,
+      "photo": "https://image.openmoviedb.com/kinopoisk-st-images//actor_iphone/iphone360_145964.jpg",
+      "name": "Элизабет Беннетт",
+      "enName": "Elizabeth Bennett",
+      "description": null,
+      "profession": "актеры",
+      "enProfession": "actor"
+    },
+    {
+      "id": 62913,
+      "photo": "https://image.openmoviedb.com/kinopoisk-st-images//actor_iphone/iphone360_62913.jpg",
+      "name": "Эдди Ко",
+      "enName": "Eddy Ko",
+      "description": null,
+      "profession": "актеры",
+      "enProfession": "actor"
+    },
+    {
+      "id": 884846,
+      "photo": "https://image.openmoviedb.com/kinopoisk-st-images//actor_iphone/iphone360_884846.jpg",
+      "name": "Бояна Панич",
+      "enName": "Bojana Panic",
+      "description": null,
+      "profession": "актеры",
+      "enProfession": "actor"
+    },
+    {
+      "id": 226350,
+      "photo": "https://image.openmoviedb.com/kinopoisk-st-images//actor_iphone/iphone360_226350.jpg",
+      "name": "Иван Маревич",
+      "enName": "Ivan Marevich",
+      "description": null,
+      "profession": "актеры",
+      "enProfession": "actor"
+    },
+    {
+      "id": 59835,
+      "photo": "https://image.openmoviedb.com/kinopoisk-st-images//actor_iphone/iphone360_59835.jpg",
+      "name": "Андре Умански",
+      "enName": "André Oumansky",
+      "description": null,
+      "profession": "актеры",
+      "enProfession": "actor"
+    },
+    {
+      "id": 227628,
+      "photo": "https://image.openmoviedb.com/kinopoisk-st-images//actor_iphone/iphone360_227628.jpg",
+      "name": "Диггер Мещ",
+      "enName": "Digger Mesch",
+      "description": null,
+      "profession": "актеры",
+      "enProfession": "actor"
+    },
+    {
+      "id": 227357,
+      "photo": "https://image.openmoviedb.com/kinopoisk-st-images//actor_iphone/iphone360_227357.jpg",
+      "name": "Эммануэль Авена",
+      "enName": "Emmanuel Avena",
+      "description": null,
+      "profession": "актеры",
+      "enProfession": "actor"
+    },
+    {
+      "id": 465699,
+      "photo": "https://image.openmoviedb.com/kinopoisk-st-images//actor_iphone/iphone360_465699.jpg",
+      "name": "Микаэла Ми-Сук",
+      "enName": "Micaelle Mee-Sook",
+      "description": null,
+      "profession": "актеры",
+      "enProfession": "actor"
+    },
+    {
+      "id": 1566032,
+      "photo": "https://image.openmoviedb.com/kinopoisk-st-images//actor_iphone/iphone360_1566032.jpg",
+      "name": "Бенжамен Сиксу",
+      "enName": "Benjamin Siksou",
+      "description": null,
+      "profession": "актеры",
+      "enProfession": "actor"
+    },
+    {
+      "id": 1135199,
+      "photo": "https://image.openmoviedb.com/kinopoisk-st-images//actor_iphone/iphone360_1135199.jpg",
+      "name": "Кериа Майан",
+      "enName": "Kerian Mayan",
+      "description": null,
+      "profession": "актеры",
+      "enProfession": "actor"
+    },
+    {
+      "id": 1706940,
+      "photo": "https://image.openmoviedb.com/kinopoisk-st-images//actor_iphone/iphone360_1706940.jpg",
+      "name": "Джейк Велла",
+      "enName": "Jake Vella",
+      "description": null,
+      "profession": "актеры",
+      "enProfession": "actor"
+    },
+    {
+      "id": 1723253,
+      "photo": "https://image.openmoviedb.com/kinopoisk-st-images//actor_iphone/iphone360_1723253.jpg",
+      "name": "Эйдан Аквилина",
+      "enName": "Aidan Aquilina",
+      "description": null,
+      "profession": "актеры",
+      "enProfession": "actor"
+    },
+    {
+      "id": 1575464,
+      "photo": "https://image.openmoviedb.com/kinopoisk-st-images//actor_iphone/iphone360_1575464.jpg",
+      "name": "Андре Агиус",
+      "enName": "André Agius",
+      "description": null,
+      "profession": "актеры",
+      "enProfession": "actor"
+    },
+    {
+      "id": 1091615,
+      "photo": "https://image.openmoviedb.com/kinopoisk-st-images//actor_iphone/iphone360_1091615.jpg",
+      "name": "Лео-Поль Салмейн",
+      "enName": "Léo-Paul Salmain",
+      "description": null,
+      "profession": "актеры",
+      "enProfession": "actor"
+    },
+    {
+      "id": 1723254,
+      "photo": "https://image.openmoviedb.com/kinopoisk-st-images//actor_iphone/iphone360_1723254.jpg",
+      "name": "Джулиан Де Горжио",
+      "enName": "Julian De Gorgio",
+      "description": null,
+      "profession": "актеры",
+      "enProfession": "actor"
+    },
+    {
+      "id": 1305930,
+      "photo": "https://image.openmoviedb.com/kinopoisk-st-images//actor_iphone/iphone360_1305930.jpg",
+      "name": "Уоррен Жакин",
+      "enName": "Warren Jacquin",
+      "description": null,
+      "profession": "актеры",
+      "enProfession": "actor"
+    },
+    {
+      "id": 1723255,
+      "photo": "https://image.openmoviedb.com/kinopoisk-st-images//actor_iphone/iphone360_1723255.jpg",
+      "name": "Даника Сесльевич",
+      "enName": "Danica Cesljevic",
+      "description": null,
+      "profession": "актеры",
+      "enProfession": "actor"
+    },
+    {
+      "id": 1575463,
+      "photo": "https://image.openmoviedb.com/kinopoisk-st-images//actor_iphone/iphone360_1575463.jpg",
+      "name": "Анджела Галеа",
+      "enName": "Angele Galea",
+      "description": null,
+      "profession": "актеры",
+      "enProfession": "actor"
+    },
+    {
+      "id": 377260,
+      "photo": "https://image.openmoviedb.com/kinopoisk-st-images//actor_iphone/iphone360_377260.jpg",
+      "name": "Любомир Мисак",
+      "enName": "Lubomir Misak",
+      "description": null,
+      "profession": "актеры",
+      "enProfession": "actor"
+    },
+    {
+      "id": 24363,
+      "photo": "https://image.openmoviedb.com/kinopoisk-st-images//actor_iphone/iphone360_24363.jpg",
+      "name": "Сай-Кит Юнг",
+      "enName": "Stuart Ong",
+      "description": null,
+      "profession": "актеры",
+      "enProfession": "actor"
+    },
+    {
+      "id": 429961,
+      "photo": "https://image.openmoviedb.com/kinopoisk-st-images//actor_iphone/iphone360_429961.jpg",
+      "name": "Марика Вулетич",
+      "enName": "Marica Vuletic",
+      "description": null,
+      "profession": "актеры",
+      "enProfession": "actor"
+    },
+    {
+      "id": 305625,
+      "photo": "https://image.openmoviedb.com/kinopoisk-st-images//actor_iphone/iphone360_305625.jpg",
+      "name": "Мария Опсеница",
+      "enName": "Marija Opsenica",
+      "description": null,
+      "profession": "актеры",
+      "enProfession": "actor"
+    },
+    {
+      "id": 1723256,
+      "photo": "https://image.openmoviedb.com/kinopoisk-st-images//actor_iphone/iphone360_1723256.jpg",
+      "name": "Нина Радонжич",
+      "enName": "Nina Radonjic",
+      "description": null,
+      "profession": "актеры",
+      "enProfession": "actor"
+    },
+    {
+      "id": 226554,
+      "photo": "https://image.openmoviedb.com/kinopoisk-st-images//actor_iphone/iphone360_226554.jpg",
+      "name": "Мишель Дюбуа",
+      "enName": "Michel Dubois",
+      "description": null,
+      "profession": "актеры",
+      "enProfession": "actor"
+    },
+    {
+      "id": 1706941,
+      "photo": "https://image.openmoviedb.com/kinopoisk-st-images//actor_iphone/iphone360_1706941.jpg",
+      "name": "Джесси Чунг",
+      "enName": "Jessie Cheung",
+      "description": null,
+      "profession": "актеры",
+      "enProfession": "actor"
+    },
+    {
+      "id": 1723257,
+      "photo": "https://image.openmoviedb.com/kinopoisk-st-images//actor_iphone/iphone360_1723257.jpg",
+      "name": "Джо Кортис",
+      "enName": "Joe Cortis",
+      "description": null,
+      "profession": "актеры",
+      "enProfession": "actor"
+    },
+    {
+      "id": 61798,
+      "photo": "https://image.openmoviedb.com/kinopoisk-st-images//actor_iphone/iphone360_61798.jpg",
+      "name": "Томас Синь",
+      "enName": "Thomas Sin",
+      "description": null,
+      "profession": "актеры",
+      "enProfession": "actor"
+    },
+    {
+      "id": 1706942,
+      "photo": "https://image.openmoviedb.com/kinopoisk-st-images//actor_iphone/iphone360_1706942.jpg",
+      "name": "Мюррэй Бертон",
+      "enName": "Murray Burton",
+      "description": null,
+      "profession": "актеры",
+      "enProfession": "actor"
+    },
+    {
+      "id": 1673543,
+      "photo": "https://image.openmoviedb.com/kinopoisk-st-images//actor_iphone/iphone360_1673543.jpg",
+      "name": "Джейсон Йип",
+      "enName": "Jason Yip",
+      "description": null,
+      "profession": "актеры",
+      "enProfession": "actor"
+    },
+    {
+      "id": 1706943,
+      "photo": "https://image.openmoviedb.com/kinopoisk-st-images//actor_iphone/iphone360_1706943.jpg",
+      "name": "Кэти Лам",
+      "enName": "Cathy Lam",
+      "description": null,
+      "profession": "актеры",
+      "enProfession": "actor"
+    },
+    {
+      "id": 1531860,
+      "photo": "https://image.openmoviedb.com/kinopoisk-st-images//actor_iphone/iphone360_1531860.jpg",
+      "name": "Предраг Васич",
+      "enName": "Predrag Vasic",
+      "description": null,
+      "profession": "актеры",
+      "enProfession": "actor"
+    },
+    {
+      "id": 1723259,
+      "photo": "https://image.openmoviedb.com/kinopoisk-st-images//actor_iphone/iphone360_1723259.jpg",
+      "name": "Тенесса Тампид-Дюпуа",
+      "enName": "Tenessa Tampied-Dupuis",
+      "description": null,
+      "profession": "актеры",
+      "enProfession": "actor"
+    },
+    {
+      "id": 1223889,
+      "photo": "https://image.openmoviedb.com/kinopoisk-st-images//actor_iphone/iphone360_1223889.jpg",
+      "name": "Байрон Жонг",
+      "enName": "Byron Jeong",
+      "description": null,
+      "profession": "актеры",
+      "enProfession": "actor"
+    },
+    {
+      "id": 1507926,
+      "photo": "https://image.openmoviedb.com/kinopoisk-st-images//actor_iphone/iphone360_1507926.jpg",
+      "name": "Дерек Тин",
+      "enName": "Derek Ting",
+      "description": null,
+      "profession": "актеры",
+      "enProfession": "actor"
+    },
+    {
+      "id": 1723260,
+      "photo": "https://image.openmoviedb.com/kinopoisk-st-images//actor_iphone/iphone360_1723260.jpg",
+      "name": "Альберто Беттенкурт",
+      "enName": "Alberto Bettencourt",
+      "description": null,
+      "profession": "актеры",
+      "enProfession": "actor"
+    },
+    {
+      "id": 1998696,
+      "photo": "https://image.openmoviedb.com/kinopoisk-st-images//actor_iphone/iphone360_1998696.jpg",
+      "name": "Мишель Бартелеми",
+      "enName": "Michel Barthélémy",
+      "description": null,
+      "profession": "художники",
+      "enProfession": "designer"
+    },
+    {
+      "id": 1643257,
+      "photo": "https://image.openmoviedb.com/kinopoisk-st-images//actor_iphone/iphone360_1643257.jpg",
+      "name": "Пётр Иващенко",
+      "enName": null,
+      "description": null,
+      "profession": "актеры дубляжа",
+      "enProfession": "voice_actor"
+    },
+    {
+      "id": 261729,
+      "photo": "https://image.openmoviedb.com/kinopoisk-st-images//actor_iphone/iphone360_261729.jpg",
+      "name": "Владимир Антоник",
+      "enName": null,
+      "description": null,
+      "profession": "актеры дубляжа",
+      "enProfession": "voice_actor"
+    },
+    {
+      "id": 1622838,
+      "photo": "https://image.openmoviedb.com/kinopoisk-st-images//actor_iphone/iphone360_1622838.jpg",
+      "name": "Инна Королёва",
+      "enName": null,
+      "description": null,
+      "profession": "актеры дубляжа",
+      "enProfession": "voice_actor"
+    },
+    {
+      "id": 1557383,
+      "photo": "https://image.openmoviedb.com/kinopoisk-st-images//actor_iphone/iphone360_1557383.jpg",
+      "name": "Константин Карасик",
+      "enName": null,
+      "description": null,
+      "profession": "актеры дубляжа",
+      "enProfession": "voice_actor"
+    },
+    {
+      "id": 273498,
+      "photo": "https://image.openmoviedb.com/kinopoisk-st-images//actor_iphone/iphone360_273498.jpg",
+      "name": "Михаил Тихонов",
+      "enName": null,
+      "description": null,
+      "profession": "актеры дубляжа",
+      "enProfession": "voice_actor"
+    },
+    {
+      "id": 310535,
+      "photo": "https://image.openmoviedb.com/kinopoisk-st-images//actor_iphone/iphone360_310535.jpg",
+      "name": "Олег Куценко",
+      "enName": null,
+      "description": null,
+      "profession": "актеры дубляжа",
+      "enProfession": "voice_actor"
+    },
+    {
+      "id": 1649331,
+      "photo": "https://image.openmoviedb.com/kinopoisk-st-images//actor_iphone/iphone360_1649331.jpg",
+      "name": "Наталья Фищук",
+      "enName": null,
+      "description": null,
+      "profession": "актеры дубляжа",
+      "enProfession": "voice_actor"
+    },
+    {
+      "id": 1649884,
+      "photo": "https://image.openmoviedb.com/kinopoisk-st-images//actor_iphone/iphone360_1649884.jpg",
+      "name": "Андрей Казанцев",
+      "enName": null,
+      "description": null,
+      "profession": "актеры дубляжа",
+      "enProfession": "voice_actor"
+    },
+    {
+      "id": 304568,
+      "photo": "https://image.openmoviedb.com/kinopoisk-st-images//actor_iphone/iphone360_304568.jpg",
+      "name": "Нина Тобилевич",
+      "enName": null,
+      "description": null,
+      "profession": "актеры дубляжа",
+      "enProfession": "voice_actor"
+    },
+    {
+      "id": 290228,
+      "photo": "https://image.openmoviedb.com/kinopoisk-st-images//actor_iphone/iphone360_290228.jpg",
+      "name": "Вячеслав Баранов",
+      "enName": null,
+      "description": null,
+      "profession": "актеры дубляжа",
+      "enProfession": "voice_actor"
+    },
+    {
+      "id": 1664014,
+      "photo": "https://image.openmoviedb.com/kinopoisk-st-images//actor_iphone/iphone360_1664014.jpg",
+      "name": "Иван Дахненко",
+      "enName": null,
+      "description": null,
+      "profession": "актеры дубляжа",
+      "enProfession": "voice_actor"
+    },
+    {
+      "id": 590562,
+      "photo": "https://image.openmoviedb.com/kinopoisk-st-images//actor_iphone/iphone360_590562.jpg",
+      "name": "Олег Форостенко",
+      "enName": null,
+      "description": null,
+      "profession": "актеры дубляжа",
+      "enProfession": "voice_actor"
+    },
+    {
+      "id": 1040432,
+      "photo": "https://image.openmoviedb.com/kinopoisk-st-images//actor_iphone/iphone360_1040432.jpg",
+      "name": "Денис Беспалый",
+      "enName": null,
+      "description": null,
+      "profession": "актеры дубляжа",
+      "enProfession": "voice_actor"
+    },
+    {
+      "id": 1557417,
+      "photo": "https://image.openmoviedb.com/kinopoisk-st-images//actor_iphone/iphone360_1557417.jpg",
+      "name": "Илья Хвостиков",
+      "enName": null,
+      "description": null,
+      "profession": "актеры дубляжа",
+      "enProfession": "voice_actor"
+    },
+    {
+      "id": 1663547,
+      "photo": "https://image.openmoviedb.com/kinopoisk-st-images//actor_iphone/iphone360_1663547.jpg",
+      "name": "Пётр Тобилевич",
+      "enName": null,
+      "description": null,
+      "profession": "актеры дубляжа",
+      "enProfession": "voice_actor"
+    }
+  ],
+  "lists": [
+    "theme_comics",
+    "hd"
+  ],
+  "typeNumber": 1,
+  "alternativeName": "Largo Winch",
+  "enName": null,
+  "names": [
+    {
+      "name": "Ларго Винч: Начало"
+    },
+    {
+      "name": "Largo Winch"
+    },
+    {
+      "name": "神鬼猎杀",
+      "language": "HK",
+      "type": null
+    },
+    {
+      "name": "Largo Winch: Deadly Revenge",
+      "language": "GB",
+      "type": "DVD box title"
+    },
+    {
+      "name": "The Heir Apparent",
+      "language": "US",
+      "type": "trailer title"
+    },
+    {
+      "name": "Largo Winch 1 - The Heir Apparent",
+      "language": "US",
+      "type": null
+    }
+  ],
+  "ageRating": 18,
+  "ratingMpaa": null,
+  "updatedAt": "2024-10-13T01:00:41.178Z",
+  "imagesInfo": {
+    "framesCount": 32
+  },
+  "sequelsAndPrequels": [
+    {
+      "id": 464606,
+      "name": "Ларго Винч 2: Заговор в Бирме",
+      "alternativeName": "Largo Winch II",
+      "enName": null,
+      "type": "movie",
+      "poster": {
+        "url": "https://image.openmoviedb.com/kinopoisk-images/1599028/d1f1342c-e377-466a-a394-4af192602234/orig",
+        "previewUrl": "https://image.openmoviedb.com/kinopoisk-images/1599028/d1f1342c-e377-466a-a394-4af192602234/x1000"
+      },
+      "rating": {
+        "kp": 6.637,
+        "imdb": 6.1,
+        "filmCritics": 0,
+        "russianFilmCritics": 0,
+        "await": null
+      },
+      "year": 2011
+    },
+    {
+      "id": 5424447,
+      "name": "Ларго Винч: Гнев прошлого",
+      "alternativeName": "Largo Winch: Le prix de l'argent",
+      "enName": null,
+      "type": "movie",
+      "poster": {
+        "url": "https://image.openmoviedb.com/kinopoisk-images/4486454/979bea65-60c0-4e58-bd80-646ea3f42ca6/orig",
+        "previewUrl": "https://image.openmoviedb.com/kinopoisk-images/4486454/979bea65-60c0-4e58-bd80-646ea3f42ca6/x1000"
+      }
+    }
+  ],
+  "shortDescription": "Усыновленный сирота становится наследником крупного состояния. Французский боевик по популярным комиксам",
+  "technology": {
+    "hasImax": false,
+    "has3D": false
+  },
+  "ticketsOnSale": false,
+  "similarMovies": [
+    {
+      "id": 619,
+      "name": "Идентификация Борна",
+      "enName": null,
+      "alternativeName": "The Bourne Identity",
+      "type": "movie",
+      "poster": {
+        "url": "https://avatars.mds.yandex.net/get-kinopoisk-image/1629390/14b9e224-6500-4b8b-acd6-4ae219baf17f/orig",
+        "previewUrl": "https://avatars.mds.yandex.net/get-kinopoisk-image/1629390/14b9e224-6500-4b8b-acd6-4ae219baf17f/x1000"
+      }
+    },
+    {
+      "id": 49844,
+      "name": "Казино Рояль",
+      "enName": null,
+      "alternativeName": "Casino Royale",
+      "type": "movie",
+      "poster": {
+        "url": "https://avatars.mds.yandex.net/get-kinopoisk-image/1777765/b65ff78f-0a11-4a9b-bffb-f8da8f3b82b6/orig",
+        "previewUrl": "https://avatars.mds.yandex.net/get-kinopoisk-image/1777765/b65ff78f-0a11-4a9b-bffb-f8da8f3b82b6/x1000"
+      }
+    },
+    {
+      "id": 87672,
+      "name": "Ультиматум Борна",
+      "enName": null,
+      "alternativeName": "The Bourne Ultimatum",
+      "type": "movie",
+      "poster": {
+        "url": "https://avatars.mds.yandex.net/get-kinopoisk-image/1704946/070dda74-7eee-4e12-b73b-ccc4b4a5e928/orig",
+        "previewUrl": "https://avatars.mds.yandex.net/get-kinopoisk-image/1704946/070dda74-7eee-4e12-b73b-ccc4b4a5e928/x1000"
+      }
+    },
+    {
+      "id": 47237,
+      "name": "Бэтмен: Начало",
+      "enName": null,
+      "alternativeName": "Batman Begins",
+      "type": "movie",
+      "poster": {
+        "url": "https://avatars.mds.yandex.net/get-kinopoisk-image/1704946/be4b776a-5ab6-42b4-9147-5c3ec6b53c44/orig",
+        "previewUrl": "https://avatars.mds.yandex.net/get-kinopoisk-image/1704946/be4b776a-5ab6-42b4-9147-5c3ec6b53c44/x1000"
+      }
+    },
+    {
+      "id": 4205,
+      "name": "Бэтмен",
+      "enName": null,
+      "alternativeName": "Batman",
+      "type": "movie",
+      "poster": {
+        "url": "https://avatars.mds.yandex.net/get-kinopoisk-image/4716873/20a027cb-e20c-4812-b98c-bd0a9c3cf596/orig",
+        "previewUrl": "https://avatars.mds.yandex.net/get-kinopoisk-image/4716873/20a027cb-e20c-4812-b98c-bd0a9c3cf596/x1000"
+      }
+    },
+    {
+      "id": 61306,
+      "name": "Арсен Люпен",
+      "enName": null,
+      "alternativeName": "Arsène Lupin",
+      "type": "movie",
+      "poster": {
+        "url": "https://avatars.mds.yandex.net/get-kinopoisk-image/1599028/ba4c3578-8b04-44ce-90c2-05c2605ccefa/orig",
+        "previewUrl": "https://avatars.mds.yandex.net/get-kinopoisk-image/1599028/ba4c3578-8b04-44ce-90c2-05c2605ccefa/x1000"
+      }
+    },
+    {
+      "id": 111543,
+      "name": "Темный рыцарь",
+      "enName": null,
+      "alternativeName": "The Dark Knight",
+      "type": "movie",
+      "poster": {
+        "url": "https://avatars.mds.yandex.net/get-kinopoisk-image/1599028/0fa5bf50-d5ad-446f-a599-b26d070c8b99/orig",
+        "previewUrl": "https://avatars.mds.yandex.net/get-kinopoisk-image/1599028/0fa5bf50-d5ad-446f-a599-b26d070c8b99/x1000"
+      }
+    },
+    {
+      "id": 258475,
+      "name": "Квант милосердия",
+      "enName": null,
+      "alternativeName": "Quantum of Solace",
+      "type": "movie",
+      "poster": {
+        "url": "https://avatars.mds.yandex.net/get-kinopoisk-image/1599028/89140d34-13e4-4593-aaf6-c8da6c34558e/orig",
+        "previewUrl": "https://avatars.mds.yandex.net/get-kinopoisk-image/1599028/89140d34-13e4-4593-aaf6-c8da6c34558e/x1000"
+      }
+    },
+    {
+      "id": 273067,
+      "name": "Ларго Винч",
+      "enName": null,
+      "alternativeName": "Largo Winch",
+      "type": "tv-series",
+      "poster": {
+        "url": "https://avatars.mds.yandex.net/get-kinopoisk-image/1629390/5207d00e-0542-4220-aa36-49869d5a2de0/orig",
+        "previewUrl": "https://avatars.mds.yandex.net/get-kinopoisk-image/1629390/5207d00e-0542-4220-aa36-49869d5a2de0/x1000"
+      }
+    }
+  ],
+  "logo": {
+    "url": null
+  },
+  "watchability": {
+    "items": [
+      {
+        "name": "Okko",
+        "logo": {
+          "url": "https://avatars.mds.yandex.net/get-ott/239697/7713e586-17d1-42d1-ac62-53e9ef1e70c3/orig"
+        },
+        "url": "https://okko.tv/movie/largo-winch?utm_medium=referral&utm_source=yandex_search&utm_campaign=new_search_feed"
+      },
+      {
+        "name": "Смотрёшка",
+        "logo": {
+          "url": "https://avatars.mds.yandex.net/get-ott/236744/c88e652e-2eb1-472d-b636-a266364dbf58/orig"
+        },
+        "url": "https://smotreshka.tv/archive/5b9efe94b2de77ad28f196ff?utm_source=yandex_search&utm_campaign=yandex_feed&utm_term=archive&utm_content=Jan_19012024"
+      },
+      {
+        "name": "24ТВ",
+        "logo": {
+          "url": "https://avatars.mds.yandex.net/get-ott/2439731/85e83b8d-1159-4781-bad5-ce0a809b3843/orig"
+        },
+        "url": "https://24h.tv/contents/2008-largo-winch-546312885047919262"
+      },
+      {
+        "name": "Kinopoisk HD",
+        "logo": {
+          "url": "https://yastatic.net/s3/kinopoisk-frontend/hd-www/release/apple-touch-icon-180x180.png"
+        },
+        "url": "https://hd.kinopoisk.ru/?rt=4d774cb167b248e0bc0e8703c7487a03"
+      }
+    ]
+  },
+  "top10": null,
+  "top250": null,
+  "audience": [
+    {
+      "count": 1768077,
+      "country": "Франция"
+    },
+    {
+      "count": 195694,
+      "country": "Россия"
+    },
+    {
+      "count": 64202,
+      "country": "Бельгия"
+    }
+  ],
+  "deletedAt": null,
+  "isSeries": false,
+  "seriesLength": null,
+  "totalSeriesLength": null,
+  "networks": null,
+  "videos": {
+    "trailers": [
+      {
+        "url": "https://www.youtube.com/embed/swgom5tFwWI",
+        "name": "Largo Winch - The Heir Apparent | trailer #1 US (2011)",
+        "site": "youtube",
+        "type": "TRAILER"
+      },
+      {
+        "url": "https://www.youtube.com/embed/swgom5tFwWI",
+        "name": "Largo Winch - The Heir Apparent | trailer #1 US (2011)",
+        "site": "youtube",
+        "type": "TRAILER"
+      }
+    ]
+  }
+}
