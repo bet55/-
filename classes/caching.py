@@ -1,20 +1,20 @@
 import logging
 from sqlite3 import OperationalError
-from typing import Any
+from typing import Any, Union
 from diskcache import Cache
 
 
 class Caching:
-    def __init__(self, dirname=None, ttl=None):
+    def __init__(self, dirname: str = None, ttl: int = None):
         """
         :param dirname: (str) - название папки хранения файла кеша.
         :param ttl: (int) время актуальности кеша в секундах.
         """
         # Признак успешности инициализации
-        self.__initialized = True
+        self.__initialized: bool = True
 
         # Сообщение об ошибке
-        self.__error_message = ""
+        self.__error_message: str = ""
 
         # Проверка параметров
         if dirname and type(dirname) is not str:
@@ -51,7 +51,7 @@ class Caching:
             self.__initialized = False
             return None
 
-    def check_cache(self, key=None) -> bool:
+    def check_cache(self, key: Union[str, int] = None) -> bool:
         """
         Проверка наличия параметра в кеше.
         :param key: (int|str) параметр в кеше.
@@ -67,7 +67,7 @@ class Caching:
 
         return key in self.__cache
 
-    def get_cache(self, key=None) -> Any:
+    def get_cache(self, key: Union[str, int] = None) -> Any:
         """
         Получение данных из кеша.
         :param key: (int|str) ключ размещения данных в кеше.
@@ -101,7 +101,7 @@ class Caching:
     def get_status(self) -> bool:
         return self.__initialized
 
-    def set_cache(self, key=None, value=None) -> bool:
+    def set_cache(self, key: Union[str, int] = None, value: Any = None) -> bool:
         """
         Размещение данных в кеш.
         :param key: (int|str) ключ размещения данных в кеше.

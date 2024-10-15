@@ -1,6 +1,8 @@
 from django.contrib.auth.models import User
 from django.db import models
 
+QUESTION_MARK_URL = 'https://banner2.cleanpng.com/20180715/yag/aavjmwzok.webp'
+
 
 # Create your models here.
 class AppUser(User):
@@ -10,19 +12,19 @@ class AppUser(User):
 class Actor(models.Model):
     kp_id = models.IntegerField()
     name = models.CharField(max_length=50)
-    photo = models.URLField()
+    photo = models.URLField(default=QUESTION_MARK_URL)
 
 
 class Director(models.Model):
     kp_id = models.IntegerField()
     name = models.CharField(max_length=50)
-    photo = models.URLField()
+    photo = models.URLField(default=QUESTION_MARK_URL)
 
 
 class Writer(models.Model):
     kp_id = models.IntegerField()
     name = models.CharField(max_length=50)
-    photo = models.URLField()
+    photo = models.URLField(default=QUESTION_MARK_URL)
 
 
 class Genre(models.Model):
@@ -33,24 +35,25 @@ class Genre(models.Model):
 class Film(models.Model):
     kp_id = models.IntegerField()
     name = models.CharField(max_length=50)
-    countries = models.JSONField()
+    countries = models.JSONField(null=True)
     genres = models.ManyToManyField(Genre)
     directors = models.ManyToManyField(Director)
     actors = models.ManyToManyField(Actor)
     writers = models.ManyToManyField(Writer)
-    budget = models.IntegerField()
-    fees = models.IntegerField()
-    premiere = models.DateTimeField()
-    description = models.TextField()
-    short_description = models.TextField()
-    slogan = models.TextField()
-    duration = models.IntegerField()
-    poster = models.URLField()
-    rating_kp = models.DecimalField(decimal_places=3, max_digits=4)
-    rating_imdb = models.DecimalField(decimal_places=3, max_digits=4)
-    votes_kp = models.IntegerField()
-    votes_imdb = models.IntegerField()
-    watch_date = models.DateTimeField()
+    budget = models.IntegerField(default=0)
+    fees = models.IntegerField(default=0)
+    premiere = models.DateTimeField(null=True)
+    description = models.TextField(default='...')
+    short_description = models.TextField(default='...')
+    slogan = models.TextField(default='...')
+    duration = models.IntegerField(default=0)
+    poster = models.URLField(default=QUESTION_MARK_URL)
+    rating_kp = models.DecimalField(default=0.0, decimal_places=3, max_digits=4)
+    rating_imdb = models.DecimalField(default=0.0, decimal_places=3, max_digits=4)
+    votes_kp = models.IntegerField(default=0)
+    votes_imdb = models.IntegerField(default=0)
+    watch_date = models.DateTimeField(null=True)
+    is_archive = models.BooleanField(default=False)
 
 
 class Sticker(models.Model):

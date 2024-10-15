@@ -28,7 +28,7 @@ def add_movie(request):
         return render(request, 'lists/addMovie.html')
 
     kp = KP_Movie()
-    kp.get_movie_by_id(request.movie_id)
+    movie = kp.get_movie_by_id(request.movie_id)
     return Response(data={'status': True, 'error': '', 'dt': request.movie_id})
 
 
