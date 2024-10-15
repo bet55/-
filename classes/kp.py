@@ -1,12 +1,17 @@
 from dataclasses import dataclass
+
+from classes.caching import Caching
 from utils import get_api_token
 import httpx
 from typing import ClassVar, Optional
 from icecream import ic
 
 
+
 @dataclass
 class KP:
+    cache_duration: int = 60 * 2
+    cache: Caching = Caching('caching', cache_duration)
     client: ClassVar[httpx.Client] = httpx.Client
     error: str = None
     BASE_URL: ClassVar[str] = 'https://api.kinopoisk.dev/v1.4/'
@@ -14,10 +19,18 @@ class KP:
 
     def make_request(self, url: str, params: Optional[dict] = None) -> dict:
         with self.client(base_url=self.BASE_URL, headers=self.headers, params=params) as client:
+
+            cache_key = f'{self.BASE_URL}{url}' + str(params)
+            cache_value = self.cache.get_cache(cache_key)
+            if cache_value:
+                return cache_value
+
             try:
                 response = client.get(url)
                 response.raise_for_status()
-                return response.json()
+                response_data = response.json()
+                self.cache.set_cache(cache_key, response_data)
+                return response_data
             except httpx.HTTPError as exc:
                 self.error = f"HTTP Exception for {exc.request.url} - {exc}"
                 ic(self.error)
@@ -34,4 +47,4 @@ class KP_Movie(KP):
 
 if __name__ == 'main':
     kp = KP_Movie()
-    ic(kp.get_movie_by_id(4664634))
+    ic(kp.get_movie_by_id(366))
