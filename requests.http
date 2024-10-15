@@ -19,3 +19,12 @@ Content-Type: application/json
   "id": 999,
   "value": "content"
 }
+
+###
+http://127.0.0.1:8000/save_to_db
+
+###
+http://127.0.0.1:8000/save_to_db?archive=True
+
+###
+GET https://image.openmoviedb.com/kinopoisk-st-images//actor_iphone/iphone360_4541869.jpg

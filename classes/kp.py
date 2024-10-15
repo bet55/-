@@ -5,7 +5,7 @@ from utils import get_api_token
 import httpx
 from typing import ClassVar, Optional
 from icecream import ic
-
+import json
 
 
 @dataclass
@@ -47,4 +47,7 @@ class KP_Movie(KP):
 
 if __name__ == 'main':
     kp = KP_Movie()
-    ic(kp.get_movie_by_id(366))
+    mv = kp.get_movie_by_id(840884)
+
+    with open('api_response_3.json', 'w') as f:
+        f.write(json.dumps(mv, indent=4, ensure_ascii=False))

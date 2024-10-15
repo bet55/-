@@ -10,29 +10,34 @@ class AppUser(User):
 
 
 class Actor(models.Model):
+    _actor_manager = models.Manager()
     kp_id = models.IntegerField()
     name = models.CharField(max_length=50)
     photo = models.URLField(default=QUESTION_MARK_URL)
 
 
 class Director(models.Model):
+    _direcotr_manager = models.Manager()
     kp_id = models.IntegerField()
     name = models.CharField(max_length=50)
     photo = models.URLField(default=QUESTION_MARK_URL)
 
 
 class Writer(models.Model):
+    _writer_manager = models.Manager()
     kp_id = models.IntegerField()
     name = models.CharField(max_length=50)
     photo = models.URLField(default=QUESTION_MARK_URL)
 
 
 class Genre(models.Model):
+    _genre_manager = models.Manager()
     name = models.CharField(max_length=50)
     watch_counter = models.IntegerField(default=0)
 
 
 class Film(models.Model):
+    _film_manager = models.Manager()
     kp_id = models.IntegerField()
     name = models.CharField(max_length=50)
     countries = models.JSONField(null=True)
@@ -43,9 +48,9 @@ class Film(models.Model):
     budget = models.IntegerField(default=0)
     fees = models.IntegerField(default=0)
     premiere = models.DateTimeField(null=True)
-    description = models.TextField(default='...')
-    short_description = models.TextField(default='...')
-    slogan = models.TextField(default='...')
+    description = models.TextField(default='...', null=True)
+    short_description = models.TextField(default='...', null=True)
+    slogan = models.TextField(default='...', null=True)
     duration = models.IntegerField(default=0)
     poster = models.URLField(default=QUESTION_MARK_URL)
     rating_kp = models.DecimalField(default=0.0, decimal_places=3, max_digits=4)
@@ -61,3 +66,4 @@ class Sticker(models.Model):
     film = models.ForeignKey(Film, on_delete=models.CASCADE)
     text = models.TextField()
     rating = models.IntegerField()
+
