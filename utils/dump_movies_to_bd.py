@@ -87,18 +87,15 @@ def convert_movie_info(movie_info: dict, is_archive: bool = False):
         m_film.genres.add(m_genre)
 
     for actor in actors:
-        m_actor, _ = Actor._actor_manager.update_or_create(kp_id=actor['kp_id'], name=actor['name'],
-                                                           photo=actor['photo'])
+        m_actor, _ = Actor._actor_manager.update_or_create(kp_id=actor['kp_id'], name=actor['name'], photo=actor['photo'])
         m_film.actors.add(m_actor)
 
     for writer in writers:
-        m_writer, _ = Writer._writer_manager.update_or_create(kp_id=writer['kp_id'], name=writer['name'],
-                                                              photo=writer['photo'])
+        m_writer, _ = Writer._writer_manager.update_or_create(kp_id=writer['kp_id'], name=writer['name'], photo=writer['photo'])
         m_film.writers.add(m_writer)
 
     for director in directors:
-        m_director, _ = Director._direcotr_manager.update_or_create(kp_id=director['kp_id'], name=director['name'],
-                                                                    photo=director['photo'])
+        m_director, _ = Director._direcotr_manager.update_or_create(kp_id=director['kp_id'], name=director['name'], photo=director['photo'])
         m_film.directors.add(m_director)
 
     return movie_info['id']

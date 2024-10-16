@@ -21,10 +21,13 @@ Content-Type: application/json
 }
 
 ###
-http://127.0.0.1:8000/save_to_db
+GET http://127.0.0.1:8000/save_to_db
 
 ###
-http://127.0.0.1:8000/save_to_db?archive=True
+GET http://127.0.0.1:8000/save_to_db?archive=True
 
 ###
 GET https://image.openmoviedb.com/kinopoisk-st-images//actor_iphone/iphone360_4541869.jpg
+
+###
+GET http://127.0.0.1:8000/movies/archive

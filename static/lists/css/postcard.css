@@ -1,0 +1,14 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+}
+
+.container img {
+
+}

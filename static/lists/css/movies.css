@@ -167,3 +167,13 @@ ul {
   fill: red;
   box-shadow: 0 0 10px #fff, 0 0 20px red, 0 0 30px red, 0 0 40px red, 0 0 50px red, 0 0 60px red, 0 0 70px red;
 }
+
+.poster {
+  width: 125px;
+  height: 175px;
+}
+
+.card-poster {
+  width: 22em;
+  height: 32em;
+}

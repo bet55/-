@@ -37,6 +37,7 @@ def convert_file(movies: list, file_name: str) -> int:
     return movies_count
 
 
+
 if __name__ == 'main':
     with open('../data/movies_to_watch_dump.json', 'r') as f:
         movies = json.load(f)

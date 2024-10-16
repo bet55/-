@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="{% static 'img/icon.png' %}">
-    <link rel="stylesheet" href="{% static 'lists/css/index.css' %}">
+    <link rel="stylesheet" href="{% static 'lists/css/movies.css' %}">
     <title>Киноклуб</title>
 </head>
 <body>
@@ -18,18 +18,19 @@
 {#            </ul>#}
 {#        </section>#}
         <section class="movie-posters">
-                <!-- create div for each image poster with the same length/width -->
+            {% for i in data %}
+            <img class="poster" src="{{ i.poster }}" alt="poster" data-kp-id="{{ i.kp_id }}">
+            {% endfor %}
         </section>
-        <section class="movie-card"> <!-- movie information -->
+        <section class="movie-card">
+            <img class="card-poster" src="" alt="">
+            <h2></h2>
+            <p></p>
+            <h3></h3>
+            <p></p>
         </section>
-
-        {% if archive %}
-            <div id="pageType" style="display: none">archive</div>
-        {% else %}
-            <div id="pageType" style="display: none">movies</div>
-        {% endif %}
-
-        <script type="text/javascript" src="{% static 'lists/js/index.js' %}"></script>
+        
+        <script async type="text/javascript" src="{% static 'lists/js/movie.js' %}"></script>
 
     </body>
 </html>

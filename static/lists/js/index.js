@@ -5,10 +5,8 @@ const mainMovieMenu = document.querySelector(".movie-posters");
 const movieCard = document.querySelector(".movie-card");
 const movieList = document.querySelector(".list")
 const pageTypingDiv = document.querySelector("#pageType")
-const moviesJsonUrl = 'http://127.0.0.1:8000/list?format=json&' + pageTypingDiv.textContent + '=True'
+const moviesJsonUrl = 'http://127.0.0.1:8000/tools/old_format?format=json&' + pageTypingDiv.textContent + '=True'
 
-console.log(moviesJsonUrl)
-console.log(pageTypingDiv)
 
 let clicked = false;
 let currentMovie = null
@@ -86,83 +84,83 @@ function resetClicked() {
 }
 
 
-// watchButton.addEventListener("click", () => {
-//     watchButton.textContent = "Watched!"
-//     const OPTIONS = {
-//         method: "PATCH",
-//         headers: {
-//             "Content-Type": "application/json",
-//             "Accept": "application/json"
-//         },
-//
-//         body: JSON.stringify({watched: true})
-//
-//     }
-//     fetch("http://localhost:3000/films/" + currentMovie.id, OPTIONS)
-//         .then(response => response.json())
-//         .then(filmData => console.log(filmData));
-// })
+watchButton.addEventListener("click", () => {
+    watchButton.textContent = "Watched!"
+    const OPTIONS = {
+        method: "PATCH",
+        headers: {
+            "Content-Type": "application/json",
+            "Accept": "application/json"
+        },
 
-// like.addEventListener("click", () => {
-//     like.textContent = "Liked ❤️ "
-//     const OPTIONS = {
-//         method: "PATCH",
-//         headers: {
-//             "Content-Type": "application/json",
-//             "Accept": "application/json"
-//         },
-//
-//         body: JSON.stringify({liked: true})
-//
-//     }
-//     fetch("http://localhost:3000/films/" + currentMovie.id, OPTIONS)
-//         .then(response => response.json())
-//         .then(filmData => console.log(filmData));
-// })
+        body: JSON.stringify({watched: true})
 
-// addToWatchList.addEventListener("click", () => {
-//     currentMovie.on_watchlist = true;
-//     const title = document.createElement("button");
-//
-//     if (!currentMovie.watched) {
-//         title.textContent = currentMovie.title;
-//         title.style.color = "black";
-//         title.setAttribute("class", "btn-two")
-//         movieList.append(title);
-//
-//         addToWatchList.textContent = "Added to Watchlist";
-//         const OPTIONS = {
-//             method: "PATCH",
-//             headers: {
-//                 "Content-Type": "application/json",
-//                 "Accept": "application/json"
-//             },
-//             body: JSON.stringify({on_watchlist: true})
-//         };
-//
-//         fetch("http://localhost:3000/films/" + currentMovie.id, OPTIONS)
-//             .then(response => response.json())
-//             .then(filmData => console.log(filmData));
-//
-//     }
-//
-//     title.addEventListener("dblclick", () => {
-//         movieList.removeChild(title);
-//
-//         const REMOVE = {
-//             method: "PATCH",
-//             headers: {
-//                 "Content-Type": "application/json",
-//                 "Accept": "application/json"
-//             },
-//             body: JSON.stringify({on_watchlist: false})
-//         };
-//
-//         fetch("http://localhost:3000/films/" + currentMovie.id, REMOVE)
-//             .then(response => response.json())
-//             .then(filmData => console.log(filmData));
-//     });
-// });
+    }
+    fetch("http://localhost:3000/films/" + currentMovie.id, OPTIONS)
+        .then(response => response.json())
+        .then(filmData => console.log(filmData));
+})
+
+like.addEventListener("click", () => {
+    like.textContent = "Liked ❤️ "
+    const OPTIONS = {
+        method: "PATCH",
+        headers: {
+            "Content-Type": "application/json",
+            "Accept": "application/json"
+        },
+
+        body: JSON.stringify({liked: true})
+
+    }
+    fetch("http://localhost:3000/films/" + currentMovie.id, OPTIONS)
+        .then(response => response.json())
+        .then(filmData => console.log(filmData));
+})
+
+addToWatchList.addEventListener("click", () => {
+    currentMovie.on_watchlist = true;
+    const title = document.createElement("button");
+
+    if (!currentMovie.watched) {
+        title.textContent = currentMovie.title;
+        title.style.color = "black";
+        title.setAttribute("class", "btn-two")
+        movieList.append(title);
+
+        addToWatchList.textContent = "Added to Watchlist";
+        const OPTIONS = {
+            method: "PATCH",
+            headers: {
+                "Content-Type": "application/json",
+                "Accept": "application/json"
+            },
+            body: JSON.stringify({on_watchlist: true})
+        };
+
+        fetch("http://localhost:3000/films/" + currentMovie.id, OPTIONS)
+            .then(response => response.json())
+            .then(filmData => console.log(filmData));
+
+    }
+
+    title.addEventListener("dblclick", () => {
+        movieList.removeChild(title);
+
+        const REMOVE = {
+            method: "PATCH",
+            headers: {
+                "Content-Type": "application/json",
+                "Accept": "application/json"
+            },
+            body: JSON.stringify({on_watchlist: false})
+        };
+
+        fetch("http://localhost:3000/films/" + currentMovie.id, REMOVE)
+            .then(response => response.json())
+            .then(filmData => console.log(filmData));
+    });
+});
 
 fetch(moviesJsonUrl)
     .then(response => response.json())
