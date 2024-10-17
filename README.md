@@ -20,6 +20,7 @@
 7. Оценки пользователей в виде стикеров на постерах с фильмами
 8. Страница-открытка с грядущими фильмами и датой
 9. Red flag on norwegian, etc films
+10. naverh button
 
 
 [figma](https://www.figma.com/design/iEelBzbgfnGmk810JXHGGn/%D0%BA%D0%B8%D0%BD%D0%BE%D0%BA%D0%BB%D1%83%D0%B1?node-id=0-1&node-type=canvas&t=ZwrMRzvz8z7EbmCr-0)  

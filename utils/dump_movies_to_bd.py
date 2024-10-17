@@ -95,7 +95,7 @@ def convert_movie_info(movie_info: dict, is_archive: bool = False):
         m_film.writers.add(m_writer)
 
     for director in directors:
-        m_director, _ = Director._direcotr_manager.update_or_create(kp_id=director['kp_id'], name=director['name'], photo=director['photo'])
+        m_director, _ = Director._director_manager.update_or_create(kp_id=director['kp_id'], name=director['name'], photo=director['photo'])
         m_film.directors.add(m_director)
 
     return movie_info['id']
@@ -148,3 +148,6 @@ if __name__ == 'main':
     #
     # ic(convert_file(movies_dump_file, 'movies_error.json'))
     # ic(convert_file(archive_movies_dump_file, 'archive_error.json'))
+
+
+

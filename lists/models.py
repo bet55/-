@@ -1,9 +1,12 @@
+import pendulum
 from django.contrib.auth.models import User
 from django.db import models
 
+from lists import validators
+
 QUESTION_MARK_URL = 'https://banner2.cleanpng.com/20180715/yag/aavjmwzok.webp'
 
-
+##TODO: choose right pk for everything
 # Create your models here.
 class AppUser(User):
     pass
@@ -17,7 +20,7 @@ class Actor(models.Model):
 
 
 class Director(models.Model):
-    _direcotr_manager = models.Manager()
+    _director_manager = models.Manager()
     kp_id = models.IntegerField()
     name = models.CharField(max_length=50)
     photo = models.URLField(default=QUESTION_MARK_URL)
@@ -38,19 +41,19 @@ class Genre(models.Model):
 
 class Film(models.Model):
     _film_manager = models.Manager()
-    kp_id = models.IntegerField()
-    name = models.CharField(max_length=50)
-    countries = models.JSONField(null=True)
+    kp_id = models.IntegerField(primary_key=True, validators=[validators.validate_kp_id])
+    name = models.CharField(max_length=50, validators=[validators.validate_name])
+    countries = models.JSONField(default=list('unknown'))
     genres = models.ManyToManyField(Genre)
     directors = models.ManyToManyField(Director)
     actors = models.ManyToManyField(Actor)
     writers = models.ManyToManyField(Writer)
     budget = models.IntegerField(default=0)
     fees = models.IntegerField(default=0)
-    premiere = models.DateTimeField(null=True)
-    description = models.TextField(default='...', null=True)
-    short_description = models.TextField(default='...', null=True)
-    slogan = models.TextField(default='...', null=True)
+    premiere = models.DateTimeField(default='01/01/1900')
+    description = models.TextField(default='...')
+    short_description = models.TextField(default='...')
+    slogan = models.TextField(default='...')
     duration = models.IntegerField(default=0)
     poster = models.URLField(default=QUESTION_MARK_URL)
     rating_kp = models.DecimalField(default=0.0, decimal_places=3, max_digits=4)
