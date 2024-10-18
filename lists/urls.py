@@ -11,6 +11,9 @@ urlpatterns = [
     path('movies/archive', view_movies),
     path('movies/add', add_movie),
 
+    # statistc
+    # features / games
+
     path('tools/check', response_check),
     path('tools/old_format', view_movies_old_format),
     path('tools/save_to_db', save_movies_to_db),

@@ -17,7 +17,7 @@ class KP:
     BASE_URL: ClassVar[str] = 'https://api.kinopoisk.dev/v1.4/'
     headers: ClassVar[dict] = {'X-API-KEY': get_api_token()}
 
-    def make_request(self, url: str, params: Optional[dict] = None) -> dict:
+    def _make_request(self, url: str, params: Optional[dict] = None) -> dict:
         with self.client(base_url=self.BASE_URL, headers=self.headers, params=params) as client:
 
             cache_key = f'{self.BASE_URL}{url}' + str(params)
@@ -41,7 +41,7 @@ class KP_Movie(KP):
     BASE_URL: ClassVar[str] = KP.BASE_URL + 'movie'
 
     def get_movie_by_id(self, movie_id: str | int) -> dict:
-        movie = self.make_request(str(movie_id))
+        movie = self._make_request(str(movie_id))
         return movie
 
 

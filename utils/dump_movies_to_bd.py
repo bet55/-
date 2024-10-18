@@ -2,6 +2,8 @@ import json
 from lists.models import Film, Actor, Director, Writer, Genre
 from icecream import ic
 
+# Единоразовое сохранение фльмов из json в базу данных
+
 
 def get_persons(person_list: list, person_name: str):
     filtered_persons = []
