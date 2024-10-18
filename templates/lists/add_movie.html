@@ -12,13 +12,12 @@
     <title>Киноклуб</title>
 </head>
 <body>
-	<form action='#'>
+	<form method="POST" action='/add_film'>
 		<label>
-	        <input type="text" placeholder="ссылка на фильм">
+	        <input type="text" placeholder="ссылка на фильм" name="url">
 	    </label>
-		 <div class="container-eg-btn-4 uf-border">
-		    <a class="button button-8">Добавить</a>
-		</div>
+
+        <button type="submit">Upload text</button>
 	</form>
 </body>
 </html>

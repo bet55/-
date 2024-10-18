@@ -130,7 +130,7 @@ def convert_file(file_path: str, error_movies_path: str, error_path: str, is_arc
             convert_movie_info(movie, is_archive)
             movies_count += 1
         except Exception as e:
-            broken_movies_ids.append({'id': movie.get('id', -1), 'exp': str(e)})
+            broken_movies_ids.append({'id': movie.get('id'), 'exp': str(e)})
             broken_movies.append(movie)
 
     with open(error_movies_path, 'w') as f:

@@ -50,7 +50,7 @@ class Film(models.Model):
     writers = models.ManyToManyField(Writer)
     budget = models.IntegerField(default=0)
     fees = models.IntegerField(default=0)
-    premiere = models.DateTimeField(default='01/01/1900')
+    premiere = models.DateTimeField(default='1900-01-01')
     description = models.TextField(default='...')
     short_description = models.TextField(default='...')
     slogan = models.TextField(default='...')
