@@ -12,14 +12,20 @@
 </head>
 <body>
         <header class="title">Киноклуб</header>
-{#        <section class="watchlist-container">#}
-{#            <h3 class="watchlist">watchList</h3>#}
-{#            <ul class="list">#}
-{#            </ul>#}
-{#        </section>#}
+
         <section class="movie-posters">
             {% for i in data %}
-            <img class="poster" src="{{ i.poster }}" alt="poster" data-kp-id="{{ i.kp_id }}">
+            <div class="poster-container" data-kp-id="{{ i.kp_id }}">
+                <img class="poster" src="{{ i.poster }}" alt="poster" data-kp-id="{{ i.kp_id }}">
+
+                <div class="options-list" data-kp-id="{{ i.kp_id }}">
+                    <button class="btn-archive">в архив</button>
+                    <button class="btn-postcard">в открытку</button>
+                    <button class="btn-remove">удалить</button>
+		        </div>
+
+            </div>    
+
             {% endfor %}
         </section>
         <section class="movie-card">

@@ -1,18 +1,22 @@
+import json
+
 from pydantic import BaseModel, Field, field_serializer, AliasPath, AliasChoices
 from typing import List, Optional, Dict, Any
 import pendulum
+from icecream import ic
 
 n_url = 'https://banner2.cleanpng.com/20180715/yag/aavjmwzok.webp'
 
-ListDict = List[Dict[str, str]]
+ListDict = Optional[List[Dict[str, str]]]
 
 
 class KpFilmGenresModel(BaseModel):
     genres: ListDict = []
-
     @field_serializer('genres')
     def serialize_genres(self, genres: List[dict], _info):
-        return [g['name'] for g in genres if g.get('name')]
+        gr = genres or []
+        return gr
+
 
 
 class KpFilmPersonModel(BaseModel):
@@ -41,10 +45,22 @@ class KPFilmModel(BaseModel):
     votes_imdb: Optional[int] = Field(0, validation_alias=AliasPath('votes', 'imdb'))
     is_archive: bool = Field(False)
 
-    @field_serializer('premiere')
-    def serialize_premier(self, premiere: str, _info):
-        return pendulum.parse(premiere).format('DD/MM/YYYY')
+    # @field_serializer('premiere')
+    # def serialize_premier(self, premiere: str, _info):
+    #     return pendulum.parse(premiere).format('DD/MM/YYYY')
 
     @field_serializer('countries')
     def serialize_countries(self, countries: List[dict], _info):
         return [c['name'] for c in countries if c.get('name')]
+
+
+
+if __name__ == 'main':
+    pass
+    # with open('../data/api_response.json', 'r') as f:
+    #     res = json.load(f)
+    #
+    # # rs = KpFilmGenresModel()
+    # rs = KpFilmGenresModel(genres=res.get('genres'))
+    #
+    # ic(rs.dict())

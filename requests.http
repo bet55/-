@@ -6,28 +6,16 @@ Accept: text/html
 GET https://api.kinopoisk.dev//v1.4/movie/274730
 X-API-KEY: FCE2VJ9-C2K4Z3C-MVJGV8V-XEGG0AW
 
-
-###
-GET http://localhost:8000/list?format=json&archive=True
-
-
-###
-POST http://localhost:8000/add
-Content-Type: application/json
-
-{
-  "id": 999,
-  "value": "content"
-}
-
-###
-GET http://127.0.0.1:8000/save_to_db
-
-###
-GET http://127.0.0.1:8000/save_to_db?archive=True
-
 ###
 GET https://image.openmoviedb.com/kinopoisk-st-images//actor_iphone/iphone360_4541869.jpg
 
 ###
 GET http://127.0.0.1:8000/movies/archive
+
+###
+POST http://127.0.0.1:8000/movies/add
+Content-Type: application/json
+
+{
+  "kp_id": 35614
+}

@@ -1,28 +1,57 @@
 from classes.kp import KP_Movie
-from lists.models import Film, Actor, Writer, Director, Genre
+from lists.models import Film as FilmModel, Actor as ActorModel, Writer as WriterModel, Director as DirectorModel, Genre as GenreModel
+from lists.serializers import FilmSerializer, FilmSmallSerializer
 from pydantic_models import KPFilmModel, KpFilmPersonModel, KpFilmGenresModel
 import json
 from typing import Any
 from icecream import ic
 
 
-class Movie:
-    def get_movie(self, kp_id: int | str):
-        pass
+class Genre:
+    pass
 
-    def get_all_movies(self, is_archive: bool = False):
-        pass
+
+class Actor:
+    pass
+
+
+class Writer:
+    pass
+
+
+class Director:
+    pass
+
+
+class StickyNotes:
+    pass
+
+
+class Movie:
+    def get_movie(self, kp_id: int | str) -> dict:
+        film_model = FilmModel._film_manager.filter(kp_id=kp_id)
+        serialize = FilmSerializer(film_model)
+        return serialize.data
+
+    def get_all_movies(self, all_info: bool = True, is_archive: bool = False) -> dict | list:
+        film_model = FilmModel._film_manager.filter(is_archive=is_archive).values()
+
+        if all_info:
+            serialize = FilmSerializer(film_model, many=True)
+            films = {film['kp_id']: film for film in serialize.data}
+        else:
+            serialize = FilmSmallSerializer(film_model, many=True)
+            films = serialize.data
+        return films
 
     def change_movie_status(self, kp_id: int | str):
-        pass
+        ...
 
     def remove_movie(self, kp_id: int | str):
         pass
 
     def download(self, kp_id: int | str) -> tuple[int, bool]:
-        # TODO обработать ошибки
-        # TODO проверить работу с жанрами
-        # TODO отсечь модели без данных
+        # TODO bulk_create
 
         kp_client = KP_Movie()
         api_response = kp_client.get_movie_by_id(kp_id)
@@ -33,37 +62,35 @@ class Movie:
 
         save_movies = self._save_movie_to_db(movie, persons, genres)
 
-        return api_response['kp_id'], save_movies
+        return api_response.get('id', -1), save_movies[1]
 
     def _save_movie_to_db(self, movie_info: dict, persons: dict, genres: list):
         # persons_models = {'actor': Actor, 'writer': Writer, 'director': Director}
 
-        movie_model = Film(**movie_info)
-        movie_model.save()
+        movie_model, m_status = FilmModel._film_manager.update_or_create(**movie_info)
 
         for genre in genres:
-            genre_model, _status = Genre._genre_manager.update_or_create(**genre)
+            genre_model, _status = GenreModel._genre_manager.update_or_create(**genre)
             movie_model.genres.add(genre_model)
 
         for actor in persons['actor']:
-            actor_model, _status = Actor._actor_manager.update_or_create(**actor)
+            actor_model, _status = ActorModel._actor_manager.update_or_create(**actor)
             movie_model.actors.add(actor_model)
 
         for writer in persons['writer']:
-            writer_model, _status = Writer._writer_manager.update_or_create(**writer)
+            writer_model, _status = WriterModel._writer_manager.update_or_create(**writer)
             movie_model.writers.add(writer_model)
 
         for director in persons['director']:
-            director_model, _status = Director._director_manager.update_or_create(**director)
+            director_model, _status = DirectorModel._director_manager.update_or_create(**director)
             movie_model.directors.add(director_model)
 
-        return True
+        return movie_model, m_status
 
     def _genres_preprocess(self, movie_info: dict) -> list[str]:
-        formated_genres = []
-        for genre in movie_info.get('genres', []):
-            modeling = KpFilmGenresModel(**genre)
-            formated_genres.append(modeling.model_dump(exclude_none=True, exclude_defaults=True, exclude_unset=True))
+        modeling = KpFilmGenresModel(genres=movie_info.get('genres'))
+        formated_genres = modeling.dict().get('genres')
+        return formated_genres
 
     def _movie_preprocess(self, movie_info: dict) -> dict[str, int | str]:
         modeling = KPFilmModel(**movie_info)

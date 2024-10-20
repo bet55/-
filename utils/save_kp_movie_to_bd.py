@@ -1,5 +1,6 @@
 from lists.models import Film, Actor, Director, Writer, Genre
 
+# Обновление метода сериализации данных из api кинопоиска и записи их в бд
 
 def refactor_kp_data(kp_data: dict) -> dict:
     #returns only persons that has correct role, name and id

@@ -11,7 +11,7 @@ import json
 @dataclass
 class KP:
     cache_duration: int = 60 * 2
-    cache: Caching = Caching('kp_caching', cache_duration)
+    cache: Caching = Caching('app_cache', cache_duration)
     client: ClassVar[httpx.Client] = httpx.Client
     error: str = None
     BASE_URL: ClassVar[str] = 'https://api.kinopoisk.dev/v1.4/'

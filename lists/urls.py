@@ -1,7 +1,6 @@
 from django.urls import path
 
-from lists.views import (response_check, view_movies, add_movie, save_movies_to_db, ToWatchList, ArchiveList,
-                         view_movie_by_id, view_postcard, view_movies_old_format, AddFilm)
+from lists.views import view_movies, add_movie, ToWatchList, ArchiveList, view_movie_by_id, view_postcard, AddFilm
 
 urlpatterns = [
     path('', view_postcard),
@@ -14,9 +13,6 @@ urlpatterns = [
     # statistc
     # features / games
 
-    path('tools/check', response_check),
-    path('tools/old_format', view_movies_old_format),
-    path('tools/save_to_db', save_movies_to_db),
 
     path('to_watch_list', ToWatchList.as_view()),
     path('archive_list', ArchiveList.as_view()),

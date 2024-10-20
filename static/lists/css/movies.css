@@ -1,179 +1,140 @@
 body {
-  background: linear-gradient(304deg, rgba(131, 58, 180, 1) 0%, rgba(23, 17, 17, 1) 50%, rgba(252, 176, 69, 1) 100%);
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: auto 1fr; 
-  grid-gap: 20px;
+    background: linear-gradient(304deg, rgba(131, 58, 180, 1) 0%, rgba(23, 17, 17, 1) 50%, rgba(252, 176, 69, 1) 100%);
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: auto 1fr;
+    grid-gap: 20px;
 }
 
 
 /* @keyframes glow */
-  .title {
+.title {
     text-shadow: 0 0 10px #fff, 0 0 20px rgba(131, 58, 180, 1), 0 0 30px rgba(131, 58, 180, 1), 0 0 40px rgba(131, 58, 180, 1), 0 0 50px rgba(131, 58, 180, 1), 0 0 60px rgba(131, 58, 180, 1), 0 0 70px rgba(131, 58, 180, 1);
-  } 
+}
 
 .my-glowing-text {
-  font-family: "Monaco", sans-serif;
-  animation: glow 5s ease-in-out infinite; 
+    font-family: "Monaco", sans-serif;
+    animation: glow 5s ease-in-out infinite;
 }
 
 .title {
-  grid-column: 1 / span 3;
-  text-align: center;
-  font-size: 100px;
-  font-family: "monaco" monospace;
-  color: #fff;
-  animation: glow 3s ease-in-out infinite alternate;
+    grid-column: 1 / span 3;
+    text-align: center;
+    font-size: 100px;
+    font-family: "monaco" monospace;
+    color: #fff;
+    animation: glow 3s ease-in-out infinite alternate;
 }
 
 .movie-card {
-  padding: 20px;
-  border-radius: 5px;
-  grid-column: 1;
-  grid-row: 2
+    padding: 20px;
+    border-radius: 5px;
+    grid-column: 1;
+    grid-row: 2
 }
 
 .movie-posters {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 20px;
-  row-gap: 40px;
-  height: 100vh;
-  width: 40vw;
-  align-items: center;
-  justify-content: center;
-  overflow: auto;
-  grid-column: 2;
-  grid-row: 2
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    row-gap: 40px;
+    height: 100vh;
+    width: 40vw;
+    align-items: center;
+    justify-content: center;
+    overflow: auto;
+    grid-column: 2;
+    grid-row: 2
 }
 
-.watchlist-container {
-  border-radius: 5px;
-  text-align: center;
-  grid-column: 3;
-  grid-row: 2
-}
 
-ul.list {
-  display: flex;
-  flex-direction: column;
-}
-
-.poster {
-  max-width: 15vw;
-  max-height: 35vh;
-}
+/*.poster {*/
+/*    max-width: 15vw;*/
+/*    max-height: 35vh;*/
+/*}*/
 
 h2, p {
-  color: white;
+    color: white;
 }
 
 h3 {
     color: white;
 }
 
-.watchlist {
-  color: white;
-  font-family: "monaco" monospace;
-  text-shadow: 0 0 10px #fff, 0 0 20px rgba(131, 58, 180, 1), 0 0 30px rgba(131, 58, 180, 1), 0 0 40px rgba(131, 58, 180, 1), 0 0 50px rgba(131, 58, 180, 1), 0 0 60px rgba(131, 58, 180, 1), 0 0 70px rgba(131, 58, 180, 1);
-}
 
-ul {
-  color: white;
-  padding: 0;
-  margin: 0;
-}
-
-.addtowatchlist,
-.like,
-.watchbutton {
-  padding: 0.6em 1em;
-  border: 4px solid #fff;
-  margin: 7px;
-  transition: ease-in-out 0.3s;
-  background-color: transparent;
-  color: #fff;
-  font-weight: bolder;
-  font-size: 13px;
-}
+/* Наше ===========================*/
 
 
-.addtowatchlist {
- justify-self: left;
-}
-
-.like {
-  justify-self: center;
-}
-
-.watchbutton {
-  justify-self: right;
-}
-
-.addtowatchlist:hover,
-.like:hover,
-.watchbutton:hover {
-  transform: scale(1.2);
-  color: #fff;
-}
-
-.btn-two {
-  color: #FFF;
-  transition: all 0.5s;
-  position: relative;
-}
-
-.btn-two span {
-  z-index: 2; 
-  display: block;
-  position: absolute;
-  width: 100%;
-  height: 100%; 
-}
-
-.btn-two::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 40px;
-  height: 10px;
-  z-index: 1;
-  transition: all 0.5s;
-  background-color: rgba(255, 255, 255, 0);
-}
-
-.btn-two::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 40px;
-  height: 10px;
-  z-index: 1;
-  transition: all 0.5s;
-  background-color: rgba(255, 255, 255, 0);
-}
-
-.btn-two:hover::before {
-  transform: rotate(45deg);
-  fill: red;
-  box-shadow: 0 0 10px #fff, 0 0 20px red, 0 0 30px red, 0 0 40px red, 0 0 50px red, 0 0 60px red, 0 0 70px red;
-}
-
-
-.btn-two:hover::after {
-  transform: rotate(-45deg);
-  fill: red;
-  box-shadow: 0 0 10px #fff, 0 0 20px red, 0 0 30px red, 0 0 40px red, 0 0 50px red, 0 0 60px red, 0 0 70px red;
-}
-
-.poster {
-  width: 125px;
-  height: 175px;
-}
-
+/* Информация о фильме */
 .card-poster {
-  width: 22em;
-  height: 32em;
+    width: 22em;
+    height: 32em;
+}
+
+
+/* Список всех фильмов */
+.poster {
+    height: 100%;
+}
+
+.poster-container {
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    width: 125px;
+    height: 175px;
+    position: relative;
+}
+
+.image {
+    height: 100%;
+    object-fit: cover;
+}
+
+.options-list {
+    visibility: hidden;
+    width: 50%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-around;
+    color: white;
+    text-align: center;
+    position: absolute;
+    background-color: rgba(1, 1, 1, 0.7);
+}
+
+
+.options-list > button {
+    height: 100%;
+    width: 100%;
+
+    border-bottom: 4px solid black;
+    border-left: 4px solid black;
+    border-right: none;
+    border-top: none;
+
+    background: none;
+    color: white;
+    font-size: 12px;
+
+    padding: 1px;
+
+}
+
+.options-list > button:hover {
+    cursor: pointer;
+}
+
+.btn-archive:hover {
+    background: rgba(17, 117, 47, 1.0);
+}
+
+.btn-postcard:hover {
+    background: rgb(17, 70, 117, 1.0);
+}
+
+.btn-remove:hover {
+    background: rgba(117, 16, 16, 1.0);
 }

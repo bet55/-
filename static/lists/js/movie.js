@@ -9,43 +9,54 @@ const cardDuration = document.querySelector('.movie-card p:last-child')
 const getMoviesUrl = document.URL + '?format=json'
 
 const getTimeFromMins = (mins) => {
-    let hours = Math.trunc(mins/60);
+    let hours = Math.trunc(mins / 60);
     let minutes = mins % 60;
     return hours + ':' + minutes;
 }
-
 
 const fetchMovies = async (url) => {
     const response = await fetch(url);
 
     if (!response.ok) {
         const message = `Movies request error: ${response.status}`;
-        console.log(message);
+        console.error(message);
     }
-    const moviesList = await response.json();
-    const moviesJson = {};
-    moviesList.forEach((e) => {
-            moviesJson[e.kp_id] = e
-    })
-    return moviesJson;
+    return await response.json();
 }
-
 
 let allMovies;
 fetchMovies(getMoviesUrl).then(movies => allMovies = movies)
 
-
-moviePosters.addEventListener('mouseover', async (event) => {
-    let target = event.target;
+const showMoviePoster = (target) => {
     let movieId = target.dataset.kpId;
 
-    if (target.classList.contains('poster')) {
+    cardImg.src = target.src;
+    cardTitle.textContent = allMovies[movieId].name;
+    cardDescription.textContent = allMovies[movieId].description;
+    cardRealiseDate.textContent = allMovies[movieId].premiere;
+    cardDuration.textContent = getTimeFromMins(allMovies[movieId].duration);
+}
 
-        cardImg.src = target.src;
-        cardTitle.textContent = allMovies[movieId].name;
-        cardDescription.textContent = allMovies[movieId].description;
-        cardRealiseDate.textContent = allMovies[movieId].premiere;
-        cardDuration.textContent = getTimeFromMins(allMovies[movieId].duration);
+const toggleMovieOptions = (target) => {
+    let movieId = target.dataset.kpId;
+    console.log(target);
+    console.log(movieId);
+    let optionsList = document.querySelector(`[data-kp-id="${movieId}"] .options-list `);
+    let isVisible = optionsList.style.visibility;
+    optionsList.style.visibility = isVisible === "visible" ? "hidden" : "visible";
+}
+
+
+moviePosters.addEventListener('click', async (event) => {
+    let target = event.target;
+
+    if (target.classList.contains('poster')) {
+        showMoviePoster(target);
+        toggleMovieOptions(target);
 
     }
+
 })
+
+
+
