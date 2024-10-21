@@ -44,11 +44,14 @@ class Movie:
             films = serialize.data
         return films
 
-    def change_movie_status(self, kp_id: int | str):
-        ...
+    def change_movie_status(self, kp_id: int | str, is_archive: bool):
+        film_model = FilmModel._film_manager.get(kp_id=kp_id)
+        film_model.is_archive = is_archive
+        return film_model.save()
 
     def remove_movie(self, kp_id: int | str):
-        pass
+        film_model = FilmModel._film_manager.get(kp_id=kp_id)
+        return film_model.delete()
 
     def download(self, kp_id: int | str) -> tuple[int, bool]:
         # TODO bulk_create
@@ -67,6 +70,7 @@ class Movie:
     def _save_movie_to_db(self, movie_info: dict, persons: dict, genres: list):
         # persons_models = {'actor': Actor, 'writer': Writer, 'director': Director}
 
+        # todo: запаковать в 1 цикл
         movie_model, m_status = FilmModel._film_manager.update_or_create(**movie_info)
 
         for genre in genres:

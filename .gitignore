@@ -3,3 +3,5 @@
 __pycache__
 caching
 *caching
+app_cache
+*cache

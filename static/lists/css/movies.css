@@ -106,7 +106,7 @@ h3 {
 }
 
 
-.options-list > button {
+.btn-option {
     height: 100%;
     width: 100%;
 
@@ -123,18 +123,32 @@ h3 {
 
 }
 
-.options-list > button:hover {
+.btn-option:hover {
     cursor: pointer;
 }
+
+.btn-rate {
+    font-size: 1.5em;
+}
+
+.btn-rate:hover {
+    background: rgba(17, 117, 47, 1.0);
+}
+
 
 .btn-archive:hover {
     background: rgba(17, 117, 47, 1.0);
 }
 
-.btn-postcard:hover {
-    background: rgb(17, 70, 117, 1.0);
+.btn-bookmark:hover {
+    background: rgba(17, 117, 47, 1.0);
+    /*			background: rgb(17, 70, 117, 1.0);*/
 }
 
 .btn-remove:hover {
     background: rgba(117, 16, 16, 1.0);
+}
+
+button > img {
+    height: 2.5em;
 }

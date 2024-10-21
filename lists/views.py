@@ -47,9 +47,23 @@ class AddFilm(APIView):
         return Response({'id': new_film.kp_id, 'name': new_film.name}, status=status.HTTP_200_OK)
 
 
-@api_view()
-def view_postcard(request):
-    return render(request, 'lists/postcard.html')
+class RateFilm(APIView):
+    sticker_model = Sticker()
+
+    def post(self, request):
+        user = request.data['user']
+        film = request.data['film']
+        text = request.data['text']
+        rating = request.data['rating']
+
+        self.sticker_model.objects.create(user=user, film=film, text=text, rating=rating)
+
+    def remove(self, request):
+        user = request.data['user']
+        film = request.data['film']
+
+        sticker = self.sticker_model.objects.get(user=user, film=film)
+        sticker.delete()
 
 
 @api_view(['GET'])
@@ -76,9 +90,9 @@ def view_movie_by_id(request, kp_id):
     return Response(movie)
 
 
+# todo error handler view
 @api_view(['GET', 'POST'])
 def add_movie(request):
-
     if request.method == 'GET':
         return render(request, 'lists/add_movie.html')
 
@@ -87,4 +101,28 @@ def add_movie(request):
     mv = Movie()
     movie_id, success = mv.download(kp_id)
 
-    return Response(data={'success': success, 'error': '', 'dt': movie_id})
+    return Response(data={'success': success, 'error': '', 'id': movie_id})
+
+
+@api_view(['PATCH'])
+def change_archive_status(request):
+    kp_id = request.data['kp_id']
+    is_archive = request.data['is_archive']
+
+    movie = Movie()
+    movie_is_changed = movie.change_movie_status(kp_id, is_archive)
+
+    return Response(data={'success': str(movie_is_changed), 'error': '', 'id': kp_id})
+
+
+@api_view(['DELETE'])
+def remove_movie(request):
+    kp_id = request.data.get('kp_id')
+
+    if not kp_id:
+        return Response(data={'success': False, 'error': 'Lost kp_id', 'id': False})
+
+    movie = Movie()
+    movie_is_deleted = movie.remove_movie(kp_id)
+
+    return Response(data={'success': str(movie_is_deleted), 'error': '', 'id': kp_id})

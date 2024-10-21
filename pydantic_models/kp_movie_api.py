@@ -12,11 +12,11 @@ ListDict = Optional[List[Dict[str, str]]]
 
 class KpFilmGenresModel(BaseModel):
     genres: ListDict = []
+
     @field_serializer('genres')
     def serialize_genres(self, genres: List[dict], _info):
         gr = genres or []
         return gr
-
 
 
 class KpFilmPersonModel(BaseModel):

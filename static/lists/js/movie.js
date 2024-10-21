@@ -39,11 +39,72 @@ const showMoviePoster = (target) => {
 
 const toggleMovieOptions = (target) => {
     let movieId = target.dataset.kpId;
-    console.log(target);
     console.log(movieId);
-    let optionsList = document.querySelector(`[data-kp-id="${movieId}"] .options-list `);
+    let optionsList = target.nextElementSibling;
     let isVisible = optionsList.style.visibility;
     optionsList.style.visibility = isVisible === "visible" ? "hidden" : "visible";
+}
+
+const rateMovie = () => {
+}
+
+const addMovieToBookmark = (target) => {
+    const unBookedImg = 'bm_grey';
+    const bookedImg = 'bm_gold';
+
+    const btnImg = target.querySelector('img');
+    console.log(btnImg)
+    if (btnImg.src.includes(bookedImg)) {
+        console.log('in')
+        btnImg.src = btnImg.src.replace(bookedImg, unBookedImg)
+    } else {
+        console.log('else')
+        btnImg.src = btnImg.src.replace(unBookedImg, bookedImg)
+    }
+
+}
+const changeMovieArchiveStatus = (target) => {
+    const isArchive = document.URL.includes('archive');
+
+    let movieId = target.parentNode.dataset.kpId;
+    const removeUrl = 'http://localhost:8000/movies/change_archive';
+    const sendData = {kp_id: movieId, is_archive: !isArchive}
+    console.log(sendData)
+    fetch(removeUrl, {
+        method: 'PATCH',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(sendData)
+    }).then((rs) => rs.json()).then((data) => {
+        console.log(data)
+    });
+
+    target.parentElement.parentElement.remove();
+}
+
+const removeMovie = (target) => {
+    let movieId = target.parentNode.dataset.kpId;
+    const removeUrl = 'http://localhost:8000/movies/remove';
+    const sendData = {kp_id: movieId}
+
+    fetch(removeUrl, {
+        method: 'DELETE',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(sendData)
+    }).then((rs) => rs.json()).then((data) => {
+        console.log(data)
+    });
+
+    target.parentElement.parentElement.remove()
+}
+const optionsMap = {
+    'btn-rate': rateMovie,
+    'btn-bookmark': addMovieToBookmark,
+    'btn-archive': changeMovieArchiveStatus,
+    'btn-remove': removeMovie
 }
 
 
@@ -53,7 +114,13 @@ moviePosters.addEventListener('click', async (event) => {
     if (target.classList.contains('poster')) {
         showMoviePoster(target);
         toggleMovieOptions(target);
-
+    }
+    console.log(target.classList)
+    if (target.classList.contains('btn-option')) {
+        let currentBtn = target.classList[1];
+        let currentFunction = optionsMap[currentBtn];
+        console.log(optionsMap[currentBtn])
+        currentFunction(target);
     }
 
 })

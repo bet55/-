@@ -7,7 +7,6 @@ from lists import validators
 QUESTION_MARK_URL = 'https://banner2.cleanpng.com/20180715/yag/aavjmwzok.webp'
 
 
-##TODO: choose right pk for everything
 # Create your models here.
 class AppUser(User):
     pass

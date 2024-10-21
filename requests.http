@@ -19,3 +19,11 @@ Content-Type: application/json
 {
   "kp_id": 35614
 }
+
+###
+DELETE http://localhost:8000/movies/remove
+Content-Type: application/json
+
+{
+  "kp_id": 5524
+}

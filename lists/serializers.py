@@ -4,6 +4,8 @@ from lists.models import Film, Genre
 
 
 class FilmSerializer(serializers.HyperlinkedModelSerializer):
+#TODO: serialize foreign tables
+
     premiere = serializers.DateTimeField(format="%d/%m/%Y")
 
     class Meta:
