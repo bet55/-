@@ -29,8 +29,12 @@ body {
 .movie-card {
     padding: 20px;
     border-radius: 5px;
-    grid-column: 1;
-    grid-row: 2
+    grid-column: 3;
+    grid-row: 2;
+
+    img {
+        visibility: hidden;
+    }
 }
 
 .movie-posters {
@@ -69,6 +73,7 @@ h3 {
 .card-poster {
     width: 22em;
     height: 32em;
+
 }
 
 

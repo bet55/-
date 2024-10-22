@@ -12,12 +12,16 @@
     <title>Киноклуб</title>
 </head>
 <body>
-	<form method="POST" action='/movies/add'>
-		<label>
-	        <input type="text" placeholder="ссылка на фильм" name="kp_id">
-	    </label>
+<form method="POST" action='#' id="movie-saver">
+    <label>
+        <input type="text" placeholder="ссылка на фильм" name="kp_id">
+    </label>
 
-        <button type="submit">Сохранить фильм</button>
-	</form>
+    <button type="submit">Сохранить фильм</button>
+</form>
+
+
+<script async type="text/javascript" src="{% static 'lists/js/add_movie.js' %}"></script>
 </body>
+
 </html>

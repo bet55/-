@@ -13,21 +13,21 @@ class AppUser(User):
 
 
 class Actor(models.Model):
-    _actor_manager = models.Manager()
+    mgr = models.Manager()
     kp_id = models.IntegerField(primary_key=True)
     name = models.CharField(max_length=50)
     photo = models.URLField(default=QUESTION_MARK_URL)
 
 
 class Director(models.Model):
-    _director_manager = models.Manager()
+    mgr = models.Manager()
     kp_id = models.IntegerField(primary_key=True)
     name = models.CharField(max_length=50)
     photo = models.URLField(default=QUESTION_MARK_URL)
 
 
 class Writer(models.Model):
-    _writer_manager = models.Manager()
+    mgr = models.Manager()
     kp_id = models.IntegerField(primary_key=True)
     name = models.CharField(max_length=50)
     photo = models.URLField(default=QUESTION_MARK_URL)
@@ -42,7 +42,7 @@ class FilmGenreRelations(models.Model):
 
 
 class Genre(models.Model):
-    _genre_manager = models.Manager()
+    mgr = models.Manager()
     name = models.CharField(max_length=50, primary_key=True)
     watch_counter = models.IntegerField(default=0)
 
@@ -57,7 +57,7 @@ class Film(models.Model):
     #         # Почему не работает????????????????????????
     #         return json.dumps(value, ensure_ascii=False)
 
-    _film_manager = models.Manager()
+    mgr = models.Manager()
     kp_id = models.IntegerField(primary_key=True)
     name = models.CharField(max_length=50, validators=[validators.validate_name])
     countries = models.JSONField(default=list(('unknown',)))
@@ -86,6 +86,7 @@ class Film(models.Model):
 
 
 class Sticker(models.Model):
+    mgr = models.Manager()
     user = models.ForeignKey(AppUser, on_delete=models.CASCADE)
     film = models.ForeignKey(Film, on_delete=models.CASCADE)
     text = models.TextField(default='И сказать нечего...')

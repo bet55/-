@@ -16,6 +16,7 @@ dependencies = [
     "django-cors-headers>=4.5.0",
     "pydantic>=2.9.2",
     "requests>=2.32.3",
+    "adrf>=0.1.8",
 ]
 
 [build-system]

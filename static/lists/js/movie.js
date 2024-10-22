@@ -11,7 +11,7 @@ const getMoviesUrl = document.URL + '?format=json'
 const getTimeFromMins = (mins) => {
     let hours = Math.trunc(mins / 60);
     let minutes = mins % 60;
-    return hours + ':' + minutes;
+    return `${hours} часа ${minutes} минуты`;
 }
 
 const fetchMovies = async (url) => {
@@ -31,6 +31,7 @@ const showMoviePoster = (target) => {
     let movieId = target.dataset.kpId;
 
     cardImg.src = target.src;
+    cardImg.style.visibility = 'visible';
     cardTitle.textContent = allMovies[movieId].name;
     cardDescription.textContent = allMovies[movieId].description;
     cardRealiseDate.textContent = allMovies[movieId].premiere;
@@ -38,10 +39,9 @@ const showMoviePoster = (target) => {
 }
 
 const toggleMovieOptions = (target) => {
-    let movieId = target.dataset.kpId;
-    console.log(movieId);
-    let optionsList = target.nextElementSibling;
-    let isVisible = optionsList.style.visibility;
+    const movieId = target.dataset.kpId;
+    const optionsList = target.nextElementSibling;
+    const isVisible = optionsList.style.visibility;
     optionsList.style.visibility = isVisible === "visible" ? "hidden" : "visible";
 }
 
@@ -53,20 +53,15 @@ const addMovieToBookmark = (target) => {
     const bookedImg = 'bm_gold';
 
     const btnImg = target.querySelector('img');
-    console.log(btnImg)
-    if (btnImg.src.includes(bookedImg)) {
-        console.log('in')
-        btnImg.src = btnImg.src.replace(bookedImg, unBookedImg)
-    } else {
-        console.log('else')
-        btnImg.src = btnImg.src.replace(unBookedImg, bookedImg)
-    }
+    const imgSrc = btnImg.src;
+    const updatedBooedSrc = imgSrc.includes(bookedImg) ? imgSrc.replace(bookedImg, unBookedImg) : imgSrc.replace(unBookedImg, bookedImg);
+    btnImg.src = updatedBooedSrc;
 
 }
 const changeMovieArchiveStatus = (target) => {
     const isArchive = document.URL.includes('archive');
 
-    let movieId = target.parentNode.dataset.kpId;
+    const movieId = target.parentNode.dataset.kpId;
     const removeUrl = 'http://localhost:8000/movies/change_archive';
     const sendData = {kp_id: movieId, is_archive: !isArchive}
     console.log(sendData)
@@ -84,7 +79,7 @@ const changeMovieArchiveStatus = (target) => {
 }
 
 const removeMovie = (target) => {
-    let movieId = target.parentNode.dataset.kpId;
+    const movieId = target.parentNode.dataset.kpId;
     const removeUrl = 'http://localhost:8000/movies/remove';
     const sendData = {kp_id: movieId}
 
@@ -110,16 +105,16 @@ const optionsMap = {
 
 moviePosters.addEventListener('click', async (event) => {
     let target = event.target;
+    target = target.parentElement.classList.contains('btn-option') ? target.parentElement : target;
 
     if (target.classList.contains('poster')) {
         showMoviePoster(target);
         toggleMovieOptions(target);
     }
-    console.log(target.classList)
+
     if (target.classList.contains('btn-option')) {
-        let currentBtn = target.classList[1];
-        let currentFunction = optionsMap[currentBtn];
-        console.log(optionsMap[currentBtn])
+        const currentBtn = target.classList[1];
+        const currentFunction = optionsMap[currentBtn];
         currentFunction(target);
     }
 

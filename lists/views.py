@@ -16,14 +16,14 @@ from utils import get_movie, refactor_kp_data, save_new_film
 # Create your views here.
 class ToWatchList(APIView):
     def get(self, request):
-        queryset = Film._film_manager.all().filter(is_archive=False).order_by('-rating_kp')
+        queryset = Film.mgr.all().filter(is_archive=False).order_by('-rating_kp')
         serializer = FilmSmallSerializer(queryset, many=True)
         return render(request, 'lists/movies.html', context={'data': serializer.data})
 
 
 class ArchiveList(APIView):
     def get(self, request):
-        queryset = Film._film_manager.all().filter(is_archive=True).order_by('-rating_kp')
+        queryset = Film.mgr.all().filter(is_archive=True).order_by('-rating_kp')
         serializer = FilmSmallSerializer(queryset, many=True)
         return render(request, 'lists/movies.html', context={'data': serializer.data})
 
@@ -56,13 +56,13 @@ class RateFilm(APIView):
         text = request.data['text']
         rating = request.data['rating']
 
-        self.sticker_model.objects.create(user=user, film=film, text=text, rating=rating)
+        self.sticker_model.mgr.create(user=user, film=film, text=text, rating=rating)
 
     def remove(self, request):
         user = request.data['user']
         film = request.data['film']
 
-        sticker = self.sticker_model.objects.get(user=user, film=film)
+        sticker = self.sticker_model.mgr.get(user=user, film=film)
         sticker.delete()
 
 
