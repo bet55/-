@@ -79,7 +79,7 @@ def view_movies(request):
 
     else:
         movies = mv.get_all_movies(all_info=False, is_archive=is_archive)
-        return render(request, 'lists/movies.html', context={'data': movies})
+        return render(request, 'lists/movies.html', context={'data': movies, 'is_archive': is_archive})
 
 
 @api_view(['GET'])

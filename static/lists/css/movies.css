@@ -1,4 +1,9 @@
-body {
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.main {
     background: linear-gradient(304deg, rgba(131, 58, 180, 1) 0%, rgba(23, 17, 17, 1) 50%, rgba(252, 176, 69, 1) 100%);
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -24,6 +29,33 @@ body {
     font-family: "monaco" monospace;
     color: #fff;
     animation: glow 3s ease-in-out infinite alternate;
+}
+
+.navigation {
+    grid-column: 1;
+
+    nav {
+        height: 50%;
+    }
+
+    ul {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        justify-content: space-around;
+        align-content: center;
+        text-align: center;
+    }
+    li:hover {
+        background-color: #000137;
+    }
+
+    a {
+        font-size: 2em;
+        text-decoration: none;
+        text-shadow: 0 0 10px #fff, 0 0 20px rgba(131, 58, 180, 1), 0 0 30px rgba(131, 58, 180, 1), 0 0 40px rgba(131, 58, 180, 1), 0 0 50px rgba(131, 58, 180, 1), 0 0 60px rgba(131, 58, 180, 1), 0 0 70px rgba(131, 58, 180, 1);
+        color: wheat;
+    }
 }
 
 .movie-card {
@@ -156,4 +188,16 @@ h3 {
 
 button > img {
     height: 2.5em;
+}
+
+
+#booked-films {
+    position: absolute;
+    top: 40px;
+    right: 40px;
+
+    img {
+        height: 8em;
+        border-radius: 100%;
+    }
 }

@@ -5,6 +5,7 @@ const cardTitle = document.querySelector('.movie-card h2')
 const cardDescription = document.querySelector('.movie-card p')
 const cardRealiseDate = document.querySelector('.movie-card h3')
 const cardDuration = document.querySelector('.movie-card p:last-child')
+const bookedFilmedStorage = document.querySelector('#booked-films');
 
 const getMoviesUrl = document.URL + '?format=json'
 
@@ -51,11 +52,21 @@ const rateMovie = () => {
 const addMovieToBookmark = (target) => {
     const unBookedImg = 'bm_grey';
     const bookedImg = 'bm_gold';
+    const movieId = target.parentNode.dataset.kpId;
 
     const btnImg = target.querySelector('img');
     const imgSrc = btnImg.src;
-    const updatedBooedSrc = imgSrc.includes(bookedImg) ? imgSrc.replace(bookedImg, unBookedImg) : imgSrc.replace(unBookedImg, bookedImg);
-    btnImg.src = updatedBooedSrc;
+    if (imgSrc.includes(bookedImg)) {
+        btnImg.src = imgSrc.replace(bookedImg, unBookedImg);
+        localStorage.removeItem(movieId);
+    } else {
+        btnImg.src = imgSrc.replace(unBookedImg, bookedImg);
+
+
+        console.log(movieId, allMovies[movieId])
+        localStorage.setItem(movieId, JSON.stringify(allMovies[movieId]) );
+    }
+
 
 }
 const changeMovieArchiveStatus = (target) => {
@@ -121,4 +132,13 @@ moviePosters.addEventListener('click', async (event) => {
 })
 
 
+bookedFilmedStorage.addEventListener('click', (event) => {
+    let lsKeys = Object.keys(localStorage);
+    let lsValues = [];
+    for (let key of lsKeys) {
+        lsValues.push(JSON.parse(localStorage.getItem(key)));
+    }
+    console.log(lsValues)
 
+
+})
