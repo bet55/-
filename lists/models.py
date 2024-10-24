@@ -9,7 +9,7 @@ QUESTION_MARK_URL = 'https://banner2.cleanpng.com/20180715/yag/aavjmwzok.webp'
 
 # Create your models here.
 class AppUser(User):
-    pass
+    avatar = models.URLField(default=QUESTION_MARK_URL)
 
 
 class Actor(models.Model):

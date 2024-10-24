@@ -12,7 +12,20 @@
 </head>
 <body>
 <div class="main">
-    <header class="title">Киноклуб</header>
+    {# https://doka.guide/recipes/dropdown-animation/ #}
+    <section class="header">
+        <header class="title"><span>Киноклуб</span></header>
+        <div class="dropdown">
+            <button class="dropbtn"> Пользователи</button>
+            <div class="dropdown-content">
+                <div><img src="{% static 'img/avatars/daenillando.jpg' %}" alt=""><a href="#">Daen</a></div>
+                <div><img src="{% static 'img/avatars/lightthouse1.jpg' %}" alt=""><a href="#">lightthouse</a></div>
+                <div><img src="{% static 'img/avatars/drbloody1.jpg' %}" alt=""><a href="#">kapitan4elka</a></div>
+                <div><img src="{% static 'img/avatars/Deputant.png' %}" alt=""><a href="#">Никич</a></div>
+            </div>
+        </div>
+    </section>
+
 
     <section class="navigation">
         <nav class="menu">
@@ -58,9 +71,9 @@
 
 </div>
 
-<div id="booked-films">
-    <img src="{% static 'img/clappers/clapper2.jpg' %}" alt="">
-</div>
+{#<div id="booked-films">#}
+{#    <img src="{% static 'img/clappers/clapper2.jpg' %}" alt="">#}
+{#</div>#}
 
 <script async type="text/javascript" src="{% static 'lists/js/movie.js' %}"></script>
 
