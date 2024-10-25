@@ -1,3 +1,5 @@
+const usersSelector = document.querySelector('#users-select');
+
 const moviePosters = document.querySelector('.movie-posters')
 
 const cardImg = document.querySelector('.movie-card img')
@@ -5,6 +7,7 @@ const cardTitle = document.querySelector('.movie-card h2')
 const cardDescription = document.querySelector('.movie-card p')
 const cardRealiseDate = document.querySelector('.movie-card h3')
 const cardDuration = document.querySelector('.movie-card p:last-child')
+
 const bookedFilmedStorage = document.querySelector('#booked-films');
 
 const getMoviesUrl = document.URL + '?format=json'
@@ -64,7 +67,7 @@ const addMovieToBookmark = (target) => {
 
 
         console.log(movieId, allMovies[movieId])
-        localStorage.setItem(movieId, JSON.stringify(allMovies[movieId]) );
+        localStorage.setItem(movieId, JSON.stringify(allMovies[movieId]));
     }
 
 
@@ -114,6 +117,15 @@ const optionsMap = {
 }
 
 
+usersSelector.addEventListener('change', (event) => {
+    // Cookie “user” does not have a proper “SameSite” attribute value. Soon, cookies without the “SameSite” attribute or with an invalid value will be treated as “Lax”. This means that the cookie will no longer be sent in third-party contexts. If your application depends on this cookie being available in such contexts, please add the “SameSite=None“ attribute to it. To know more about the “SameSite“ attribute, read https://developer.mozilla.org/docs/Web/HTTP/Headers/Set-Cookie/SameSite
+    let user = usersSelector.value;
+    document.cookie =  `user=${user}`;
+    console.log(user);
+
+})
+
+
 moviePosters.addEventListener('click', async (event) => {
     let target = event.target;
     target = target.parentElement.classList.contains('btn-option') ? target.parentElement : target;
@@ -142,3 +154,58 @@ bookedFilmedStorage.addEventListener('click', (event) => {
 
 
 })
+
+
+const btnUp = {
+    el: document.querySelector('.btn-up'),
+    scrolling: false,
+    show() {
+        if (this.el.classList.contains('btn-up_hide') && !this.el.classList.contains('btn-up_hiding')) {
+            this.el.classList.remove('btn-up_hide');
+            this.el.classList.add('btn-up_hiding');
+            window.setTimeout(() => {
+                this.el.classList.remove('btn-up_hiding');
+            }, 300);
+        }
+    },
+    hide() {
+        if (!this.el.classList.contains('btn-up_hide') && !this.el.classList.contains('btn-up_hiding')) {
+            this.el.classList.add('btn-up_hiding');
+            window.setTimeout(() => {
+                this.el.classList.add('btn-up_hide');
+                this.el.classList.remove('btn-up_hiding');
+            }, 300);
+        }
+    },
+    addEventListener() {
+        // при прокрутке окна (window)
+        window.addEventListener('scroll', () => {
+            const scrollY = window.scrollY || document.documentElement.scrollTop;
+            if (this.scrolling && scrollY > 0) {
+                return;
+            }
+            this.scrolling = false;
+            // если пользователь прокрутил страницу более чем на 200px
+            if (scrollY > 400) {
+                // сделаем кнопку .btn-up видимой
+                this.show();
+            } else {
+                // иначе скроем кнопку .btn-up
+                this.hide();
+            }
+        });
+        // при нажатии на кнопку .btn-up
+        document.querySelector('.btn-up').onclick = () => {
+            this.scrolling = true;
+            this.hide();
+            // переместиться в верхнюю часть страницы
+            window.scrollTo({
+                top: 0,
+                left: 0,
+                behavior: 'smooth'
+            });
+        }
+    }
+}
+
+btnUp.addEventListener();

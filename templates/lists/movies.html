@@ -13,16 +13,16 @@
 <body>
 <div class="main">
     {# https://doka.guide/recipes/dropdown-animation/ #}
+{#https://developer.mozilla.org/en-US/docs/Web/API/HTMLInputElement/select_event#}
     <section class="header">
         <header class="title"><span>Киноклуб</span></header>
-        <div class="dropdown">
-            <button class="dropbtn"> Пользователи</button>
-            <div class="dropdown-content">
-                <div><img src="{% static 'img/avatars/daenillando.jpg' %}" alt=""><a href="#">Daen</a></div>
-                <div><img src="{% static 'img/avatars/lightthouse1.jpg' %}" alt=""><a href="#">lightthouse</a></div>
-                <div><img src="{% static 'img/avatars/drbloody1.jpg' %}" alt=""><a href="#">kapitan4elka</a></div>
-                <div><img src="{% static 'img/avatars/Deputant.png' %}" alt=""><a href="#">Никич</a></div>
-            </div>
+        <div class="users-list">
+            <select name="test" id="users-select">
+                <option value="daenilladno" >Саня</option>
+                <option value="Deputant">Никич</option>
+                <option value="drbloody1">Лёха</option>
+                <option value="lightthouse">Степан</option>
+            </select>
         </div>
     </section>
 
@@ -51,8 +51,10 @@
 
                 <div class="options-list" data-kp-id="{{ i.kp_id }}">
                     <button class="btn-option btn-rate">🌟</button>
-                    <button class="btn-option btn-bookmark"><img src="{% static 'img/poster_options/bm_grey.png' %}"></button>
-                    <button class="btn-option btn-archive"><img src="{% static 'img/poster_options/rar.png' %}"></button>
+                    <button class="btn-option btn-bookmark"><img src="{% static 'img/poster_options/bm_grey.png' %}">
+                    </button>
+                    <button class="btn-option btn-archive"><img src="{% static 'img/poster_options/rar.png' %}">
+                    </button>
                     <button class="btn-option btn-remove"><img src="{% static 'img/poster_options/cd.png' %}"></button>
                 </div>
 
@@ -71,9 +73,11 @@
 
 </div>
 
-{#<div id="booked-films">#}
-{#    <img src="{% static 'img/clappers/clapper2.jpg' %}" alt="">#}
-{#</div>#}
+<div id="booked-films">
+    <img src="{% static 'img/clappers/clapper2.jpg' %}" alt="">
+</div>
+
+<div class="btn-up btn-up_hide"></div>
 
 <script async type="text/javascript" src="{% static 'lists/js/movie.js' %}"></script>
 

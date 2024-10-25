@@ -6,13 +6,17 @@
 .main {
     background: linear-gradient(304deg, rgba(131, 58, 180, 1) 0%, rgba(23, 17, 17, 1) 50%, rgba(252, 176, 69, 1) 100%);
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: 1fr 2fr 1fr;
     grid-template-rows: auto 1fr;
     grid-gap: 20px;
+    min-height: 100vh;
 }
 
 
-/* @keyframes glow */
+ @keyframes glow {
+
+ }
+
 .title {
     text-shadow: 0 0 10px #fff, 0 0 20px rgba(131, 58, 180, 1), 0 0 30px rgba(131, 58, 180, 1), 0 0 40px rgba(131, 58, 180, 1), 0 0 50px rgba(131, 58, 180, 1), 0 0 60px rgba(131, 58, 180, 1), 0 0 70px rgba(131, 58, 180, 1);
 }
@@ -72,11 +76,10 @@
 
 .movie-posters {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: auto 1fr;
     gap: 20px;
     row-gap: 40px;
-    height: 100vh;
-    width: 40vw;
     align-items: center;
     justify-content: center;
     overflow: auto;
@@ -113,14 +116,14 @@ h3 {
 /* Список всех фильмов */
 .poster {
     height: 100%;
+    width: 100%;
 }
 
 .poster-container {
     display: flex;
     justify-content: end;
     align-items: center;
-    width: 125px;
-    height: 175px;
+    height: 15em;
     position: relative;
 }
 
@@ -129,6 +132,7 @@ h3 {
     object-fit: cover;
 }
 
+/* Набор параметров для применения к фильму*/
 .options-list {
     visibility: hidden;
     width: 50%;
@@ -191,11 +195,11 @@ button > img {
     height: 2.5em;
 }
 
-
+/* Корзина с выбранными фильмами*/
 #booked-films {
     position: fixed;
     bottom: 30px;
-    right: 40px;
+    left: 40px;
 
     img {
         height: 8em;
@@ -203,63 +207,80 @@ button > img {
     }
 }
 
+#booked-films:hover {
+    cursor: pointer;
+}
+
 .header {
     grid-column: 1/4;
     display: flex;
+    height: 100%;
 
     .title {
         flex-grow: 2;
     }
 }
 
-.dropbtn {
-    background-color: #4CAF50;
-    color: white;
-    padding: 16px;
-    font-size: 16px;
-    border: none;
+/* Выбор пользователя*/
+.users-list {
+    height: 3em;
+    width: 5em;
+    margin: 3em;
 }
 
-.dropdown {
-    position: relative;
-    display: inline-block;
+#users-select {
+    height: 100%;
+    width: 100%;
+    font-size: 1em;
 
-    margin: 2em;
-}
-
-.dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: #f1f1f1;
-    min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-    z-index: 1;
-
-    div {
-        display: flex;
-        align-items: center;
+    imgm {
+        height: 1em;
     }
 
-    img {
-        height: 4em;
-    }
 }
 
-.dropdown-content a {
-    color: black;
-    padding: 12px 16px;
-    text-decoration: none;
-    display: block;
+#users-select:hover, option:hover {
+    cursor: pointer;
 }
 
-.dropdown-content div:hover {
-    background-color: #ddd;
+/* Кнопка наверх */
+
+.btn-up {
+  position: fixed; /* фиксированная позиция */
+  background-color: #673ab7; /* цвет заднего фона */
+  right: 20px; /* расстояние от правого края */
+  bottom: 0px; /* расстояние от нижнего края */
+  border-top-left-radius: 8px; /* скругление верхнего левого угла */
+  border-top-right-radius: 8px; /* скругление верхнего правого угла */
+  cursor: pointer; /* форма курсора */
+  display: flex; /* не отображать элемент */
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.3s ease-in-out;
+  width: 60px;
+  height: 50px;
+  opacity: 1;
 }
 
-.dropdown:hover .dropdown-content {
-    display: block;
+.btn-up::before {
+  content: "";
+  width: 40px;
+  height: 40px;
+  background: transparent no-repeat center center;
+  background-size: 100% 100%;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='%23fff' viewBox='0 0 16 16'%3E%3Cpath fill-rule='evenodd' d='M7.646 4.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1-.708.708L8 5.707l-5.646 5.647a.5.5 0 0 1-.708-.708l6-6z'/%3E%3C/svg%3E");
 }
 
-.dropdown:hover .dropbtn {
-    background-color: #3e8e41;
+.btn-up_hide {
+  display: none;
+}
+
+.btn-up_hiding {
+  opacity: 0;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .btn-up:hover {
+    background-color: #512da8; /* цвет заднего фона при наведении */
+  }
 }
