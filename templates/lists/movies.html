@@ -8,17 +8,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="{% static 'img/icon.png' %}">
     <link rel="stylesheet" href="{% static 'lists/css/movies.css' %}">
+    <link rel="stylesheet" href="{% static 'lists/css/stickynotes.css' %}">
     <title>Киноклуб</title>
 </head>
 <body>
 <div class="main">
     {# https://doka.guide/recipes/dropdown-animation/ #}
-{#https://developer.mozilla.org/en-US/docs/Web/API/HTMLInputElement/select_event#}
+    {#https://developer.mozilla.org/en-US/docs/Web/API/HTMLInputElement/select_event#}
     <section class="header">
         <header class="title"><span>Киноклуб</span></header>
         <div class="users-list">
             <select name="test" id="users-select">
-                <option value="daenilladno" >Саня</option>
+                <option value="daenilladno">Саня</option>
                 <option value="Deputant">Никич</option>
                 <option value="drbloody1">Лёха</option>
                 <option value="lightthouse">Степан</option>
@@ -28,8 +29,8 @@
 
 
     <section class="navigation">
-        <nav class="menu">
-            <ul>
+        <nav class="menu-nav">
+            <ul class="menu-list">
                 {% if is_archive %}
                     <li><a href="http://localhost:8000/movies">Список фильмов</a></li>
                 {% else %}
@@ -48,6 +49,21 @@
         {% for i in data %}
             <div class="poster-container" data-kp-id="{{ i.kp_id }}">
                 <img class="poster" src="{{ i.poster }}" alt="poster" data-kp-id="{{ i.kp_id }}">
+
+                <div class="note-container">
+                    <div class="note">
+                        <a href="#">
+                            <h2>Title #1</h2>
+                            <p>Text Content #1</p>
+                        </a>
+                    </div>
+                    <div class="note">
+                        <a href="#">
+                            <h2>Title #2</h2>
+                            <p>Text Content #2</p>
+                        </a>
+                    </div>
+                </div>
 
                 <div class="options-list" data-kp-id="{{ i.kp_id }}">
                     <button class="btn-option btn-rate">🌟</button>
