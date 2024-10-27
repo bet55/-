@@ -17,6 +17,9 @@
     {#https://developer.mozilla.org/en-US/docs/Web/API/HTMLInputElement/select_event#}
     <section class="header">
         <header class="title"><span>Киноклуб</span></header>
+        <div class="rate-toggle">
+            <button class="btn-rate-toggle">Показать оценки</button>
+        </div>
         <div class="users-list">
             <select name="test" id="users-select">
                 <option value="daenilladno">Саня</option>
@@ -95,6 +98,7 @@
 
 <div class="btn-up btn-up_hide"></div>
 
+<script async type="module" src="{% static 'lists/js/tmp.js' %}" ></script>
 <script async type="text/javascript" src="{% static 'lists/js/movie.js' %}"></script>
 
 </body>

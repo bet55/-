@@ -1,3 +1,5 @@
+const rateToggler = document.querySelector('.btn-rate-toggle');
+
 const usersSelector = document.querySelector('#users-select');
 
 const moviePosters = document.querySelector('.movie-posters')
@@ -11,6 +13,7 @@ const cardDuration = document.querySelector('.movie-card p:last-child')
 const bookedFilmedStorage = document.querySelector('#booked-films');
 
 const getMoviesUrl = document.URL + '?format=json'
+
 
 const getTimeFromMins = (mins) => {
     let hours = Math.trunc(mins / 60);
@@ -44,7 +47,7 @@ const showMoviePoster = (target) => {
 
 const toggleMovieOptions = (target) => {
     const movieId = target.dataset.kpId;
-    const optionsList = target.nextElementSibling;
+    const optionsList = document.querySelector(`.options-list[data-kp-id="${movieId}"]`);
     const isVisible = optionsList.style.visibility;
     optionsList.style.visibility = isVisible === "visible" ? "hidden" : "visible";
 }
@@ -120,7 +123,7 @@ const optionsMap = {
 usersSelector.addEventListener('change', (event) => {
     // Cookie “user” does not have a proper “SameSite” attribute value. Soon, cookies without the “SameSite” attribute or with an invalid value will be treated as “Lax”. This means that the cookie will no longer be sent in third-party contexts. If your application depends on this cookie being available in such contexts, please add the “SameSite=None“ attribute to it. To know more about the “SameSite“ attribute, read https://developer.mozilla.org/docs/Web/HTTP/Headers/Set-Cookie/SameSite
     let user = usersSelector.value;
-    document.cookie =  `user=${user}`;
+    document.cookie = `user=${user}`;
     console.log(user);
 
 })
@@ -153,6 +156,26 @@ bookedFilmedStorage.addEventListener('click', (event) => {
     console.log(lsValues)
 
 
+})
+
+function changeNotesVisibility() {
+    let visibility = 'visible';
+
+    return () => {
+        const rateNotes = document.querySelectorAll('.note-container')
+        visibility = visibility === 'visible' ? 'hidden' : 'visible';
+
+        console.log(visibility)
+        rateNotes.forEach(note => {
+            note.style.visibility = visibility
+        })
+    }
+}
+
+const rateNotesToggler = changeNotesVisibility()
+
+rateToggler.addEventListener('click', (event) => {
+    rateNotesToggler();
 })
 
 

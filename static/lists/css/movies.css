@@ -37,9 +37,10 @@
 
 .navigation {
     grid-column: 1;
+    height: 50vh;
 
     .menu-nav {
-        height: 50%;
+        height: 100%;
     }
 
     .menu-list {
