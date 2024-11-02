@@ -95,7 +95,7 @@ class Movie:
 
         converted_response = self._response_preprocess(api_response)
 
-        save_movies = self._a_save_movie_to_db(converted_response)
+        save_movies = await self._a_save_movie_to_db(converted_response)
 
         return api_response.get('id', -1), save_movies[1]
 

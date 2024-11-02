@@ -9,7 +9,7 @@ from rest_framework.views import APIView
 
 from classes import KP_Movie, Movie
 from lists.models import Film, Director, Genre, Actor, Writer, FilmGenreRelations, Sticker, AppUser
-from lists.serializers import FilmSerializer, FilmSmallSerializer, GenreSerializer
+from lists.serializers import FilmSerializer, FilmSmallSerializer, GenreSerializer, UsersSerializer
 from utils import get_movie, refactor_kp_data, save_new_film
 
 
@@ -77,9 +77,12 @@ def view_movies(request):
         movies = mv.get_all_movies(is_archive=is_archive)
         return Response(movies)
 
-    else:
-        movies = mv.get_all_movies(all_info=False, is_archive=is_archive)
-        return render(request, 'lists/movies.html', context={'data': movies, 'is_archive': is_archive})
+    users = AppUser.objects.all()
+    serializer = UsersSerializer(users, many=True)
+
+    movies = mv.get_all_movies(all_info=False, is_archive=is_archive)
+    return render(request, 'lists/movies.html',
+                  context={'movies': movies, 'users': serializer.data, 'is_archive': is_archive})
 
 
 @api_view(['GET'])
@@ -126,3 +129,17 @@ def remove_movie(request):
     movie_is_deleted = movie.remove_movie(kp_id)
 
     return Response(data={'success': str(movie_is_deleted), 'error': '', 'id': kp_id})
+
+
+@api_view(['POST', 'PUT'])
+def rate_movie(request):
+    movie_id = request.data.get('movie_id')
+    user_id = request.data.get('user_id')
+    rating = request.data.get('rating')
+    message = request.data.get('message')
+    if not all([movie_id, user_id, rating]):
+        return Response(data={'success': False, 'error': 'Lost movie_id, user_id, rating', 'id': ''})
+    sticker = Sticker()
+    sticker_model, transaction_status = sticker.mgr.update_or_create(user=user_id, film=movie_id, text=message,
+                                                                     rating=rating)
+    return Response(data={'success': transaction_status, 'error': '', 'id': movie_id})

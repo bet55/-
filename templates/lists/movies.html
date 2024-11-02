@@ -8,6 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="{% static 'img/icon.png' %}">
     <link rel="stylesheet" href="{% static 'css/movies.css' %}">
+    <link rel="stylesheet" href="{% static 'css/scroll_up_button.css' %}">
     <link rel="stylesheet" href="{% static 'css/sticky_notes.css' %}">
     <title>Киноклуб</title>
 </head>
@@ -23,11 +24,11 @@
         <div class="users-list">
             <select name="test" id="users-select">
                 <option disabled value="X">Никто</option>
-                <option value="daenilladno">Саня</option>
-                <option value="Deputant">Никич</option>
-                <option value="drbloody1">Лёха</option>
-                <option value="lightthouse">Степан</option>
+                {% for u in users %}
+                    <option value="{{ u.id }}">{{ u.first_name }}</option>
+                {% endfor %}
             </select>
+            <label for="users-select">hs</label>
         </div>
     </section>
 
@@ -50,16 +51,11 @@
 
     <section class="movie-posters">
 
-        {% for i in data %}
+        {% for i in movies %}
             <div class="poster-container" data-kp-id="{{ i.kp_id }}">
                 <img class="poster" src="{{ i.poster }}" alt="poster" data-kp-id="{{ i.kp_id }}">
 
-                <div class="note-container">
-                    <div class="note">
-                        <h2>Title #1</h2>
-                        <p>Text Content #1</p>
-                    </div>
-                </div>
+                <div class="note-container"></div>
 
                 <div class="options-list" data-kp-id="{{ i.kp_id }}">
                     <button class="btn-option btn-rate">🌟</button>

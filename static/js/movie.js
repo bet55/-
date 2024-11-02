@@ -54,30 +54,59 @@ const toggleMovieOptions = (target) => {
     optionsList.style.visibility = isVisible === "visible" ? "hidden" : "visible";
 }
 
-const createRateNote = () => {
-    // <div className="note">
-    //     <a href="#">
-    //         <h2>Title #1</h2>
-    //         <p>Text Content #1</p>
-    //     </a>
-    // </div>
-
-    const note = document.createElement('div')
-
-
-}
 
 const rateMovie = (target) => {
-//     Проверка, что пользователь есть в куках
-//     Вывести форму с оценкой и отзывом
-//     Отправка формы с указанием пользователя
-//     Добавление стикера с оценкой к постеру
+
+    const showRateNoteForm = () => {
+    }
+
+    const rateRequest = () => {
+        const rateUrl = 'http://localhost:8000/movies/rate';
+        const sendData = {
+            user_id: 1,
+            movie_id: 1,
+            rating: 1,
+            message: 1,
+        }
+        fetch(rateUrl, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(sendData)
+        }).then((rs) => rs.json()).then((data) => {
+            console.log(data)
+        });
+
+    }
+    const createNoteElement = (movieId) => {
+        const noteContainer = document.querySelector(`.poster-container[data-kp-id="${movieId}"] .note-container`)
+        const noteDiv = document.createElement('div')
+        const noteH2 = document.createElement('h2')
+        const noteP = document.createElement('p')
+
+
+        noteP.textContent = 'Оценка?'
+        noteH2.textContent = 'Комментарий'
+        noteDiv.append(noteH2, noteP)
+        noteDiv.classList.add('note')
+
+        noteContainer.append(noteDiv)
+    }
+
+    const movieId = target.parentNode.dataset.kpId;
     const user = getCookie('user')
     if (!user) {
         alert('Выберите пользователя')
-    } else {
-
+        return false
     }
+
+    // showRateNoteForm()
+    // rateRequest()
+    createNoteElement(movieId)
+
+
+    return true
 
 }
 
@@ -107,7 +136,7 @@ const changeMovieArchiveStatus = (target) => {
     const movieId = target.parentNode.dataset.kpId;
     const removeUrl = 'http://localhost:8000/movies/change_archive';
     const sendData = {kp_id: movieId, is_archive: !isArchive}
-    console.log(sendData)
+
     fetch(removeUrl, {
         method: 'PATCH',
         headers: {
@@ -147,7 +176,6 @@ const optionsMap = {
 
 
 usersSelector.addEventListener('change', (event) => {
-    // Cookie “user” does not have a proper “SameSite” attribute value. Soon, cookies without the “SameSite” attribute or with an invalid value will be treated as “Lax”. This means that the cookie will no longer be sent in third-party contexts. If your application depends on this cookie being available in such contexts, please add the “SameSite=None“ attribute to it. To know more about the “SameSite“ attribute, read https://developer.mozilla.org/docs/Web/HTTP/Headers/Set-Cookie/SameSite
     const user = usersSelector.value;
     setCookie('user', user)
 

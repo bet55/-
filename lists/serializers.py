@@ -1,6 +1,6 @@
 from rest_framework import serializers
 
-from lists.models import Film, Genre
+from lists.models import Film, Genre, AppUser
 
 
 class FilmSerializer(serializers.HyperlinkedModelSerializer):
@@ -23,3 +23,8 @@ class GenreSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Genre
         fields = '__all__'
+
+class UsersSerializer(serializers.HyperlinkedModelSerializer):
+    class Meta:
+        model = AppUser
+        fields = ['id', 'username', 'first_name', 'last_name', 'email']
