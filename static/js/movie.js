@@ -1,3 +1,5 @@
+import {getCookie, setCookie, deleteCookie} from "./cookie.js";
+
 const rateToggler = document.querySelector('.btn-rate-toggle');
 
 const usersSelector = document.querySelector('#users-select');
@@ -52,7 +54,31 @@ const toggleMovieOptions = (target) => {
     optionsList.style.visibility = isVisible === "visible" ? "hidden" : "visible";
 }
 
-const rateMovie = () => {
+const createRateNote = () => {
+    // <div className="note">
+    //     <a href="#">
+    //         <h2>Title #1</h2>
+    //         <p>Text Content #1</p>
+    //     </a>
+    // </div>
+
+    const note = document.createElement('div')
+
+
+}
+
+const rateMovie = (target) => {
+//     Проверка, что пользователь есть в куках
+//     Вывести форму с оценкой и отзывом
+//     Отправка формы с указанием пользователя
+//     Добавление стикера с оценкой к постеру
+    const user = getCookie('user')
+    if (!user) {
+        alert('Выберите пользователя')
+    } else {
+
+    }
+
 }
 
 const addMovieToBookmark = (target) => {
@@ -122,9 +148,8 @@ const optionsMap = {
 
 usersSelector.addEventListener('change', (event) => {
     // Cookie “user” does not have a proper “SameSite” attribute value. Soon, cookies without the “SameSite” attribute or with an invalid value will be treated as “Lax”. This means that the cookie will no longer be sent in third-party contexts. If your application depends on this cookie being available in such contexts, please add the “SameSite=None“ attribute to it. To know more about the “SameSite“ attribute, read https://developer.mozilla.org/docs/Web/HTTP/Headers/Set-Cookie/SameSite
-    let user = usersSelector.value;
-    document.cookie = `user=${user}`;
-    console.log(user);
+    const user = usersSelector.value;
+    setCookie('user', user)
 
 })
 
@@ -183,20 +208,20 @@ const btnUp = {
     el: document.querySelector('.btn-up'),
     scrolling: false,
     show() {
-        if (this.el.classList.contains('btn-up_hide') && !this.el.classList.contains('btn-up_hiding')) {
-            this.el.classList.remove('btn-up_hide');
-            this.el.classList.add('btn-up_hiding');
+        if (this.el.classList.contains('btn-hide') && !this.el.classList.contains('btn-hiding')) {
+            this.el.classList.remove('btn-hide');
+            this.el.classList.add('btn-hiding');
             window.setTimeout(() => {
-                this.el.classList.remove('btn-up_hiding');
+                this.el.classList.remove('btn-hiding');
             }, 300);
         }
     },
     hide() {
-        if (!this.el.classList.contains('btn-up_hide') && !this.el.classList.contains('btn-up_hiding')) {
-            this.el.classList.add('btn-up_hiding');
+        if (!this.el.classList.contains('btn-hide') && !this.el.classList.contains('btn-hiding')) {
+            this.el.classList.add('btn-hiding');
             window.setTimeout(() => {
-                this.el.classList.add('btn-up_hide');
-                this.el.classList.remove('btn-up_hiding');
+                this.el.classList.add('btn-hide');
+                this.el.classList.remove('btn-hiding');
             }, 300);
         }
     },

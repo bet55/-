@@ -7,8 +7,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="{% static 'img/icon.png' %}">
-    <link rel="stylesheet" href="{% static 'lists/css/movies.css' %}">
-    <link rel="stylesheet" href="{% static 'lists/css/stickynotes.css' %}">
+    <link rel="stylesheet" href="{% static 'css/movies.css' %}">
+    <link rel="stylesheet" href="{% static 'css/sticky_notes.css' %}">
     <title>Киноклуб</title>
 </head>
 <body>
@@ -22,6 +22,7 @@
         </div>
         <div class="users-list">
             <select name="test" id="users-select">
+                <option disabled value="X">Никто</option>
                 <option value="daenilladno">Саня</option>
                 <option value="Deputant">Никич</option>
                 <option value="drbloody1">Лёха</option>
@@ -55,16 +56,8 @@
 
                 <div class="note-container">
                     <div class="note">
-                        <a href="#">
-                            <h2>Title #1</h2>
-                            <p>Text Content #1</p>
-                        </a>
-                    </div>
-                    <div class="note">
-                        <a href="#">
-                            <h2>Title #2</h2>
-                            <p>Text Content #2</p>
-                        </a>
+                        <h2>Title #1</h2>
+                        <p>Text Content #1</p>
                     </div>
                 </div>
 
@@ -92,14 +85,19 @@
 
 </div>
 
+<div class="rate-form">
+    
+</div>
+
 <div id="booked-films">
     <img src="{% static 'img/clappers/clapper2.jpg' %}" alt="">
 </div>
 
-<div class="btn-up btn-up_hide"></div>
+<div class="btn-up btn-hide"></div>
 
-<script async type="module" src="{% static 'lists/js/tmp.js' %}" ></script>
-<script async type="text/javascript" src="{% static 'lists/js/movie.js' %}"></script>
+
+<script type="module" src="{% static 'js/movie.js' %}"></script>
+
 
 </body>
 </html>

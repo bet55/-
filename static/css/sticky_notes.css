@@ -1,8 +1,31 @@
+.note-container {
+    visibility: visible;
+    position: absolute;
+    left: 5px;
+    top: 5px;
+    height: 95%;
+    width: 70%;
+    z-index: 1;
+}
+
+
 .note {
-    height: 100%;
-    width: 100%;
-    /*margin: 1em;*/
+    height: 25%;
+    width: 50%;
     float: left;
+
+
+    text-decoration: none;
+    color: #000;
+    background: #ffc;
+    display: block;
+    padding: 1em;
+    -moz-box-shadow: 5px 5px 7px rgba(33, 33, 33, 1);
+    -webkit-box-shadow: 5px 5px 7px rgba(33, 33, 33, .7);
+    box-shadow: 5px 5px 7px rgba(33, 33, 33, .7);
+    -moz-transition: -moz-transform .15s linear;
+    -o-transition: -o-transform .15s linear;
+    -webkit-transition: -webkit-transform .15s linear;
 
     h2, p {
         font-size: 10px;
@@ -17,40 +40,19 @@
     p {
         font-family: "Reenie Beanie", arial, sans-serif;
     }
-}
 
-.note-container {
-    visibility: visible;
-    position: absolute;
-    right: 3em;
-    height: 50%;
-    width: 50%;
-    z-index: 1;
+
 }
 
 
-.note a {
-    text-decoration: none;
-    color: #000;
-    background: #ffc;
-    display: block;
-    padding: 1em;
-    -moz-box-shadow: 5px 5px 7px rgba(33, 33, 33, 1);
-    -webkit-box-shadow: 5px 5px 7px rgba(33, 33, 33, .7);
-    box-shadow: 5px 5px 7px rgba(33, 33, 33, .7);
-    -moz-transition: -moz-transform .15s linear;
-    -o-transition: -o-transform .15s linear;
-    -webkit-transition: -webkit-transform .15s linear;
-}
 
-
-.note a {
+.note {
     -webkit-transform: rotate(-6deg);
     -o-transform: rotate(-6deg);
     -moz-transform: rotate(-6deg);
 }
 
-.note-container .note:nth-child(even) a {
+.note-container .note:nth-child(even) {
     -o-transform: rotate(4deg);
     -webkit-transform: rotate(4deg);
     -moz-transform: rotate(4deg);
@@ -76,7 +78,7 @@
     top: -10px;
 }
 
-.note-container .note a:hover, div .note a:focus {
+.note-container .note:hover, div .note a:focus {
     box-shadow: 10px 10px 7px rgba(0, 0, 0, .7);
     -moz-box-shadow: 10px 10px 7px rgba(0, 0, 0, .7);
     -webkit-box-shadow: 10px 10px 7px rgba(0, 0, 0, .7);
