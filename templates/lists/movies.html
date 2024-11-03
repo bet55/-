@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="{% static 'css/movies.css' %}">
     <link rel="stylesheet" href="{% static 'css/scroll_up_button.css' %}">
     <link rel="stylesheet" href="{% static 'css/sticky_notes.css' %}">
+    <link rel="stylesheet" href="{% static 'css/rating_modal.css' %}">
     <title>Киноклуб</title>
 </head>
 <body>
@@ -81,9 +82,9 @@
 
 </div>
 
-<div class="rate-form">
-    
-</div>
+
+{% include "ratting_modal.html" %}
+
 
 <div id="booked-films">
     <img src="{% static 'img/clappers/clapper2.jpg' %}" alt="">

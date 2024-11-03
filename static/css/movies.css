@@ -225,7 +225,7 @@ button > img {
 /* Выбор пользователя*/
 .users-list {
     height: 3em;
-    width: 5em;
+    width: 7em;
     margin: 3em;
 }
 
@@ -233,8 +233,9 @@ button > img {
     height: 100%;
     width: 100%;
     font-size: 1em;
+    padding: 5px;
 
-    imgm {
+    img {
         height: 1em;
     }
 
@@ -244,3 +245,15 @@ button > img {
     cursor: pointer;
 }
 
+
+/* Dialog*/
+#rate-dialog {
+    /*display: flex;*/
+    flex-direction: column;
+    width: calc(100% - 40px);
+    max-width: 400px;
+    border: none;
+    inset: 0;
+    position: fixed;
+
+}
