@@ -1,15 +1,20 @@
-const form = document.querySelector("#movie-saver");
+const addButton = document.querySelector("#button");
+const input = document.querySelector("#form");
 
 async function sendData() {
     // Associate the FormData object with the form element
-    const formData = new FormData(form);
+    const sendData = {
+        kp_id: input.value
+    };
     const addUrl = 'http://localhost:8000/movies/add';
 
     try {
         const response = await fetch(addUrl, {
             method: "POST",
-            // Set the FormData instance as the request body
-            body: formData,
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(sendData),
         });
         console.log(await response.json());
     } catch (e) {
@@ -18,7 +23,7 @@ async function sendData() {
 }
 
 // Take over form submission
-form.addEventListener("submit", (event) => {
+addButton.addEventListener("click", (event) => {
     event.preventDefault();
     sendData();
 });

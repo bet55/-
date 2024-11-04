@@ -6,7 +6,12 @@ import {selectOptionHandler} from "./movie/movie_options.js";
 import {corfMoviesHandler} from "./movie/movies_corf.js";
 import {showScrollButtonHandler} from "./utils/scroll_up_button.js";
 
-
+const form = document.querySelector('#rate-form')
+form.addEventListener('click', (e) => {
+        e.stopPropagation();
+    console.log('hey')
+    }
+)
 let allMovies;
 
 fetchMovies().then(movies => {

@@ -22,7 +22,7 @@
     <section class="header">
         <header class="title"><span>Киноклуб</span></header>
         <div class="rate-toggle">
-            <button class="btn-rate-toggle">Показать оценки</button>
+            <img class="toggler-img" src="{% static 'img/stickynotes/note2.png' %}" alt="">
         </div>
         <div class="users-list">
             <select name="test" id="users-select">
@@ -41,7 +41,7 @@
                 {% if is_archive %}
                     <li><a href="http://localhost:8000/movies">Список фильмов</a></li>
                 {% else %}
-                    <li><a href="http://localhost:8000/movies/archive">Архив</a></li>
+                    <li><a href="http://localhost:8000/movies/archive">Архив фильмов</a></li>
                 {% endif %}
 
                 <li><a href="http://localhost:8000/movies/add">Добавить фильм</a></li>
@@ -57,7 +57,17 @@
             <div class="poster-container" data-kp-id="{{ i.kp_id }}">
                 <img class="poster" src="{{ i.poster }}" alt="poster" data-kp-id="{{ i.kp_id }}">
 
-                <div class="note-container"></div>
+                <div class="note-container" data-kp-id="{{ i.kp_id }}">
+{#                    <div class="note">#}
+{#                        <h2>7</h2>#}
+{#                    </div>#}
+{#                    <div class="note">#}
+{#                        <h2>3</h2>#}
+{#                    </div>#}
+{#                    <div class="note">#}
+{#                        <h2>4</h2>#}
+{#                    </div>#}
+                </div>
 
                 <div class="options-list" data-kp-id="{{ i.kp_id }}">
                     <button class="btn-option btn-rate">🌟</button>
@@ -75,10 +85,11 @@
 
     <section class="movie-card">
         <img class="card-poster" src="" alt="">
-        <h2></h2>
-        <p></p>
-        <h3></h3>
-        <p></p>
+        <h2 class="card-title"></h2>
+        <p class="card-description"></p>
+        <h3 class="card-realise"></h3>
+        <p class="card-duration"></p>
+        <p class="card-link"><a href=""></a></p>
     </section>
 
 </div>

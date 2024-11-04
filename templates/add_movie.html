@@ -7,18 +7,24 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="{% static 'img/icon.png' %}">
-    <link rel="stylesheet" href="{% static 'css/movies.css' %}">
     <link rel="stylesheet" href="{% static 'css/add_movie.css' %}">
     <title>Киноклуб</title>
 </head>
 <body>
-<form method="POST" action='#' id="movie-saver">
-    <label>
-        <input type="text" placeholder="ссылка на фильм" name="kp_id">
-    </label>
+<nav class="menu">
+    <ul>
+        <li><a href="http://localhost:8000/movies">Список фильмов</a></li>
+        <li><a href="http://localhost:8000/movies/archive">Архив фильмов</a></li>
+        <li><a href="http://localhost:8000/">Грядущий сеанс</a></li>
+    </ul>
+</nav>
 
-    <button type="submit">Сохранить фильм</button>
-</form>
+<div class="input-group">
+    <input type="text" id="form" placeholder="Ссылка на фильм">
+
+    <input type="submit" id="button" value="Добавить">
+
+</div>
 
 
 <script async type="text/javascript" src="{% static 'js/add_movie.js' %}"></script>

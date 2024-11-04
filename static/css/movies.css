@@ -19,6 +19,7 @@
 
 .title {
     text-shadow: 0 0 10px #fff, 0 0 20px rgba(131, 58, 180, 1), 0 0 30px rgba(131, 58, 180, 1), 0 0 40px rgba(131, 58, 180, 1), 0 0 50px rgba(131, 58, 180, 1), 0 0 60px rgba(131, 58, 180, 1), 0 0 70px rgba(131, 58, 180, 1);
+    margin-left: 3em;
 }
 
 .my-glowing-text {
@@ -52,8 +53,13 @@
         text-align: center;
     }
 
-    li:hover {
-        background-color: #000137;
+    a:hover {
+        text-shadow: 0 0 15px #fff,
+        0 0 20px rgba(191, 58, 180, 1),
+        0 0 30px rgba(191, 58, 180, 1), 0 0 40px rgba(191, 58, 180, 1),
+        0 0 50px rgba(191, 58, 180, 1), 0 0 60px rgba(191, 58, 180, 1),
+        0 0 70px rgba(191, 58, 180, 1);
+
     }
 
     a {
@@ -73,6 +79,21 @@
     img {
         visibility: hidden;
     }
+
+    a {
+        text-decoration: none;
+        color: white;
+    }
+
+
+    h2, p {
+        color: #A0A0A0;
+    }
+
+    h3 {
+        color: white;
+    }
+
 }
 
 .movie-posters {
@@ -86,20 +107,6 @@
     overflow: auto;
     grid-column: 2;
     grid-row: 2
-}
-
-
-/*.poster {*/
-/*    max-width: 15vw;*/
-/*    max-height: 35vh;*/
-/*}*/
-
-h2, p {
-    color: white;
-}
-
-h3 {
-    color: white;
 }
 
 
@@ -197,7 +204,6 @@ button > img {
 }
 
 
-
 /* Выбор пользователя*/
 .users-list {
     height: 3em;
@@ -211,12 +217,35 @@ button > img {
     font-size: 1em;
     padding: 5px;
 
+    /* for Firefox */
+    -moz-appearance: none;
+    /* for Safari, Chrome, Opera */
+    -webkit-appearance: none;
+
     img {
         height: 1em;
     }
 
 }
 
+#users-select {
+    background-color: #1b2b34;
+    /*border-color: #0f0f0f;*/
+}
+
 #users-select:hover, option:hover {
+    cursor: pointer;
+}
+
+/* rate-toggler*/
+.rate-toggle{
+    height: 4em;
+    margin: 3em;
+}
+
+.toggler-img {
+    height: 100%;
+}
+.rate-toggle:hover{
     cursor: pointer;
 }

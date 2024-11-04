@@ -1,46 +1,97 @@
 body {
-    background-color: #000137;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 100vw;
+    background-color: #1b2b34;
+    grid-template-columns: 2.2fr 10fr;
+    display: grid;
     height: 100vh;
-
+    overflow: hidden;
 }
 
-form {
+.menu {
+    grid-column: 1;
+    height: 100%;
+}
+
+nav {
+    height: 100%;
+
+    a:hover {
+        text-shadow: 0 0 15px #fff,
+        0 0 20px rgba(191, 58, 180, 1),
+        0 0 30px rgba(191, 58, 180, 1), 0 0 40px rgba(191, 58, 180, 1),
+        0 0 50px rgba(191, 58, 180, 1), 0 0 60px rgba(191, 58, 180, 1),
+        0 0 70px rgba(191, 58, 180, 1);
+
+    }
+
+    a {
+        font-size: 2em;
+        text-decoration: none;
+        text-shadow: 0 0 10px #fff, 0 0 20px rgba(131, 58, 180, 1), 0 0 30px rgba(131, 58, 180, 1), 0 0 40px rgba(131, 58, 180, 1), 0 0 50px rgba(131, 58, 180, 1), 0 0 60px rgba(131, 58, 180, 1), 0 0 70px rgba(131, 58, 180, 1);
+        color: wheat;
+    }
+
+    ul {
+        list-style-type: none;
+        display: flex;
+        flex-direction: column;
+        height: 70%;
+        justify-content: space-around;
+        align-content: center;
+        text-align: center;
+    }
+}
+
+
+.input-group {
+    grid-column: 2;
+    margin-left: 18em;
+    width: 40%;
     display: flex;
     flex-direction: column;
-    width: 100vw;
-    align-items: center;
-    justify-content: space-around;
-
-    label {
-        width: 80%;
-    }
-
-    button {
-        width: 10em;
-        height: 4em;
-    }
-    button:hover {
-        cursor: pointer;
-        background-color: #3c763d;
-    }
-}
-
-input {
-    width: 50%;
-    height: 25px;
-    font-family: sans-serif;
-    display: flex;
     justify-content: center;
     align-items: center;
-    align-content: center;
-    flex-wrap: wrap;
-    margin: 0 auto 10px;
-    padding: .5em;
-    line-height: normal;
+}
 
+#form {
+    width: 400px;
+    padding: 10px;
+    font-size: 18px;
+    outline: none;
+    background: linear-gradient(to left top, #000, #22132e) fixed;
+    border-radius: 10px;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    color: rgba(255, 255, 255, 0.8);
+    transition: all 0.5s;
+}
+
+#form:hover {
+    border: 2px solid rgba(255, 255, 255, 0.5);
+}
+
+#form:focus {
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    background: linear-gradient(to left top, #000, #4e2d69) fixed;
+}
+
+#button {
+    width: 425px;
+    padding: 10px;
+    margin-top: 10px;
+    font-size: 15px;
+    font-weight: bold;
+    outline: none;
+    background: linear-gradient(to left top, #000, #4e2d69) fixed;
+    border-radius: 10px;
+    border: 5px solid rgba(255, 255, 255, 0.2);
+    color: rgba(255, 255, 255, 0.8);
+    transition: all 0.5s;
+}
+
+#button:hover {
+    border: 5px solid rgba(255, 255, 255, 0.5);
+    background: linear-gradient(to left top, #000, #8b5db0) fixed;
+}
+
+#button:focus {
+    background: linear-gradient(to left top, #8b5db0, #000) fixed;
 }

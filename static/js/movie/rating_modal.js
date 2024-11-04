@@ -2,83 +2,93 @@ let focusedElementBeforeModal;
 const modal = document.getElementById('modal');
 const modalOverlay = document.querySelector('.modal-overlay');
 
-const openModal = () => {
-  // Save current focus
-  focusedElementBeforeModal = document.activeElement;
+export const openModal = (movieId) => {
+    const form = document.querySelector('#rate-form')
+    form.style.display = 'block';
 
-  // Listen for and trap the keyboard
-  modal.addEventListener('keydown', trapTabKey);
+    function trapTabKey(e) {
+        // Check for TAB key press
+        if (e.keyCode === 9) {
 
-  // Listen for indicators to close the modal
-  modalOverlay.addEventListener('click', closeModal);
-  // Close btn
-  const closeBtn = document.querySelector('.close-btn');
-  closeBtn.addEventListener('click', closeModal);
+            // SHIFT + TAB
+            if (e.shiftKey) {
+                if (document.activeElement === firstTabStop) {
+                    e.preventDefault();
+                    lastTabStop.focus();
+                }
 
-  // submit form
-  const form = document.getElementById('review-form');
-  form.addEventListener('submit', submitAddReview, false);
-
-  // Find all focusable children
-  let focusableElementsString = 'a[href], area[href], input:not([disabled]), select:not([disabled]), textarea:not([disabled]), button:not([disabled]), iframe, object, embed, [tabindex="0"], [contenteditable]';
-  let focusableElements = modal.querySelectorAll(focusableElementsString);
-  // Convert NodeList to Array
-  focusableElements = Array.prototype.slice.call(focusableElements);
-
-  let firstTabStop = focusableElements[0];
-  let lastTabStop = focusableElements[focusableElements.length - 1];
-
-  // Show the modal and overlay
-  modal.classList.add('show');
-  modalOverlay.classList.add('show');
-
-  // Focus first child
-  // firstTabStop.focus();
-  const reviewName = document.getElementById('reviewName');
-  reviewName.focus();
-
-  function trapTabKey(e) {
-    // Check for TAB key press
-    if (e.keyCode === 9) {
-
-      // SHIFT + TAB
-      if (e.shiftKey) {
-        if (document.activeElement === firstTabStop) {
-          e.preventDefault();
-          lastTabStop.focus();
+                // TAB
+            } else {
+                if (document.activeElement === lastTabStop) {
+                    e.preventDefault();
+                    firstTabStop.focus();
+                }
+            }
         }
 
-      // TAB
-      } else {
-        if (document.activeElement === lastTabStop) {
-          e.preventDefault();
-          firstTabStop.focus();
+        // ESCAPE
+        if (e.keyCode === 27) {
+            closeModal(movieId);
         }
-      }
+    }
+};
+
+const submitAddReview = (e, movieId) => {
+    // console.log(e);
+    console.log('Form subbmitted!');
+    e.preventDefault();
+    closeModal(movieId);
+};
+
+const closeModal = (movieId, isRated = true) => {
+
+
+
+    const stars = document.querySelectorAll('input[id^="star"]')
+
+    const stars1 = document.querySelector('#star1')
+    const stars2 = document.querySelector('#star2')
+    const stars3 = document.querySelector('#star3')
+    const stars4 = document.querySelector('#star4')
+    const stars5 = document.querySelector('#star5')
+    let starValue;
+
+    console.log(stars1.checked,stars2.checked,stars3.checked,stars4.checked,stars5.checked)
+  // console.log(stars)
+    stars.forEach(e => {
+        console.log(e.checked, e.value)
+        if (e.checked) {
+            starValue = e.value
+
+        }
+    })
+    console.log(starValue, isRated, movieId)
+    if (isRated && starValue) {
+        createNoteElement(movieId)
     }
 
-    // ESCAPE
-    if (e.keyCode === 27) {
-      closeModal();
-    }
-  }
+
+    // modal.classList.remove('show');
+    // modalOverlay.classList.remove('show');
+    //
+    // const form = document.getElementById('review-form');
+    // form.reset();
+    //
+    // focusedElementBeforeModal.focus();
 };
 
-const submitAddReview = (e) => {
-  // console.log(e);
-  console.log('Form subbmitted!');
-  e.preventDefault();
-  closeModal();
-};
+const createNoteElement = (movieId) => {
+    console.log(movieId)
+    const noteContainer = document.querySelector(`.note-container[data-kp-id="${movieId}"] `)
+    const noteDiv = document.createElement('div')
+    const noteH2 = document.createElement('h2')
+    const noteP = document.createElement('p')
 
-const closeModal = () => {
-  // Hide the modal and overlay
-  modal.classList.remove('show');
-  modalOverlay.classList.remove('show');
 
-  const form = document.getElementById('review-form');
-  form.reset();
-  // Set focus back to element that had it before the modal was opened
-  focusedElementBeforeModal.focus();
-};
+    noteP.textContent = 'Оценка?'
+    noteH2.textContent = '7'
+    noteDiv.append(noteH2)
+    noteDiv.classList.add('note')
 
+    noteContainer.append(noteDiv)
+}

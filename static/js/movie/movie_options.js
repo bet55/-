@@ -1,4 +1,5 @@
 import {getCookie} from "../utils/cookie.js";
+import {openModal} from "./rating_modal.js";
 
 const moviePosters = document.querySelector('.movie-posters')
 
@@ -10,8 +11,8 @@ const toggleMovieOptions = (target) => {
 }
 const rateMovie = (target) => {
 
-    const showRateNoteForm = () => {
-        openModal()
+    const showRateNoteForm = (movieId) => {
+        openModal(movieId)
     }
 
     const rateRequest = () => {
@@ -33,20 +34,6 @@ const rateMovie = (target) => {
         });
 
     }
-    const createNoteElement = (movieId) => {
-        const noteContainer = document.querySelector(`.poster-container[data-kp-id="${movieId}"] .note-container`)
-        const noteDiv = document.createElement('div')
-        const noteH2 = document.createElement('h2')
-        const noteP = document.createElement('p')
-
-
-        noteP.textContent = 'Оценка?'
-        noteH2.textContent = 'Комментарий'
-        noteDiv.append(noteH2, noteP)
-        noteDiv.classList.add('note')
-
-        noteContainer.append(noteDiv)
-    }
 
     const movieId = target.parentNode.dataset.kpId;
     const user = getCookie('user')
@@ -55,7 +42,7 @@ const rateMovie = (target) => {
         return false
     }
 
-    showRateNoteForm()
+    showRateNoteForm(movieId)
     // rateRequest()
 
 
