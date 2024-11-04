@@ -196,31 +196,7 @@ button > img {
     height: 2.5em;
 }
 
-/* Корзина с выбранными фильмами*/
-#booked-films {
-    position: fixed;
-    bottom: 30px;
-    left: 40px;
 
-    img {
-        height: 8em;
-        border-radius: 100%;
-    }
-}
-
-#booked-films:hover {
-    cursor: pointer;
-}
-
-.header {
-    grid-column: 1/4;
-    display: flex;
-    height: 100%;
-
-    .title {
-        flex-grow: 2;
-    }
-}
 
 /* Выбор пользователя*/
 .users-list {
@@ -243,17 +219,4 @@ button > img {
 
 #users-select:hover, option:hover {
     cursor: pointer;
-}
-
-
-/* Dialog*/
-#rate-dialog {
-    /*display: flex;*/
-    flex-direction: column;
-    width: calc(100% - 40px);
-    max-width: 400px;
-    border: none;
-    inset: 0;
-    position: fixed;
-
 }

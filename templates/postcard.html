@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    {% load static %}
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="{% static 'img/icon.png' %}">
+    <link rel="stylesheet" href="{% static 'css/postcard.css' %}">
+    <link rel="stylesheet" href="{% static 'css/movies_corf.css' %}">
+    <title>Киноклуб</title>
+</head>
+<body>
+<div class="container">
+    <div class="borders">
+        <div class="posters">
+{#            <img src="{% static 'img/posters_examples/orig.jpeg' %}" alt="">#}
+{#            <img src="{% static 'img/posters_examples/orig2.jpeg' %}" alt="">#}
+{#            <img src="{% static 'img/posters_examples/orig3.jpeg' %}" alt="">#}
+{#            <img src="{% static 'img/posters_examples/orig4.jpeg' %}" alt="">#}
+        </div>
+        <div class="title">
+            <span class="text-line">скоро...</span>
+{#            <span class="text-line">КИНОПОКАЗ</span>#}
+        </div>
+    </div>
+</div>
+
+{% include "elements/movies_corf.html" %}
+
+<script async type="module" src="{% static 'js/postcard.js' %}"></script>
+
+
+</body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <style>
+        body {
+            background: linear-gradient(to left top, #22132e, #000) fixed;
+        }
+
+        div {
+            margin: auto;
+            position: relative;
+            top: 200px;
+            width: 40%;
+        }
+
+        #form {
+            width: 400px;
+            padding: 10px;
+            font-size: 18px;
+            outline: none;
+            background: linear-gradient(to left top, #000, #22132e) fixed;
+            border-radius: 10px;
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            color: rgba(255, 255, 255, 0.8);
+            transition: all 0.5s;
+        }
+
+        #form:hover {
+            border: 2px solid rgba(255, 255, 255, 0.5);
+        }
+
+        #form:focus {
+            border: 2px solid rgba(255, 255, 255, 0.5);
+            background: linear-gradient(to left top, #000, #4e2d69) fixed;
+        }
+
+        #button {
+            width: 425px;
+            padding: 10px;
+            margin-top: 10px;
+            font-size: 15px;
+            font-weight: bold;
+            outline: none;
+            background: linear-gradient(to left top, #000, #4e2d69) fixed;
+            border-radius: 10px;
+            border: 5px solid rgba(255, 255, 255, 0.2);
+            color: rgba(255, 255, 255, 0.8);
+            transition: all 0.5s;
+        }
+
+        #button:hover {
+            border: 5px solid rgba(255, 255, 255, 0.5);
+            background: linear-gradient(to left top, #000, #8b5db0) fixed;
+        }
+
+        #button:focus {
+            background: linear-gradient(to left top, #8b5db0, #000) fixed;
+        }
+    </style>
+    <title>Title</title>
+</head>
+<body>
+<div>
+    <input type="text" id="form" placeholder="Example">
+
+    <input type="submit" id="button" value="Enter">
+</div>
+</body>
+</html>

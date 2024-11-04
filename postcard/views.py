@@ -4,5 +4,5 @@ from django.shortcuts import render
 
 @api_view()
 def view_postcard(request):
-    return render(request, 'postcard/postcard.html')
+    return render(request, 'postcard.html')
 

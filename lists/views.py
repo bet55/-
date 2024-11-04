@@ -10,6 +10,7 @@ from rest_framework.views import APIView
 from classes import KP_Movie, Movie
 from lists.models import Film, Director, Genre, Actor, Writer, FilmGenreRelations, Sticker, AppUser
 from lists.serializers import FilmSerializer, FilmSmallSerializer, GenreSerializer, UsersSerializer
+from pydantic_models import RateMovieRequestModel
 from utils import get_movie, refactor_kp_data, save_new_film
 
 
@@ -18,19 +19,19 @@ class ToWatchList(APIView):
     def get(self, request):
         queryset = Film.mgr.all().filter(is_archive=False).order_by('-rating_kp')
         serializer = FilmSmallSerializer(queryset, many=True)
-        return render(request, 'lists/movies.html', context={'data': serializer.data})
+        return render(request, 'movies.html', context={'data': serializer.data})
 
 
 class ArchiveList(APIView):
     def get(self, request):
         queryset = Film.mgr.all().filter(is_archive=True).order_by('-rating_kp')
         serializer = FilmSmallSerializer(queryset, many=True)
-        return render(request, 'lists/movies.html', context={'data': serializer.data})
+        return render(request, 'movies.html', context={'data': serializer.data})
 
 
 class AddFilm(APIView):
     def get(self, request):
-        return render(request, 'lists/add_movie.html')
+        return render(request, 'add_movie.html')
 
     def post(self, request):
         kp_id = request.POST.get('url').split('/')[4]
@@ -81,7 +82,7 @@ def view_movies(request):
     serializer = UsersSerializer(users, many=True)
 
     movies = mv.get_all_movies(all_info=False, is_archive=is_archive)
-    return render(request, 'lists/movies.html',
+    return render(request, 'movies.html',
                   context={'movies': movies, 'users': serializer.data, 'is_archive': is_archive})
 
 
@@ -97,7 +98,7 @@ def view_movie_by_id(request, kp_id):
 @api_view(['GET', 'POST'])
 def add_movie(request):
     if request.method == 'GET':
-        return render(request, 'lists/add_movie.html')
+        return render(request, 'add_movie.html')
 
     kp_id = ''.join(char for char in list(request.data.get('kp_id', '')) if char.isdigit())
 
@@ -133,13 +134,16 @@ def remove_movie(request):
 
 @api_view(['POST', 'PUT'])
 def rate_movie(request):
-    movie_id = request.data.get('movie_id')
-    user_id = request.data.get('user_id')
-    rating = request.data.get('rating')
-    message = request.data.get('message')
-    if not all([movie_id, user_id, rating]):
-        return Response(data={'success': False, 'error': 'Lost movie_id, user_id, rating', 'id': ''})
-    sticker = Sticker()
-    sticker_model, transaction_status = sticker.mgr.update_or_create(user=user_id, film=movie_id, text=message,
-                                                                     rating=rating)
-    return Response(data={'success': transaction_status, 'error': '', 'id': movie_id})
+    try:
+        modeling = RateMovieRequestModel(**request.data)
+        formated_request = modeling.model_dump(exclude_none=True, exclude_defaults=True, exclude_unset=True)
+
+        formated_request['user'] = AppUser.objects.get(id=formated_request['user'])
+        formated_request['film'] = Film.mgr.get(kp_id=formated_request['film'])
+
+        sticker_model, transaction_status = Sticker.mgr.update_or_create(**formated_request)
+    except Exception as exp:
+
+        return Response(data={'success': False, 'error': str(exp)})
+
+    return Response(data={'success': transaction_status, 'error': ''})

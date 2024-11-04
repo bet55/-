@@ -27,3 +27,13 @@ Content-Type: application/json
 {
   "kp_id": 5524
 }
+
+###
+POST http://localhost:8000/movies/rate
+Content-Type: application/json
+
+{
+  "film": 837525,
+  "user": 5,
+  "rating": 7
+}

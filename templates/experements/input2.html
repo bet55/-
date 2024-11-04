@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <style>
+        .main {
+            position: relative;
+            max-height: 200px;
+        }
+
+        .input {
+            max-width: 190px;
+            border: none;
+            border-bottom: solid gray 1px;
+            background: transparent;
+            outline: none;
+            padding: 10px;
+            transition: 0.2s;
+            color: #e8e8e8;
+            font-size: 17px;
+        }
+
+        .input:focus, .input:valid {
+            border-color: lightblue;
+        }
+
+        label span {
+            position: absolute;
+            top: 0px;
+            display: block;
+            transition: 0.2s;
+            pointer-events: none;
+            font-size: 25px;
+            color: gray;
+            opacity: 0%;
+        }
+
+        .input:focus + label span, .input:valid + label span {
+            color: lightblue;
+            top: -25px;
+            opacity: 100%;
+        }
+
+        .input:focus + label p, .input:valid + label p {
+            opacity: 0;
+        }
+    </style>
+    <title>Title</title>
+</head>
+<body>
+<div class="main">
+    <input required="" type="text" class="input">
+    <label>
+        <span style="transition-delay:0ms;left:0px">U</span>
+        <span style="transition-delay:75ms;left:20px">s</span>
+        <span style="transition-delay:150ms;left:33px">e</span>
+        <span style="transition-delay:225ms;left:47px">r</span>
+        <span style="transition-delay:300ms;left:56px">n</span>
+        <span style="transition-delay:375ms;left:72px">a</span>
+        <span style="transition-delay:450ms;left:85px">m</span>
+        <span style="transition-delay:525ms;left:110px">e</span>
+        <p style="position:absolute;left:-8px;top:-10px;font-size:24px;margin:10px;color:gray;transition:0.5s;pointer-events:none;">Username</p>
+    </label>
+</div>
+</body>
+</html>

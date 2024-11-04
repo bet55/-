@@ -1,0 +1,27 @@
+/* Корзина с выбранными фильмами*/
+
+
+#booked-films {
+    position: fixed;
+    bottom: 30px;
+    left: 40px;
+
+    img {
+        height: 8em;
+        border-radius: 100%;
+    }
+}
+
+#booked-films:hover {
+    cursor: pointer;
+}
+
+.header {
+    grid-column: 1/4;
+    display: flex;
+    height: 100%;
+
+    .title {
+        flex-grow: 2;
+    }
+}
