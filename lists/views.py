@@ -7,9 +7,9 @@ from rest_framework.response import Response
 
 from rest_framework.views import APIView
 
-from classes import KP_Movie, Movie
+from classes import KP_Movie, Movie, Note
 from lists.models import Film, Director, Genre, Actor, Writer, FilmGenreRelations, Sticker, AppUser
-from lists.serializers import FilmSerializer, FilmSmallSerializer, GenreSerializer, UsersSerializer
+from lists.serializers import FilmSerializer, FilmSmallSerializer, GenreSerializer, UserSerializer, StickerSerializer
 from pydantic_models import RateMovieRequestModel
 from utils import get_movie, refactor_kp_data, save_new_film
 
@@ -79,11 +79,15 @@ def view_movies(request):
         return Response(movies)
 
     users = AppUser.objects.all()
-    serializer = UsersSerializer(users, many=True)
+    user_ser = UserSerializer(users, many=True)
+
+    # st = Note()
+    # notes = st.get_all_stickers()
 
     movies = mv.get_all_movies(all_info=False, is_archive=is_archive)
+
     return render(request, 'movies.html',
-                  context={'movies': movies, 'users': serializer.data, 'is_archive': is_archive})
+                  context={'movies': movies, 'users': user_ser.data, 'is_archive': is_archive})
 
 
 @api_view(['GET'])
@@ -141,7 +145,7 @@ def rate_movie(request):
         formated_request['user'] = AppUser.objects.get(id=formated_request['user'])
         formated_request['film'] = Film.mgr.get(kp_id=formated_request['film'])
 
-        sticker_model, transaction_status = Sticker.mgr.update_or_create(**formated_request)
+        sticker_model, transaction_status = Note.mgr.update_or_create(**formated_request)
     except Exception as exp:
 
         return Response(data={'success': False, 'error': str(exp)})

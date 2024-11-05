@@ -1,22 +1,48 @@
 #rate-modal {
-    height: 100%;
-    width: 100%;
-    background-color: #0f0f0f;
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0, 0, 0); /* Fallback color */
+    background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+}
+
+header {
+    display: grid;
+    grid-template-columns: 5fr 1fr;
+
+    h2 {
+
+    }
+
+    span {
+        font-size: 2em;
+        justify-self: end;
+    }
+
+    span:hover {
+        cursor: pointer;
+    }
+
 }
 
 #rate-form {
-    display: block;
-    background-color: #1b2b34;
-    position: absolute;
-    top: 50%;  /* position the top  edge of the element at the middle of the parent */
-    left: 50%; /* position the left edge of the element at the middle of the parent */
 
-    transform: translate(-50%, -50%);
+    background-color: #9d9d9d;
+    width: 30%;
 
+
+    margin: auto;
     padding: 2em;
+
 }
 
-#comment-section {
+#comment-field {
     display: flex;
     flex-direction: column;
 
@@ -24,100 +50,54 @@
         padding: 1em;
         font-size: 1.2em;
     }
+
+    textarea {
+        resize: none;
+        font-size: 2em;
+        height: 5em;
+
+    }
 }
 
-input,
-/* input:not(input[type='radio']), */
-/* input:not(type='radio'), */
-select, .rate, textarea, button {
-  background: #f9f9f9;
-  border: 1px solid #e5e5e5;
-  border-radius: 8px;
-  box-shadow: inset 0 1px 1px #e1e1e1;
-  font-size: 16px;
-  padding: 8px;
-}
-input[type="radio"] {
-  box-shadow: none;
-}
-button {
-  min-width: 48px;
-  min-height: 48px;
-}
-button:hover {
-  border: 1px solid #ccc;
-  background-color: #fff;
-}
-button#review-add-btn,
-button.close-btn,
-button#submit-review-btn {
-  min-height: 40px;
-}
-button#submit-review-btn {
-  font-weight: bold;
-  cursor: pointer;
-  padding: 0 16px;
+#stars-hint {
+    visibility: hidden;
 }
 
-.fieldset {
-  margin-top: 20px;
-}
-.right {
-  align-self: flex-end;
-}
-#review-form-container {
-  width: 100%;
-  /* background-color: #eee; */
-  padding: 0 20px 26px;
-  color: #333;
-  overflow-y: auto;
-}
-#review-form-container h2 {
-  margin: 0 0 0 6px;
-}
-#review-form {
-  display: flex;
-  flex-direction: column;
-  background: #fff;
-  border: 1px solid #e5e5e5;
-  border-radius: 4px;
+#btn-save {
+    margin-top: 1em;
+    height: 3em;
+    width: 8em;
 }
 
-#review-form .rate > label {
-  margin-bottom: 0;
-  margin-top: -5px;
-  height: 30px;
+#btn-save:hover {
+    cursor: pointer;
+    background-color: #3c763d;
+    border: none;
+    font-weight: bold;
 }
 
-#submit-review {
-  align-self: flex-end;
+.rating {
+    display: inline-block;
 }
 
+.rating input {
+    display: none;
+}
 
-/*/=============*/
+.rating label {
+    float: right;
+    cursor: pointer;
+    transition: color 0.3s;
+}
 
-        .rating {
-            display: inline-block;
-        }
+.rating label:before {
+    content: "\2605";
+    font-size: 30px;
+}
 
-        .rating input {
-            display: none;
-        }
-
-        .rating label {
-            float: right;
-            cursor: pointer;
-            transition: color 0.3s;
-        }
-
-        .rating label:before {
-            content: "\2605";
-            font-size: 30px;
-        }
-
-        .rating input:checked ~ label,
-        .rating label:hover,
-        .rating label:hover ~ label {
-            color: #ffd700;
-            transition: color 0.3s;
-        }
+.rating input:checked ~ label,
+.rating label:hover,
+.rating label:hover ~ label {
+    color: #ffd700;
+    transition: color 0.3s;
+}

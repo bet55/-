@@ -10,7 +10,7 @@ X-API-KEY: FCE2VJ9-C2K4Z3C-MVJGV8V-XEGG0AW
 GET https://image.openmoviedb.com/kinopoisk-st-images//actor_iphone/iphone360_4541869.jpg
 
 ###
-GET http://127.0.0.1:8000/movies/archive
+GET http://127.0.0.1:8000/movies
 
 ###
 POST http://127.0.0.1:8000/movies/add

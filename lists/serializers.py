@@ -1,10 +1,10 @@
 from rest_framework import serializers
 
-from lists.models import Film, Genre, AppUser
+from lists.models import Film, Genre, AppUser, Sticker
 
 
 class FilmSerializer(serializers.HyperlinkedModelSerializer):
-#TODO: serialize foreign tables
+    # TODO: serialize foreign tables
 
     premiere = serializers.DateTimeField(format="%d/%m/%Y")
 
@@ -24,7 +24,14 @@ class GenreSerializer(serializers.HyperlinkedModelSerializer):
         model = Genre
         fields = '__all__'
 
-class UsersSerializer(serializers.HyperlinkedModelSerializer):
+
+class UserSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = AppUser
         fields = ['id', 'username', 'first_name', 'last_name', 'email']
+
+
+class StickerSerializer(serializers.HyperlinkedModelSerializer):
+    class Meta:
+        model = Sticker
+        fields = '__all__'

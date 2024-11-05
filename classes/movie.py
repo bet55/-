@@ -8,25 +8,6 @@ from icecream import ic
 from collections import namedtuple
 
 
-class Genre:
-    pass
-
-
-class Actor:
-    pass
-
-
-class Writer:
-    pass
-
-
-class Director:
-    pass
-
-
-class StickyNotes:
-    pass
-
 
 class Movie:
     KPEntities = namedtuple('KPEntities', ['movie', 'persons', 'genres'])
@@ -37,13 +18,13 @@ class Movie:
         return serialize.data
 
     def get_all_movies(self, all_info: bool = True, is_archive: bool = False) -> dict | list:
-        film_model = FilmModel.mgr.filter(is_archive=is_archive).values()
+        raw_film = FilmModel.mgr.filter(is_archive=is_archive).values()
 
         if all_info:
-            serialize = FilmSerializer(film_model, many=True)
+            serialize = FilmSerializer(raw_film, many=True)
             films = {film['kp_id']: film for film in serialize.data}
         else:
-            serialize = FilmSmallSerializer(film_model, many=True)
+            serialize = FilmSmallSerializer(raw_film, many=True)
             films = serialize.data
         return films
 

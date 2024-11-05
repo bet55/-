@@ -2,17 +2,23 @@
 
 <div id="rate-modal">
     <form id="rate-form" action="">
-        <h2>Оценка фильма</h2>
+
+        <header>
+            <h2>Оценка фильма</h2>
+            <span id="btn-close">&#10006</span>
+        </header>
+
+
         <div class="rating">
-            <input type="radio" id="star10" name="rating" value="5"/>
+            <input type="radio" id="star10" name="rating" value="10"/>
             <label for="star10"></label>
-            <input type="radio" id="star9" name="rating" value="5"/>
+            <input type="radio" id="star9" name="rating" value="9"/>
             <label for="star9"></label>
-            <input type="radio" id="star8" name="rating" value="5"/>
+            <input type="radio" id="star8" name="rating" value="8"/>
             <label for="star8"></label>
-            <input type="radio" id="star7" name="rating" value="5"/>
+            <input type="radio" id="star7" name="rating" value="7"/>
             <label for="star7"></label>
-            <input type="radio" id="star6" name="rating" value="5"/>
+            <input type="radio" id="star6" name="rating" value="6"/>
             <label for="star6"></label>
             <input type="radio" id="star5" name="rating" value="5"/>
             <label for="star5"></label>
@@ -25,13 +31,17 @@
             <input type="radio" id="star1" name="rating" value="1"/>
             <label for="star1"></label>
         </div>
-        <div id="comment-section">
+
+        <div id="stars-hint"><span>0/10</span></div>
+
+        <div id="comment-field">
             <label for="comment-area">
                 Комментарий
             </label>
             <textarea name="" id="comment-area" cols="30" rows="10"></textarea>
         </div>
 
+        <button id="btn-save">Сохранить</button>
     </form>
 
 </div>

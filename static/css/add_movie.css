@@ -90,6 +90,7 @@ nav {
 #button:hover {
     border: 5px solid rgba(255, 255, 255, 0.5);
     background: linear-gradient(to left top, #000, #8b5db0) fixed;
+    cursor: pointer;
 }
 
 #button:focus {

@@ -11,42 +11,15 @@ const toggleMovieOptions = (target) => {
 }
 const rateMovie = (target) => {
 
-    const showRateNoteForm = (movieId) => {
-        openModal(movieId)
-    }
-
-    const rateRequest = () => {
-        const rateUrl = 'http://localhost:8000/movies/rate';
-        const sendData = {
-            user_id: 1,
-            movie_id: 1,
-            rating: 1,
-            message: 1,
-        }
-        fetch(rateUrl, {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(sendData)
-        }).then((rs) => rs.json()).then((data) => {
-            console.log(data)
-        });
-
-    }
-
     const movieId = target.parentNode.dataset.kpId;
     const user = getCookie('user')
+
     if (!user) {
         alert('Выберите пользователя')
-        return false
     }
-
-    showRateNoteForm(movieId)
-    // rateRequest()
-
-
-    return true
+    else {
+        openModal(movieId);
+    }
 
 }
 
