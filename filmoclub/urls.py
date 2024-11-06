@@ -24,4 +24,5 @@ urlpatterns = [
     path('movies/', include('lists.urls')),
     path('', include('postcard.urls')),
     path('tools/', include('tools.urls')),
+    path('statistc/', include('statistic.urls')),
 ]
