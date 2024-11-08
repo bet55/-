@@ -22,6 +22,9 @@ Django:
 Front:
 - дефолтный пользователь
 - частичная загрузка постеров
+    - https://imagekit.io/blog/lazy-loading-images-complete-guide/
+    - https://css-loaders.com/time/
+    - https://projects.lukehaas.me/css-loaders/
 - тосты со статусом действий
 - индикаторы загрузок
 - оставить data-kp-id в одном месте
@@ -30,6 +33,7 @@ Front:
 - завершение евента
 - формирование евента
 
+- include/block/extend
 
 Спросить Даню:
 - кэширование запросов в бд

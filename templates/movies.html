@@ -55,7 +55,8 @@
 
         {% for i in movies %}
             <div class="poster-container" data-kp-id="{{ i.kp_id }}">
-                <img class="poster" src="{{ i.poster }}" alt="poster" data-kp-id="{{ i.kp_id }}">
+            
+                <img class="poster" src="{{ i.poster }}" alt="poster" data-kp-id="{{ i.kp_id }}" loading="lazy">
 
                 <div class="note-container" data-kp-id="{{ i.kp_id }}">
 
@@ -73,11 +74,15 @@
 
                 <div class="options-list" data-kp-id="{{ i.kp_id }}">
                     <button class="btn-option btn-rate">🌟</button>
-                    <button class="btn-option btn-bookmark"><img src="{% static 'img/poster_options/bm_grey.png' %}">
+                    <button class="btn-option btn-bookmark">
+                        <img src="{% static 'img/poster_options/bm_grey.png' %}">
                     </button>
-                    <button class="btn-option btn-archive"><img src="{% static 'img/poster_options/rar.png' %}">
+                    <button class="btn-option btn-archive">
+                        <img src="{% static 'img/poster_options/rar.png' %}">
                     </button>
-                    <button class="btn-option btn-remove"><img src="{% static 'img/poster_options/cd.png' %}"></button>
+                    <button class="btn-option btn-remove">
+                        <img src="{% static 'img/poster_options/cd.png' %}">
+                    </button>
                 </div>
 
             </div>
