@@ -31,7 +31,7 @@ class UserSerializer(serializers.HyperlinkedModelSerializer):
         fields = ['id', 'username', 'first_name', 'last_name', 'email']
 
 
-class StickerSerializer(serializers.HyperlinkedModelSerializer):
+class StickerSerializer(serializers.ModelSerializer):
     class Meta:
         model = Sticker
         fields = '__all__'

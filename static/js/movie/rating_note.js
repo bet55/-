@@ -1,5 +1,16 @@
-const createNoteElement = (movieId, rating, comment) => {
-
+const createNoteElement = (movieId, userId, rating, comment) => {
+    const userNote = document.querySelector(`.note-container[data-kp-id="${movieId}"] .note[data-user-id="${userId}"]`)
+    console.log(userId, movieId);
+    console.log(userNote);
+    if (userNote) {
+        console.log('exist')
+        const noteH2 = userNote.querySelector('h2');
+        // const noteP = userNote.querySelector('p');
+        // noteP.textContent = comment;
+        noteH2.textContent = rating;
+        return false
+    }
+        console.log('not exist')
     const noteContainer = document.querySelector(`.note-container[data-kp-id="${movieId}"] `);
     const noteDiv = document.createElement('div');
     const noteH2 = document.createElement('h2');
@@ -12,6 +23,7 @@ const createNoteElement = (movieId, rating, comment) => {
     noteDiv.classList.add('note');
 
     noteContainer.append(noteDiv);
+    return true;
 }
 
 
@@ -23,7 +35,7 @@ const rateRequest = async (movieId, userId, rating, comment) => {
         rating: rating,
     }
 
-    if(comment) {
+    if (comment) {
         sendData['text'] = comment;
     }
 
@@ -38,6 +50,7 @@ const rateRequest = async (movieId, userId, rating, comment) => {
         });
         console.log(await response.json());
     } catch (e) {
+        console.error(sendData);
         console.error(e);
     }
 }

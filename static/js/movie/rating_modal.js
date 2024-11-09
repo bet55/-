@@ -9,34 +9,42 @@ const closeButton = document.querySelector('#btn-close');
 const saveButton = document.querySelector('#btn-save');
 const commentField = document.querySelector('#comment-area');
 
+// Не отправляем форму
+modalForm.addEventListener('submit', (e) => {
+    e.preventDefault()
+})
 
-const showStarsHint = () => {
+// Не пускаем нажатие под модальное окно
+modalForm.addEventListener('click', (e) => {
+    e.stopPropagation()
+})
 
-    stars.forEach(star => {
-        star.addEventListener('change', (e) => {
-            const target = e.target;
-            const starValue = target.value;
-            starsHint.firstChild.textContent = `${starValue}/10`;
-            starsHint.style.visibility = 'visible';
-        })
 
+// Дублируем звезды числами
+stars.forEach(star => {
+    star.addEventListener('change', (e) => {
+        const target = e.target;
+        const starValue = target.value;
+        starsHint.firstChild.textContent = `${starValue}/10`;
+        starsHint.style.visibility = 'visible';
     })
 
-}
-
-const closeHandlers = (movieId) => {
-    modalOverlay.addEventListener('click', (e) => {
-        closeModal(movieId);
-    })
-    saveButton.addEventListener('click', (e) => {
-        closeModal(movieId, true);
-    })
-    closeButton.addEventListener('click', (e) => {
-        closeModal(movieId);
-    })
+})
 
 
-}
+// Закрываем модалку
+modalOverlay.addEventListener('click', (e) => {
+    const movieId = modalOverlay.dataset.kpId;
+    closeModal(movieId);
+})
+saveButton.addEventListener('click', (e) => {
+    const movieId = modalOverlay.dataset.kpId;
+    closeModal(movieId, true);
+})
+closeButton.addEventListener('click', (e) => {
+    const movieId = modalOverlay.dataset.kpId;
+    closeModal(movieId);
+})
 
 
 const closeModal = (movieId, isSaved = false) => {
@@ -53,7 +61,7 @@ const closeModal = (movieId, isSaved = false) => {
         const rating = star.value;
         const userId = getCookie('user')
 
-        createNoteElement(movieId, rating, comment);
+        createNoteElement(movieId, userId, rating, comment);
         rateRequest(movieId, userId, rating, comment);
     }
 
@@ -61,17 +69,9 @@ const closeModal = (movieId, isSaved = false) => {
 };
 
 export const openModal = (movieId) => {
-    modalForm.addEventListener('submit', (e) => {
-        e.preventDefault()
-    })
-    modalForm.addEventListener('click', (e) => {
-        e.stopPropagation()
-    })
 
     modalOverlay.style.display = 'block';
-
-    showStarsHint();
-    closeHandlers(movieId);
+    modalOverlay.dataset.kpId = movieId;
 
 };
 

@@ -79,15 +79,12 @@ def view_movies(request):
         return Response(movies)
 
     users = AppUser.objects.all()
-    user_ser = UserSerializer(users, many=True)
-
-    # st = Note()
-    # notes = st.get_all_stickers()
+    us_sr = UserSerializer(users, many=True)
 
     movies = mv.get_all_movies(all_info=False, is_archive=is_archive)
 
     return render(request, 'movies.html',
-                  context={'movies': movies, 'users': user_ser.data, 'is_archive': is_archive})
+                  context={'movies': movies, 'users': us_sr.data, 'is_archive': is_archive})
 
 
 @api_view(['GET'])
@@ -138,16 +135,6 @@ def remove_movie(request):
 
 @api_view(['POST', 'PUT'])
 def rate_movie(request):
-    try:
-        modeling = RateMovieRequestModel(**request.data)
-        formated_request = modeling.model_dump(exclude_none=True, exclude_defaults=True, exclude_unset=True)
+    note_created = Note.create_note(request.data)
 
-        formated_request['user'] = AppUser.objects.get(id=formated_request['user'])
-        formated_request['film'] = Film.mgr.get(kp_id=formated_request['film'])
-
-        sticker_model, transaction_status = Note.mgr.update_or_create(**formated_request)
-    except Exception as exp:
-
-        return Response(data={'success': False, 'error': str(exp)})
-
-    return Response(data={'success': transaction_status, 'error': ''})
+    return Response(data={'success': note_created, 'error': ''})

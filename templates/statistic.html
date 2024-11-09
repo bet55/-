@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Статистика</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+
+        body {
+            min-height: 100%;
+            background-color: #1b2b34;
+        }
+
+        .main {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .graphs {
+            width: 200px;
+            height: 180px;
+        }
+        
+        h1 {
+            margin: 1em;
+        }
+        
+        .stats {
+            margin: 2em;
+        }
+
+        ul {
+            font-weight: bold;
+            font-size: 17px;
+            list-style-type: none;
+
+            span {
+                background: #5e5e5e;
+            }
+            li {
+                margin: 1em;
+            }
+        }
+    </style>
+</head>
+<body>
+{#https://stackoverflow.com/questions/40534715/how-to-embed-matplotlib-graph-in-django-webpage#}
+<div class="main">
+    <h1>Агрегация информации о фильмах</h1>
+
+    <div class="stats">
+        <ul>
+            <li>Всего посмотренно фильмов: <span>{{ statistic.count }} </span></li>
+            <li>Общая продолжительность: <span>{{ statistic.total_duration }}</span></li>
+            <li>Средняя оценка на кинопоиске: <span>{{ statistic.rating_kp }}</span></li>
+            <li>Средняя оценка на imdb: <span>{{ statistic.rating_imdb }}</span></li>
+        </ul>
+    </div>
+
+    {{ graph_div|safe }}
+</div>
+
+</body>
+</html>

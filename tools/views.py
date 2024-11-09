@@ -2,12 +2,22 @@ from rest_framework.decorators import api_view
 from adrf.decorators import api_view as asapi_view
 from rest_framework.response import Response
 from asgiref.sync import sync_to_async
-from classes import Movie
+from classes import Movie, Note
 from lists.models import AppUser
 import json
 import asyncio
 
 from tools.serializers import UserSerializer
+
+
+@api_view(['GET'])
+def view_notes(request):
+    # st = Sticker.mgr.all()
+    # sr = StickerSerializer(st, many=True)
+    # return Response(sr.data)
+
+    notes = Note.get_all_notes()
+    return Response(notes)
 
 
 @api_view(['GET'])

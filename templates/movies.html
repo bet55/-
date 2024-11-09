@@ -51,25 +51,40 @@
 
     </section>
 
+    {#    {{ notes }}#}
+    {##}
+    {#    <section class="notes-tmp">#}
+    {##}
+    {##}
+    {#        {% for kp_id, note in notes.items %}#}
+    {#            <div>outside</div>#}
+    {#            {% for n in note %}#}
+    {#                <div>inside</div>#}
+    {#                <div>{{ kp_id }}</div>#}
+    {#                <div>{{ n.rating }}</div>#}
+    {#            {% endfor %}#}
+    {#        {% endfor %}#}
+    {##}
+    {#    </section>#}
+
     <section class="movie-posters">
 
         {% for i in movies %}
+
+
             <div class="poster-container" data-kp-id="{{ i.kp_id }}">
-            
-                <img class="poster" src="{{ i.poster }}" alt="poster" data-kp-id="{{ i.kp_id }}" loading="lazy">
+
+                <img class="poster" src="{{ i.poster }}" alt="" data-kp-id="{{ i.kp_id }}" loading="lazy">
 
                 <div class="note-container" data-kp-id="{{ i.kp_id }}">
+                
+                        {% for note in i.notes %}
+                            <div class="note" data-user-id="{{ note.user }}">
+                                <h2>{{ note.rating }}</h2>
+{#                                <p>{{ note.rating }}</p>#}
+                            </div>
+                        {% endfor %}
 
-                    
-{#                    <div class="note">#}
-{#                        <h2>7</h2>#}
-{#                    </div>#}
-{#                    <div class="note">#}
-{#                        <h2>3</h2>#}
-{#                    </div>#}
-{#                    <div class="note">#}
-{#                        <h2>4</h2>#}
-{#                    </div>#}
                 </div>
 
                 <div class="options-list" data-kp-id="{{ i.kp_id }}">
@@ -102,8 +117,8 @@
 </div>
 
 
-{% include "elements/ratting_modal.html" %}
 {% include "elements/movies_corf.html" %}
+{% include "elements/ratting_modal.html" %}
 {% include "elements/scroll_up_button.html" %}
 
 

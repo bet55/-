@@ -13,7 +13,7 @@ const rateMovie = (target) => {
 
     const movieId = target.parentNode.dataset.kpId;
     const user = getCookie('user')
-
+    console.log(movieId, target);
     if (!user) {
         alert('Выберите пользователя')
     }
@@ -36,8 +36,6 @@ const addMovieToBookmark = (target, allMovies) => {
     } else {
         btnImg.src = imgSrc.replace(unBookedImg, bookedImg);
 
-
-        console.log(movieId, allMovies[movieId])
         localStorage.setItem(movieId, JSON.stringify(allMovies[movieId]));
     }
 
@@ -90,11 +88,13 @@ const optionsMap = {
 }
 
 function selectOptionHandler(allMovies) {
+
     moviePosters.addEventListener('click', async (event) => {
         let target = event.target;
         target = target.parentElement.classList.contains('btn-option') ? target.parentElement : target;
 
         if (target.classList.contains('btn-option')) {
+
             const currentBtn = target.classList[1];
             const currentFunction = optionsMap[currentBtn];
             currentFunction(target, allMovies);

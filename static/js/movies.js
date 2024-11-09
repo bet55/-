@@ -1,6 +1,6 @@
 import {fetchMovies} from "./movie/movies_fetching.js";
 import {settingUserHandler} from "./movie/set_user.js";
-import {showRatingNotesHandler} from "./movie/rating_notes.js";
+import {showRatingNotesHandler} from "./movie/rating_toggler.js";
 import {showMovieHandler} from "./movie/movie_information.js";
 import {selectOptionHandler} from "./movie/movie_options.js";
 import {corfMoviesHandler} from "./movie/movies_corf.js";
@@ -12,7 +12,7 @@ let allMovies;
 fetchMovies().then(movies => {
     allMovies = movies
 
-    settingUserHandler() // выбора пользователей
+    settingUserHandler() // выбор пользователя
     showRatingNotesHandler() // отображения оценок
     showMovieHandler(allMovies) // отрисовки большого постера
     selectOptionHandler(allMovies) // применение действия к фильму

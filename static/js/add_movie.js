@@ -20,6 +20,8 @@ async function sendData() {
     } catch (e) {
         console.error(e);
     }
+
+    input.value = '';
 }
 
 // Take over form submission

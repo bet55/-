@@ -1,6 +1,6 @@
 from django.urls import path
 
-from tools.views import response_check, save_movies_to_db, view_movies_old_format, create_user, view_users
+from tools.views import response_check, save_movies_to_db, view_movies_old_format, create_user, view_users, view_notes
 
 urlpatterns = [
     path('check', response_check),
@@ -8,5 +8,6 @@ urlpatterns = [
     path('save_to_db', save_movies_to_db),
     path('create_users', create_user),
     path('users', view_users),
+    path('notes', view_notes),
 
 ]

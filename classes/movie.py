@@ -1,3 +1,4 @@
+from classes.note import Note
 from classes.kp import KP_Movie
 from lists.models import Film as FilmModel, Actor as ActorModel, Writer as WriterModel, Director as DirectorModel, Genre as GenreModel
 from lists.serializers import FilmSerializer, FilmSmallSerializer
@@ -6,7 +7,6 @@ import json
 from typing import Any
 from icecream import ic
 from collections import namedtuple
-
 
 
 class Movie:
@@ -19,13 +19,22 @@ class Movie:
 
     def get_all_movies(self, all_info: bool = True, is_archive: bool = False) -> dict | list:
         raw_film = FilmModel.mgr.filter(is_archive=is_archive).values()
+        notes = Note.get_all_notes()
 
         if all_info:
             serialize = FilmSerializer(raw_film, many=True)
-            films = {film['kp_id']: film for film in serialize.data}
+            films = dict()
+            for film in serialize.data:
+                kp_id = film['kp_id']
+                film_notes = notes.get(kp_id, [])
+                films[kp_id] = {**film, 'notes': film_notes}
         else:
             serialize = FilmSmallSerializer(raw_film, many=True)
-            films = serialize.data
+            films = list()
+            for film in serialize.data:
+                kp_id = film['kp_id']
+                film_notes = notes.get(kp_id, [])
+                films.append({**film, 'notes': film_notes})
         return films
 
     def change_movie_status(self, kp_id: int | str, is_archive: bool):
