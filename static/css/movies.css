@@ -3,16 +3,6 @@
     padding: 0;
 }
 
-/* Hide scrollbar */
-/*html::-webkit-scrollbar {*/
-/*    display: none; !*Chrome, Safari and Opera *!*/
-/*}*/
-
-/*html {*/
-/*    -ms-overflow-style: none; !* IE and Edge *!*/
-/*    scrollbar-width: none; !* Firefox *!*/
-/*}*/
-
 .main {
     background: linear-gradient(304deg, rgba(131, 58, 180, 1) 0%, rgba(23, 17, 17, 1) 50%, rgba(252, 176, 69, 1) 100%);
     display: grid;
@@ -45,6 +35,7 @@
     margin-left: 3em;
 }
 
+/* Навигация */
 .navigation {
     grid-column: 1;
     height: 50vh;
@@ -79,6 +70,7 @@
     }
 }
 
+/* Информация о фильме */
 .movie-card {
     padding: 20px;
     border-radius: 5px;
@@ -105,6 +97,14 @@
 
 }
 
+
+.card-poster {
+    width: 22em;
+    height: 32em;
+
+}
+
+/* Список всех фильмов */
 .movie-posters {
     grid-column: 2;
     grid-row: 2;
@@ -117,24 +117,12 @@
     align-items: center;
     justify-content: center;
 
-    overflow: auto;
+    overflow: hidden;
     margin-bottom: 2em;
 
 }
 
 
-/* Наше ===========================*/
-
-
-/* Информация о фильме */
-.card-poster {
-    width: 22em;
-    height: 32em;
-
-}
-
-
-/* Список всех фильмов */
 .poster {
     height: 100%;
     width: 100%;
@@ -164,6 +152,9 @@
     position: relative;
 }
 
+.poster-container:hover  > .options-list {
+    visibility: visible;
+}
 
 /* Набор параметров для применения к фильму*/
 .options-list {
@@ -275,4 +266,8 @@
 
 .rate-toggle:hover {
     cursor: pointer;
+}
+
+.hidden {
+    visibility: hidden;
 }

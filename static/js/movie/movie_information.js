@@ -25,14 +25,14 @@ const showMoviePoster = (target, allMovies) => {
 }
 
 export function showMovieHandler(allMovies) {
-    // todo переписать на листенеры блоков с постерами
+
     moviePosters.addEventListener('click', async (event) => {
         let target = event.target;
         target = target.parentElement.classList.contains('btn-option') ? target.parentElement : target;
 
         if (target.classList.contains('poster') || target.classList.contains('note-container')) {
             showMoviePoster(target, allMovies);
-            toggleMovieOptions(target);
+            // toggleMovieOptions(target);
         }
 
     })

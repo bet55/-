@@ -3,6 +3,8 @@ from django.shortcuts import render
 from classes import Statistic
 from rest_framework.response import Response
 
+#  Добавить анимацию пересчета  цифр
+# https://codepen.io/r-i-c-h/pen/BaXGZXx
 
 @api_view()
 def overall_stats(request):

@@ -1,7 +1,7 @@
 from django.urls import path
 
 from lists.views import view_movies, add_movie, ToWatchList, ArchiveList, view_movie_by_id, AddFilm, remove_movie, \
-    change_archive_status, rate_movie
+    change_archive_status, rate_movie, remove_rate
 
 urlpatterns = [
 
@@ -11,7 +11,9 @@ urlpatterns = [
     path('add', add_movie),
     path('remove', remove_movie),
     path('change_archive', change_archive_status),
+
     path('rate', rate_movie),
+    path('rate/remove', remove_rate),
 
     # statistc
     # features / games

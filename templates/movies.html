@@ -21,9 +21,17 @@
     {#https://developer.mozilla.org/en-US/docs/Web/API/HTMLInputElement/select_event#}
     <section class="header">
         <header class="title"><span>Киноклуб</span></header>
-        <div class="rate-toggle">
-            <img class="toggler-img" src="{% static 'img/stickynotes/note2.png' %}" alt="">
-        </div>
+
+        {% if is_archive %}
+            <div class="rate-toggle hidden">
+                <img class="toggler-img" src="{% static 'img/stickynotes/note2.png' %}" alt="">
+            </div>
+        {% else %}
+            <div class="rate-toggle">
+                <img class="toggler-img" src="{% static 'img/stickynotes/note2.png' %}" alt="">
+            </div>
+        {% endif %}
+
         <div class="users-list">
             <select name="test" id="users-select">
                 <option disabled value="X">Никто</option>
@@ -51,21 +59,6 @@
 
     </section>
 
-    {#    {{ notes }}#}
-    {##}
-    {#    <section class="notes-tmp">#}
-    {##}
-    {##}
-    {#        {% for kp_id, note in notes.items %}#}
-    {#            <div>outside</div>#}
-    {#            {% for n in note %}#}
-    {#                <div>inside</div>#}
-    {#                <div>{{ kp_id }}</div>#}
-    {#                <div>{{ n.rating }}</div>#}
-    {#            {% endfor %}#}
-    {#        {% endfor %}#}
-    {##}
-    {#    </section>#}
 
     <section class="movie-posters">
 
@@ -77,18 +70,20 @@
                 <img class="poster" src="{{ i.poster }}" alt="" data-kp-id="{{ i.kp_id }}" loading="lazy">
 
                 <div class="note-container" data-kp-id="{{ i.kp_id }}">
-                
-                        {% for note in i.notes %}
-                            <div class="note" data-user-id="{{ note.user }}">
-                                <h2>{{ note.rating }}</h2>
-{#                                <p>{{ note.rating }}</p>#}
-                            </div>
-                        {% endfor %}
+
+                    {% for note in i.notes %}
+                        <div class="note" data-user-id="{{ note.user }}">
+                            <h2>{{ note.rating }}</h2>
+                            {#                                <p>{{ note.rating }}</p>#}
+                        </div>
+                    {% endfor %}
 
                 </div>
 
                 <div class="options-list" data-kp-id="{{ i.kp_id }}">
-                    <button class="btn-option btn-rate">🌟</button>
+                    {% if is_archive %}
+                        <button class="btn-option btn-rate">🌟</button>
+                    {% endif %}
                     <button class="btn-option btn-bookmark">
                         <img src="{% static 'img/poster_options/bm_grey.png' %}">
                     </button>

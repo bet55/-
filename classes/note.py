@@ -38,3 +38,8 @@ class Note:
                                                         update_fields=['rating', 'text'],
                                                         unique_fields=['film', 'user'])
         return True
+
+    @classmethod
+    def remove_note(cls, user, film):
+        note = Sticker.mgr.get(user=user, film=film)
+        return note.delete()
