@@ -19,41 +19,38 @@
 <div class="main">
     {# https://doka.guide/recipes/dropdown-animation/ #}
     {#https://developer.mozilla.org/en-US/docs/Web/API/HTMLInputElement/select_event#}
-    <section class="header">
-        <header class="title"><span>Киноклуб</span></header>
+    <header>
+        <h1 class="title">Киноклуб</h1>
 
         {% if is_archive %}
-            <div class="rate-toggle hidden">
+            <div class="rate-toggle">
                 <img class="toggler-img" src="{% static 'img/stickynotes/note2.png' %}" alt="">
             </div>
         {% else %}
-            <div class="rate-toggle">
+            <div class="rate-toggle hidden">
                 <img class="toggler-img" src="{% static 'img/stickynotes/note2.png' %}" alt="">
             </div>
         {% endif %}
 
         <div class="users-list">
-            <select name="test" id="users-select">
+            <select name="users" id="users-select">
                 <option disabled value="X">Никто</option>
                 {% for u in users %}
                     <option value="{{ u.id }}">{{ u.first_name }}</option>
                 {% endfor %}
             </select>
         </div>
-    </section>
+    </header>
 
 
     <section class="navigation">
         <nav class="menu-nav">
             <ul class="menu-list">
-                {% if is_archive %}
-                    <li><a href="http://localhost:8000/movies">Список фильмов</a></li>
-                {% else %}
-                    <li><a href="http://localhost:8000/movies/archive">Архив фильмов</a></li>
-                {% endif %}
-
+                <li><a href="http://localhost:8000/">Церемония</a></li>
+                <li><a href="http://localhost:8000/movies">Список фильмов</a></li>
+                <li><a href="http://localhost:8000/movies/archive">Архив фильмов</a></li>
                 <li><a href="http://localhost:8000/movies/add">Добавить фильм</a></li>
-                <li><a href="http://localhost:8000/">Грядущий сеанс</a></li>
+                <li><a href="http://localhost:8000/statistic">Статистика</a></li>
             </ul>
         </nav>
 

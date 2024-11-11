@@ -5,13 +5,12 @@
     position: fixed;
     bottom: 30px;
     left: 40px;
-
-
 }
 
 #corf:hover {
     cursor: pointer;
 }
+
 
 #corf-icon {
     height: 8em;
@@ -19,11 +18,16 @@
 }
 
 #corf-films {
+    visibility: hidden;
+
     position: absolute;
     bottom: 5px;
     left: 8em;
-    /*background-color: #66512c;*/
-    width: 21em;
+
+    width: 22em;
+    max-height: 60vh;
+    overflow: scroll;
+
     backdrop-filter: blur(15px);
     /*white-space: pre;*/
 
@@ -34,23 +38,42 @@
     }
 
     li {
-        padding: 0 10px 8px 2px;
+        padding: 0 10px 0 2px;
         border-bottom: 2px solid black;
         display: flex;
         align-items: center;
+        justify-content: space-between;
+        text-align: center;
     }
 
     li:hover {
         background-color: #3c3c3c;
+        cursor: default;
+
+        span {
+            visibility: visible;
+        }
+        .film-remove {
+            cursor: pointer;
+        }
     }
 
+
     span {
-        padding-left: 5px;
         font-weight: bold;
         font-size: 20px;
     }
 
     img {
-        height: 6em;
+        width: 5em;
+        object-fit: contain;
     }
+
+    .film-remove {
+        visibility: hidden;
+    }
+
 }
+
+
+
