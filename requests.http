@@ -37,3 +37,30 @@ Content-Type: application/json
   "user": 5,
   "rating": 7
 }
+
+###
+POST http://localhost:8000/test_postcard
+Content-Type: application/json
+
+{
+  "meeting_date": "2024-11-21",
+  "movies": [341, 337, 352]
+}
+
+###
+PATCH http://localhost:8000/test_postcard
+Content-Type: application/json
+
+{
+  "id": 1,
+  "meeting_date": "2024-11-21",
+  "movies": [341]
+}
+
+###
+DELETE http://localhost:8000/test_postcard
+Content-Type: application/json
+
+{
+  "id": 1
+}

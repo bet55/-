@@ -11,7 +11,7 @@ from collections import namedtuple
 
 class Movie:
     KPEntities = namedtuple('KPEntities', ['movie', 'persons', 'genres'])
-
+#TODO: redo after new serializator behaviour
     def get_movie(self, kp_id: int | str) -> dict:
         film_model = FilmModel.mgr.filter(kp_id=kp_id)
         serialize = FilmSerializer(film_model)
@@ -30,11 +30,7 @@ class Movie:
                 films[kp_id] = {**film, 'notes': film_notes}
         else:
             serialize = FilmSmallSerializer(raw_film, many=True)
-            films = list()
-            for film in serialize.data:
-                kp_id = film['kp_id']
-                film_notes = notes.get(kp_id, [])
-                films.append({**film, 'notes': film_notes})
+            films = serialize.data
         return films
 
     def change_movie_status(self, kp_id: int | str, is_archive: bool):

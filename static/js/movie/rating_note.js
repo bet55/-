@@ -21,6 +21,7 @@ const createNoteElement = (movieId, userId, rating, comment) => {
     noteH2.textContent = rating;
     noteDiv.append(noteH2);
     noteDiv.classList.add('note');
+    noteDiv.dataset.userId = userId
 
     noteContainer.append(noteDiv);
     return true;
