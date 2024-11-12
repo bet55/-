@@ -9,12 +9,11 @@ body {
     grid-template-columns: 1fr 4fr;
 }
 
-.menu{
-        grid-column: 1;
+.menu {
+    grid-column: 1;
 }
 
 nav {
-
 
 
     a:hover {
@@ -158,3 +157,5 @@ nav {
         max-height: 40%;
     }
 }
+
+

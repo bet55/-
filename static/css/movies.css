@@ -3,16 +3,8 @@
     padding: 0;
 }
 
-/* Hide scrollbar */
-/*html::-webkit-scrollbar {*/
-/*    display: none; !*Chrome, Safari and Opera *!*/
-/*}*/
 
-/*html {*/
-/*    -ms-overflow-style: none; !* IE and Edge *!*/
-/*    scrollbar-width: none; !* Firefox *!*/
-/*}*/
-
+/* Общий блок*/
 .main {
     background: linear-gradient(304deg, rgba(131, 58, 180, 1) 0%, rgba(23, 17, 17, 1) 50%, rgba(252, 176, 69, 1) 100%);
     display: grid;
@@ -33,8 +25,18 @@
     animation: glow 5s ease-in-out infinite;
 }
 
+
+header {
+    grid-row: 1;
+    grid-column: 1/4;
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+
 .title {
-    grid-column: 1 / span 3;
+    /*grid-column: 1 / span 3;*/
+    flex-grow: 2;
     text-align: center;
     font-size: 4em;
     font-family: "monaco" monospace;
@@ -42,9 +44,62 @@
     animation: glow 3s ease-in-out infinite alternate;
 
     text-shadow: 0 0 10px #fff, 0 0 20px rgba(131, 58, 180, 1), 0 0 30px rgba(131, 58, 180, 1), 0 0 40px rgba(131, 58, 180, 1), 0 0 50px rgba(131, 58, 180, 1), 0 0 60px rgba(131, 58, 180, 1), 0 0 70px rgba(131, 58, 180, 1);
-    margin-left: 3em;
+    /*margin-left: 3em;*/
 }
 
+
+/* Выбор пользователя*/
+.users-list {
+    height: 3em;
+    width: 7em;
+    margin: 3em;
+}
+
+#users-select {
+    height: 100%;
+    width: 100%;
+    font-size: 1em;
+    padding: 5px;
+
+    /* for Firefox */
+    -moz-appearance: none;
+    /* for Safari, Chrome, Opera */
+    -webkit-appearance: none;
+
+    img {
+        height: 1em;
+    }
+
+}
+
+#users-select {
+    background-color: #1b2b34;
+    /*border-color: #0f0f0f;*/
+}
+
+#users-select:hover, option:hover {
+    cursor: pointer;
+}
+
+/* rate-toggler*/
+.rate-toggle {
+    height: 4em;
+    margin: 3em;
+}
+
+.toggler-img {
+    height: 100%;
+}
+
+.rate-toggle:hover {
+    cursor: pointer;
+}
+
+.hidden {
+    visibility: hidden;
+}
+
+/* Навигация */
 .navigation {
     grid-column: 1;
     height: 50vh;
@@ -79,6 +134,8 @@
     }
 }
 
+
+/* Информация о фильме */
 .movie-card {
     padding: 20px;
     border-radius: 5px;
@@ -105,6 +162,14 @@
 
 }
 
+
+.card-poster {
+    width: 22em;
+    height: 32em;
+
+}
+
+/* Список всех фильмов */
 .movie-posters {
     grid-column: 2;
     grid-row: 2;
@@ -117,24 +182,12 @@
     align-items: center;
     justify-content: center;
 
-    overflow: auto;
+    overflow: hidden;
     margin-bottom: 2em;
 
 }
 
 
-/* Наше ===========================*/
-
-
-/* Информация о фильме */
-.card-poster {
-    width: 22em;
-    height: 32em;
-
-}
-
-
-/* Список всех фильмов */
 .poster {
     height: 100%;
     width: 100%;
@@ -164,6 +217,9 @@
     position: relative;
 }
 
+.poster-container:hover > .options-list {
+    visibility: visible;
+}
 
 /* Набор параметров для применения к фильму*/
 .options-list {
@@ -222,57 +278,9 @@
 
 .btn-bookmark:hover {
     background: rgba(17, 117, 47, 1.0);
-    /*			background: rgb(17, 70, 117, 1.0);*/
 }
 
 .btn-remove:hover {
     background: rgba(117, 16, 16, 1.0);
 }
 
-
-/* Выбор пользователя*/
-.users-list {
-    height: 3em;
-    width: 7em;
-    margin: 3em;
-}
-
-#users-select {
-    height: 100%;
-    width: 100%;
-    font-size: 1em;
-    padding: 5px;
-
-    /* for Firefox */
-    -moz-appearance: none;
-    /* for Safari, Chrome, Opera */
-    -webkit-appearance: none;
-
-    img {
-        height: 1em;
-    }
-
-}
-
-#users-select {
-    background-color: #1b2b34;
-    /*border-color: #0f0f0f;*/
-}
-
-#users-select:hover, option:hover {
-    cursor: pointer;
-}
-
-/* rate-toggler*/
-.rate-toggle {
-    height: 4em;
-    margin: 3em;
-}
-
-.toggler-img {
-    height: 100%;
-}
-
-.rate-toggle:hover {
-    cursor: pointer;
-}

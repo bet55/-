@@ -1,5 +1,7 @@
 import {getCookie} from "../utils/cookie.js";
 import {openModal} from "./rating_modal.js";
+import {addToCorf, removeFromCorf} from "../utils/movies_corf.js";
+import {bookedToggle} from "./booked_toggler.js";
 
 const moviePosters = document.querySelector('.movie-posters')
 
@@ -9,36 +11,48 @@ const toggleMovieOptions = (target) => {
     const isVisible = optionsList.style.visibility;
     optionsList.style.visibility = isVisible === "visible" ? "hidden" : "visible";
 }
+
 const rateMovie = (target) => {
 
     const movieId = target.parentNode.dataset.kpId;
     const user = getCookie('user')
-    console.log(movieId, target);
+
     if (!user) {
         alert('Выберите пользователя')
-    }
-    else {
+    } else {
         openModal(movieId);
     }
 
 }
 
-const addMovieToBookmark = (target, allMovies) => {
-    const unBookedImg = 'bm_grey';
-    const bookedImg = 'bm_gold';
-    const movieId = target.parentNode.dataset.kpId;
+const paintBookedMovies = () => {
 
-    const btnImg = target.querySelector('img');
-    const imgSrc = btnImg.src;
-    if (imgSrc.includes(bookedImg)) {
-        btnImg.src = imgSrc.replace(bookedImg, unBookedImg);
-        localStorage.removeItem(movieId);
-    } else {
-        btnImg.src = imgSrc.replace(unBookedImg, bookedImg);
+    let lsKeys = Object.keys(localStorage);
 
-        localStorage.setItem(movieId, JSON.stringify(allMovies[movieId]));
+    for (let key of lsKeys) {
+        if (isNaN(key)) {
+            continue;
+        }
+        bookedToggle(key);
+
     }
 
+}
+
+
+const addMovieToBookmark = (target, allMovies) => {
+
+    const movieId = target.parentNode.dataset.kpId;
+
+    if (target.classList.contains('booked')) {
+        bookedToggle(movieId, true);
+        removeFromCorf(movieId);
+
+
+    } else {
+        bookedToggle(movieId);
+        addToCorf(movieId, allMovies[movieId]);
+    }
 
 }
 
@@ -88,6 +102,8 @@ const optionsMap = {
 }
 
 function selectOptionHandler(allMovies) {
+
+    paintBookedMovies();
 
     moviePosters.addEventListener('click', async (event) => {
         let target = event.target;

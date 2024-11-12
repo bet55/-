@@ -3,7 +3,7 @@ import {settingUserHandler} from "./movie/set_user.js";
 import {showRatingNotesHandler} from "./movie/rating_toggler.js";
 import {showMovieHandler} from "./movie/movie_information.js";
 import {selectOptionHandler} from "./movie/movie_options.js";
-import {corfMoviesHandler} from "./movie/movies_corf.js";
+import {corfMoviesHandler} from "./utils/movies_corf.js";
 import {showScrollButtonHandler} from "./utils/scroll_up_button.js";
 
 

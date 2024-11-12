@@ -138,3 +138,13 @@ def rate_movie(request):
     note_created = Note.create_note(request.data)
 
     return Response(data={'success': note_created, 'error': ''})
+
+
+@api_view(['DELETE'])
+def remove_rate(request):
+    user = request.dat['user']
+    film = request.data['film']
+
+    res = Note.remove_note(user, film)
+
+    return Response(data={'success': bool(res), 'error': str(res)})

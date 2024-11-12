@@ -1,27 +1,79 @@
 /* Корзина с выбранными фильмами*/
 
 
-#booked-films {
+#corf {
     position: fixed;
     bottom: 30px;
     left: 40px;
-
-    img {
-        height: 8em;
-        border-radius: 100%;
-    }
 }
 
-#booked-films:hover {
+#corf:hover {
     cursor: pointer;
 }
 
-.header {
-    grid-column: 1/4;
-    display: flex;
-    height: 100%;
 
-    .title {
-        flex-grow: 2;
-    }
+#corf-icon {
+    height: 8em;
+    border-radius: 100%;
 }
+
+#corf-films {
+    visibility: hidden;
+
+    position: absolute;
+    bottom: 5px;
+    left: 8em;
+
+    width: 22em;
+    max-height: 60vh;
+    overflow: scroll;
+
+    backdrop-filter: blur(15px);
+    /*white-space: pre;*/
+
+    ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    li {
+        padding: 0 10px 0 2px;
+        border-bottom: 2px solid black;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        text-align: center;
+    }
+
+    li:hover {
+        background-color: #3c3c3c;
+        cursor: default;
+
+        span {
+            visibility: visible;
+        }
+        .film-remove {
+            cursor: pointer;
+        }
+    }
+
+
+    span {
+        font-weight: bold;
+        font-size: 20px;
+    }
+
+    img {
+        width: 5em;
+        object-fit: contain;
+    }
+
+    .film-remove {
+        visibility: hidden;
+    }
+
+}
+
+
+
