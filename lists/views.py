@@ -148,3 +148,10 @@ def remove_rate(request):
     res = Note.remove_note(user, film)
 
     return Response(data={'success': bool(res), 'error': str(res)})
+
+
+@api_view(['GET'])
+def get_all_movies(request):
+    films = Film.mgr.all()
+    serializer = FilmSerializer(films, many=True)
+    return Response(serializer.data)

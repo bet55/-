@@ -1,4 +1,5 @@
 from rest_framework import serializers
+from django.db import models
 
 from lists.serializers import FilmSerializer
 from postcard.models import Postcard

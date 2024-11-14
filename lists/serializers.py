@@ -4,10 +4,25 @@ from django.db import models
 from lists.models import Film, Genre, AppUser, Sticker
 
 
+class FilmListSerializer(serializers.ListSerializer):
+    def to_representation(self, data):
+        iterable = data.all() if isinstance(data, models.manager.BaseManager) else data
+
+        return {
+            self.child.to_representation(item).get('kp_id'): self.child.to_representation(item) for item in iterable
+        }
+
+    @property
+    def data(self):
+        ret = serializers.BaseSerializer.data.fget(self)
+        return serializers.ReturnDict(ret, serializer=self)
+
+
 class FilmSerializer(serializers.ModelSerializer):
     premiere = serializers.DateTimeField(format="%d/%m/%Y")
 
     class Meta:
+        list_serializer_class = FilmListSerializer
         model = Film
         fields = ['kp_id',
                   'name',
