@@ -6,8 +6,13 @@ from classes import Movie, Note
 from lists.models import AppUser
 import json
 import asyncio
-
+from django.shortcuts import render
 from tools.serializers import UserSerializer
+
+
+@api_view(['GET'])
+def layout(request):
+    return render(request, template_name='based_layout.html')
 
 
 @api_view(['GET'])

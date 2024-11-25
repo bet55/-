@@ -3,35 +3,24 @@ from classes.kp import KP_Movie
 from lists.models import Film as FilmModel, Actor as ActorModel, Writer as WriterModel, Director as DirectorModel, Genre as GenreModel
 from lists.serializers import FilmSerializer, FilmSmallSerializer
 from pydantic_models import KPFilmModel, KpFilmPersonModel, KpFilmGenresModel
-import json
-from typing import Any
-from icecream import ic
 from collections import namedtuple
 
 
 class Movie:
     KPEntities = namedtuple('KPEntities', ['movie', 'persons', 'genres'])
-#TODO: redo after new serializator behaviour
+
     def get_movie(self, kp_id: int | str) -> dict:
         film_model = FilmModel.mgr.filter(kp_id=kp_id)
         serialize = FilmSerializer(film_model)
         return serialize.data
 
     def get_all_movies(self, all_info: bool = True, is_archive: bool = False) -> dict | list:
-        raw_film = FilmModel.mgr.filter(is_archive=is_archive).values()
-        notes = Note.get_all_notes()
 
-        if all_info:
-            serialize = FilmSerializer(raw_film, many=True)
-            films = dict()
-            for film in serialize.data:
-                kp_id = film['kp_id']
-                film_notes = notes.get(kp_id, [])
-                films[kp_id] = {**film, 'notes': film_notes}
-        else:
-            serialize = FilmSmallSerializer(raw_film, many=True)
-            films = serialize.data
-        return films
+        raw_film = FilmModel.mgr.filter(is_archive=is_archive)
+
+        serialize = FilmSerializer(raw_film, many=True) if all_info else FilmSmallSerializer(raw_film, many=True)
+
+        return serialize.data
 
     def change_movie_status(self, kp_id: int | str, is_archive: bool):
         film_model = FilmModel.mgr.get(kp_id=kp_id)

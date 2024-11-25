@@ -44,7 +44,7 @@ const addMovieToBookmark = (target, allMovies) => {
 
     const movieId = target.parentNode.dataset.kpId;
 
-    if (target.classList.contains('booked')) {
+    if (target.firstElementChild.classList.contains('booked')) {
         bookedToggle(movieId, true);
         removeFromCorf(movieId);
 

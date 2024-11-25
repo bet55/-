@@ -10,8 +10,6 @@ from rest_framework.views import APIView
 from classes import KP_Movie, Movie, Note
 from lists.models import Film, Director, Genre, Actor, Writer, FilmGenreRelations, Sticker, AppUser
 from lists.serializers import FilmSerializer, FilmSmallSerializer, GenreSerializer, UserSerializer, StickerSerializer
-from pydantic_models import RateMovieRequestModel
-from utils import get_movie, refactor_kp_data, save_new_film
 
 
 # Create your views here.
@@ -34,18 +32,11 @@ class AddFilm(APIView):
         return render(request, 'add_movie.html')
 
     def post(self, request):
-        kp_id = request.POST.get('url').split('/')[4]
-        kp_data = asyncio.run(get_movie(kp_id))
-        if kp_data.get('id') is None or kp_data.get('name') is None:
-            return Response(kp_data, status=status.HTTP_400_BAD_REQUEST)
+        kp_id = request.data.kp_id
+        mv = Movie()
+        movie_id, success = mv.download(kp_id)
 
-        correct_data = refactor_kp_data(kp_data)
-        new_film = save_new_film(correct_data)
-
-        if new_film is None:
-            return Response('couldn`t save new film (unluck)')
-
-        return Response({'id': new_film.kp_id, 'name': new_film.name}, status=status.HTTP_200_OK)
+        return Response(data={'success': success, 'error': '', 'id': movie_id})
 
 
 class RateFilm(APIView):
@@ -133,25 +124,19 @@ def remove_movie(request):
     return Response(data={'success': str(movie_is_deleted), 'error': '', 'id': kp_id})
 
 
-@api_view(['POST', 'PUT'])
+@api_view(['POST', 'PUT', 'DELETE'])
 def rate_movie(request):
+
+    if request.method == 'DELETE':
+        user = request.dat['user']
+        film = request.data['film']
+
+        res = Note.remove_note(user, film)
+
+        return Response(data={'success': bool(res), 'error': str(res)})
+
     note_created = Note.create_note(request.data)
 
     return Response(data={'success': note_created, 'error': ''})
 
 
-@api_view(['DELETE'])
-def remove_rate(request):
-    user = request.dat['user']
-    film = request.data['film']
-
-    res = Note.remove_note(user, film)
-
-    return Response(data={'success': bool(res), 'error': str(res)})
-
-
-@api_view(['GET'])
-def get_all_movies(request):
-    films = Film.mgr.all()
-    serializer = FilmSerializer(films, many=True)
-    return Response(serializer.data)

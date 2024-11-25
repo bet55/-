@@ -8,7 +8,7 @@ from icecream import ic
 from utils.movies_ids import movies_ids, archive_movies_ids
 from utils.get_api_token import get_api_token
 
-
+# Создаем локальный дамп фильмов с КП
 async def get_movie(movie_id):
     BASE_URL = 'https://api.kinopoisk.dev/v1.4/movie/'
     headers = {'X-API-KEY': get_api_token()}
