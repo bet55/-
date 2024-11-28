@@ -1,0 +1,16 @@
+body {
+    background-image: url('../../static/img/background.jpg');
+    background-size: 100%;
+    overflow: hidden;
+}
+
+.title {
+    font-size: 3.5rem;
+    color: var(--bs-red);
+    font-weight: bold;
+}
+
+
+.header-img, .footer-img {
+    height: 13em;
+}

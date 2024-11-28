@@ -1,9 +1,8 @@
 import {formatTime} from "../utils/format_time.js";
-import {toggleMovieOptions} from "./movie_options.js";
 
-const moviePosters = document.querySelector('.movie-posters')
+const moviePosters = document.querySelector('.posters-grid')
 
-const cardImg = document.querySelector('.card-poster')
+const cardImg = document.querySelector('.card-img')
 const cardTitle = document.querySelector('.card-title')
 const cardDescription = document.querySelector('.card-description')
 const cardRealiseDate = document.querySelector('.card-realise')
@@ -11,8 +10,7 @@ const cardDuration = document.querySelector('.card-duration')
 const cardLink = document.querySelector('.card-link a')
 
 
-const showMoviePoster = (target, allMovies) => {
-    let movieId = target.dataset.kpId;
+const showMoviePoster = (movieId, allMovies) => {
 
     cardImg.src = allMovies[movieId].poster;
     cardImg.style.visibility = 'visible';
@@ -28,13 +26,14 @@ export function showMovieHandler(allMovies) {
 
     moviePosters.addEventListener('click', async (event) => {
         let target = event.target;
-        target = target.parentElement.classList.contains('btn-option') ? target.parentElement : target;
 
-        if (target.classList.contains('poster') || target.classList.contains('note-container')) {
-            showMoviePoster(target, allMovies);
-            // toggleMovieOptions(target);
+        if (target.classList.contains('poster-container') || target.classList.contains('poster-img')) {
+            console.log('clicked')
+            const movieId = target.dataset.kpId;
+
+            showMoviePoster(movieId, allMovies);
         }
 
     })
-//
+
 }
