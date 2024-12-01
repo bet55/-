@@ -7,7 +7,7 @@ from rest_framework.response import Response
 
 from rest_framework.views import APIView
 
-from classes import KP_Movie, Movie, Note
+from classes import KP_Movie, Movie, Note, Tools
 from lists.models import Film, Director, Genre, Actor, Writer, FilmGenreRelations, Sticker, AppUser
 from lists.serializers import FilmSerializer, FilmSmallSerializer, GenreSerializer, UserSerializer, StickerSerializer
 
@@ -74,8 +74,13 @@ def view_movies(request):
 
     movies = mv.get_all_movies(all_info=False, is_archive=is_archive)
 
+    random_images = Tools.get_random_images()
+
     return render(request, 'movies.html',
-                  context={'movies': movies, 'users': us_sr.data, 'is_archive': is_archive})
+                  context={'movies': movies,
+                           'users': us_sr.data,
+                           'is_archive': is_archive,
+                           'random': random_images})
 
 
 @api_view(['GET'])
@@ -126,7 +131,6 @@ def remove_movie(request):
 
 @api_view(['POST', 'PUT', 'DELETE'])
 def rate_movie(request):
-
     if request.method == 'DELETE':
         user = request.dat['user']
         film = request.data['film']
@@ -138,5 +142,3 @@ def rate_movie(request):
     note_created = Note.create_note(request.data)
 
     return Response(data={'success': note_created, 'error': ''})
-
-

@@ -9,10 +9,9 @@
     <link rel="icon" href="{% static 'img/icon.png' %}">
     <link rel="stylesheet" href="{% static 'css/movies.css' %}">
 
-    <link rel="stylesheet" href="{% static 'css/scroll_up_button.css' %}">
-    <link rel="stylesheet" href="{% static 'css/sticky_notes.css' %}">
-    <link rel="stylesheet" href="{% static 'css/rating_modal.css' %}">
-    <link rel="stylesheet" href="{% static 'css/movies_corf.css' %}">
+    <link rel="stylesheet" href="{% static 'css/elements/scroll_up_button.css' %}">
+    <link rel="stylesheet" href="{% static 'css/elements/sticky_notes.css' %}">
+    <link rel="stylesheet" href="{% static 'css/elements/rating_modal.css' %}">
     <title>Киноклуб</title>
 </head>
 <body>
@@ -109,7 +108,7 @@
 </div>
 
 
-{% include "elements/movies_corf.html" %}
+{% include "elements/movies_cart.html" %}
 {% include "elements/ratting_modal.html" %}
 {% include "elements/scroll_up_button.html" %}
 

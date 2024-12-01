@@ -1,14 +1,14 @@
 import {bookedToggle} from "../movie/booked_toggler.js";
 
-const bookedFilmedStorage = document.querySelector('#corf');
-const filmsListContainer = document.querySelector('#corf-films');
+const cart = document.querySelector('#cart');
+const cartMoviesList = document.querySelector('#cart-list');
 
+// Отрисовываем список фильмов из закладок
 const createFilmsList = (filmsStorage) => {
-
-    const filmsList = filmsListContainer.querySelector('ul');
 
     let filmContainer, title, poster, removeBtn;
 
+    // Создаём новый элемент списка для каждого фильма
     filmsStorage.forEach(film => {
 
 
@@ -26,7 +26,7 @@ const createFilmsList = (filmsStorage) => {
 
         filmContainer.dataset.kpId = film['kp_id'];
         filmContainer.append(poster, title, removeBtn);
-        filmsList.append(filmContainer);
+        cartMoviesList.append(filmContainer);
 
 
         removeBtn.addEventListener('click', (e) => {
@@ -41,10 +41,10 @@ const createFilmsList = (filmsStorage) => {
 
     })
 
-
 }
 
-const getStragedFilmIds = () => {
+// Получаем все элементы из стораджа, у которых ключ - это число
+const getStorageFilmIds = () => {
     let lsKeys = Object.keys(localStorage);
     let lsValues = [];
 
@@ -58,33 +58,37 @@ const getStragedFilmIds = () => {
     return lsValues;
 }
 
-const addToCorf = (filmId, film) => {
+// Добавляем фильм в сторадж и список закладок
+const addToCart = (filmId, film) => {
     localStorage.setItem(filmId, JSON.stringify(film));
 
     createFilmsList([film]);
 }
-
-const removeFromCorf = (filmId) => {
+// Удаляем фильм из стораджа и списка закладок
+const removeFromCart = (filmId) => {
     localStorage.removeItem(filmId);
 
     const filmContainer = document.querySelector(`li[data-kp-id="${filmId}"]`);
     filmContainer.remove();
 }
 
-function corfMoviesHandler() {
+// Обрабатываем кнопку показа списка фильмов из закладок
+function cartMoviesHandler() {
 
-    const filmIds = getStragedFilmIds();
+    // Заполняем список закладок фильмами из локал стораджа
+    const filmIds = getStorageFilmIds();
     createFilmsList(filmIds);
 
-    filmsListContainer.addEventListener('click', (e) => {
+    cartMoviesList.addEventListener('click', (e) => {
         e.stopPropagation();
     })
 
-    filmsListContainer.style.visibility = 'hidden' // Бредик полнейший
-    bookedFilmedStorage.addEventListener('click', (event) => {
-        const visibility = (filmsListContainer.style.visibility === 'hidden') ? 'visible' : 'hidden';
-        filmsListContainer.style.visibility = visibility;
+    // Видимость списка по нажатию
+    cartMoviesList.style.visibility = 'hidden' // Бредик полнейший (без этого хака нет свойства у объекта до нажатия)
+    cart.addEventListener('click', (event) => {
+        const visibility = (cartMoviesList.style.visibility === 'hidden') ? 'visible' : 'hidden';
+        cartMoviesList.style.visibility = visibility;
     })
 }
 
-export {corfMoviesHandler, addToCorf, removeFromCorf}
+export {cartMoviesHandler, addToCart, removeFromCart}

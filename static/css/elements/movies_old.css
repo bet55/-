@@ -1,0 +1,286 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+
+/* Общий блок*/
+.main {
+    background: linear-gradient(304deg, rgba(131, 58, 180, 1) 0%, rgba(23, 17, 17, 1) 50%, rgba(252, 176, 69, 1) 100%);
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    grid-template-rows: auto 1fr;
+    grid-gap: 20px;
+    min-height: 100vh;
+}
+
+
+@keyframes glow {
+
+}
+
+
+.my-glowing-text {
+    font-family: "Monaco", sans-serif;
+    animation: glow 5s ease-in-out infinite;
+}
+
+
+header {
+    grid-row: 1;
+    grid-column: 1/4;
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+
+.title {
+    /*grid-column: 1 / span 3;*/
+    flex-grow: 2;
+    text-align: center;
+    font-size: 4em;
+    font-family: "monaco" monospace;
+    color: #fff;
+    animation: glow 3s ease-in-out infinite alternate;
+
+    text-shadow: 0 0 10px #fff, 0 0 20px rgba(131, 58, 180, 1), 0 0 30px rgba(131, 58, 180, 1), 0 0 40px rgba(131, 58, 180, 1), 0 0 50px rgba(131, 58, 180, 1), 0 0 60px rgba(131, 58, 180, 1), 0 0 70px rgba(131, 58, 180, 1);
+    /*margin-left: 3em;*/
+}
+
+
+/* Выбор пользователя*/
+.users-list {
+    height: 3em;
+    width: 7em;
+    margin: 3em;
+}
+
+#users-select {
+    height: 100%;
+    width: 100%;
+    font-size: 1em;
+    padding: 5px;
+
+    /* for Firefox */
+    -moz-appearance: none;
+    /* for Safari, Chrome, Opera */
+    -webkit-appearance: none;
+
+    img {
+        height: 1em;
+    }
+
+}
+
+#users-select {
+    background-color: #1b2b34;
+    /*border-color: #0f0f0f;*/
+}
+
+#users-select:hover, option:hover {
+    cursor: pointer;
+}
+
+/* rate-toggler*/
+.rate-toggle {
+    height: 4em;
+    margin: 3em;
+}
+
+.toggler-img {
+    height: 100%;
+}
+
+.rate-toggle:hover {
+    cursor: pointer;
+}
+
+.hidden {
+    visibility: hidden;
+}
+
+/* Навигация */
+.navigation {
+    grid-column: 1;
+    height: 50vh;
+
+    .menu-nav {
+        height: 100%;
+    }
+
+    .menu-list {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        justify-content: space-around;
+        align-content: center;
+        text-align: center;
+    }
+
+    a:hover {
+        text-shadow: 0 0 15px #fff,
+        0 0 20px rgba(191, 58, 180, 1),
+        0 0 30px rgba(191, 58, 180, 1), 0 0 40px rgba(191, 58, 180, 1),
+        0 0 50px rgba(191, 58, 180, 1), 0 0 60px rgba(191, 58, 180, 1),
+        0 0 70px rgba(191, 58, 180, 1);
+
+    }
+
+    a {
+        font-size: 2em;
+        text-decoration: none;
+        text-shadow: 0 0 10px #fff, 0 0 20px rgba(131, 58, 180, 1), 0 0 30px rgba(131, 58, 180, 1), 0 0 40px rgba(131, 58, 180, 1), 0 0 50px rgba(131, 58, 180, 1), 0 0 60px rgba(131, 58, 180, 1), 0 0 70px rgba(131, 58, 180, 1);
+        color: wheat;
+    }
+}
+
+
+/* Информация о фильме */
+.movie-card {
+    padding: 20px;
+    border-radius: 5px;
+    grid-column: 3;
+    grid-row: 2;
+
+    img {
+        visibility: hidden;
+    }
+
+    a {
+        text-decoration: none;
+        color: white;
+    }
+
+
+    h2, p {
+        color: #A0A0A0;
+    }
+
+    h3 {
+        color: white;
+    }
+
+}
+
+
+.card-img {
+    width: 22em;
+    height: 32em;
+
+}
+
+/* Список всех фильмов */
+.movie-posters {
+    grid-column: 2;
+    grid-row: 2;
+
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: auto 1fr;
+    gap: 20px;
+    row-gap: 40px;
+    align-items: center;
+    justify-content: center;
+
+    overflow: hidden;
+    margin-bottom: 2em;
+
+}
+
+
+.poster {
+    height: 100%;
+    width: 100%;
+
+    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+    background-size: 400% 400%;
+    animation: loading-gradient 15s ease infinite;
+}
+
+@keyframes loading-gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.poster-container {
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    height: 15em;
+    position: relative;
+}
+
+.poster-container:hover > .options-list {
+    visibility: visible;
+}
+
+/* Набор параметров для применения к фильму*/
+.options-list {
+    visibility: hidden;
+    width: 50%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-around;
+    color: white;
+    text-align: center;
+    position: absolute;
+    background-color: rgba(1, 1, 1, 0.7);
+}
+
+
+.btn-option {
+    height: 100%;
+    width: 100%;
+
+    border-bottom: 4px solid black;
+    border-left: 4px solid black;
+    border-right: none;
+    border-top: none;
+
+    background: none;
+    color: white;
+    font-size: 12px;
+
+    padding: 1px;
+
+    img {
+        height: 2.5em;
+    }
+
+
+}
+
+.btn-option:hover {
+    cursor: pointer;
+}
+
+.btn-rate {
+    font-size: 1.5em;
+}
+
+.btn-rate:hover {
+    background: rgba(17, 117, 47, 1.0);
+}
+
+
+.btn-archive:hover {
+    background: rgba(17, 117, 47, 1.0);
+}
+
+.btn-bookmark:hover {
+    background: rgba(17, 117, 47, 1.0);
+}
+
+.btn-remove:hover {
+    background: rgba(117, 16, 16, 1.0);
+}
+

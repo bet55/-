@@ -22,13 +22,12 @@ const showMoviePoster = (movieId, allMovies) => {
     cardLink.href = `https://www.kinopoisk.ru/film/${allMovies[movieId].kp_id}/`
 }
 
-export function showMovieHandler(allMovies) {
+export function fillMovieCard(allMovies) {
 
     moviePosters.addEventListener('click', async (event) => {
         let target = event.target;
 
         if (target.classList.contains('poster-container') || target.classList.contains('poster-img')) {
-            console.log('clicked')
             const movieId = target.dataset.kpId;
 
             showMoviePoster(movieId, allMovies);

@@ -1,4 +1,4 @@
-const rateToggler = document.querySelector('.toggler-img');
+const rateToggler = document.querySelector('.rate-toggle');
 
 const changeNotesVisibility = () => {
     let visibility = 'hidden';
@@ -13,10 +13,11 @@ const changeNotesVisibility = () => {
         })
     }
 }
-let visibilityToggler = changeNotesVisibility()
+const visibilityToggler = changeNotesVisibility()
 
 export function showRatingNotesHandler() {
     rateToggler.addEventListener('click', (event) => {
+        console.log('show notes!');
         visibilityToggler();
     })
 

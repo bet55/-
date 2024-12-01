@@ -1,117 +1,13 @@
-<!DOCTYPE html>
-<html lang="ru">
-<head>
-    <meta charset="UTF-8">
-    <title>Статистика</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-        }
+{% extends "based_layout.html" %}
 
+{% load static %}
 
-        body {
-            min-height: 100%;
-            background-color: #1b2b34;
-        }
+{% block style %}
+    <link rel="stylesheet" href="{% static 'css/cringe.css' %}">
+{% endblock %}
+{% block title %}Фильмы{% endblock %}
 
-        .main {
-            display: grid;
-            grid-template-columns: 1fr 3fr;
-            grid-template-rows: 0.5fr 1fr 2fr;
-            justify-content: center;
-            align-items: center;
-        }
-
-
-        header {
-            grid-row: 1;
-            grid-column: 1/3;
-            text-align: center;
-            align-content: center;
-            height: 5em;
-
-        }
-
-        nav {
-            grid-row: 3;
-            grid-column: 1;
-            height: 100%;
-
-
-            a:hover {
-                text-shadow: 0 0 15px #fff,
-                0 0 20px rgba(191, 58, 180, 1),
-                0 0 30px rgba(191, 58, 180, 1), 0 0 40px rgba(191, 58, 180, 1),
-                0 0 50px rgba(191, 58, 180, 1), 0 0 60px rgba(191, 58, 180, 1),
-                0 0 70px rgba(191, 58, 180, 1);
-
-            }
-
-            a {
-                font-size: 2em;
-                text-decoration: none;
-                text-shadow: 0 0 10px #fff, 0 0 20px rgba(131, 58, 180, 1), 0 0 30px rgba(131, 58, 180, 1), 0 0 40px rgba(131, 58, 180, 1), 0 0 50px rgba(131, 58, 180, 1), 0 0 60px rgba(131, 58, 180, 1), 0 0 70px rgba(131, 58, 180, 1);
-                color: wheat;
-            }
-
-            ul {
-                list-style-type: none;
-                display: flex;
-                flex-direction: column;
-                height: 70%;
-                justify-content: space-around;
-                align-content: center;
-                text-align: center;
-            }
-        }
-
-        .stats {
-            grid-row: 2;
-            grid-column: 2;
-            margin: 2em;
-
-            ul {
-                font-weight: bold;
-                font-size: 17px;
-                list-style-type: none;
-
-                span {
-                    background: #5e5e5e;
-                }
-
-                li {
-                    margin: 1em;
-                }
-            }
-        }
-
-        .graph {
-            grid-column: 2;
-            {#width: 200px;#}
-            {#height: 180px;#}
-        }
-
-
-    </style>
-</head>
-<body>
-{#https://stackoverflow.com/questions/40534715/how-to-embed-matplotlib-graph-in-django-webpage#}
-<div class="main">
-    <header>
-        <h1>Агрегация информации о фильмах</h1>
-    </header>
-
-
-    <nav class="menu">
-        <ul>
-            <li><a href="http://localhost:8000/">Церемония</a></li>
-            <li><a href="http://localhost:8000/movies">Список фильмов</a></li>
-            <li><a href="http://localhost:8000/movies/archive">Архив фильмов</a></li>
-            <li><a href="http://localhost:8000/movies/add">Добавить фильм</a></li>
-            <li><a href="http://localhost:8000/statistic">Статистика</a></li>
-        </ul>
-    </nav>
+{% block center-content %}
 
     <div class="stats">
         <ul>
@@ -125,8 +21,4 @@
     <div class="graph">
         {{ graph_div|safe }}
     </div>
-
-</div>
-
-</body>
-</html>
+{% endblock %}

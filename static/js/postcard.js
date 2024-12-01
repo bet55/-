@@ -1,3 +1,3 @@
-import {corfMoviesHandler} from "./utils/movies_corf.js";
+import {cartMoviesHandler} from "./utils/movies_cart.js";
 
-corfMoviesHandler() // корзина с выбранными фильмами
+cartMoviesHandler() // корзина с выбранными фильмами

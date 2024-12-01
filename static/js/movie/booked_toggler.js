@@ -1,8 +1,8 @@
 export const bookedToggle = (movieId, unbook = false) => {
-    const unBookedImg = 'bm_grey';
-    const bookedImg = 'bm_gold';
+    const unBookedImg = 'bookmark4';
+    const bookedImg = 'bookmark3';
 
-    const bookedBtn = document.querySelector(`.options-list[data-kp-id="${movieId}"] .btn-bookmark img`);
+    const bookedBtn = document.querySelector(`.poster-container[data-kp-id="${movieId}"] .poster-settings .opt-booked`);
 
     if (!Boolean(bookedBtn)) {
         return false;
@@ -10,9 +10,9 @@ export const bookedToggle = (movieId, unbook = false) => {
 
     if (unbook) {
         bookedBtn.classList.remove('booked');
-        bookedBtn.src = bookedBtn.src.replace(bookedImg, unBookedImg)
+        bookedBtn.src = bookedBtn.src.replace(bookedImg, unBookedImg);
     } else {
         bookedBtn.classList.add('booked');
-        bookedBtn.src = bookedBtn.src.replace(unBookedImg, bookedImg)
+        bookedBtn.src = bookedBtn.src.replace(unBookedImg, bookedImg);
     }
 }
