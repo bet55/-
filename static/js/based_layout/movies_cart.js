@@ -1,4 +1,5 @@
 import {bookedToggle} from "../movie/booked_toggler.js";
+import {createToast} from "../utils/create_toast.js";
 
 const cart = document.querySelector('#cart');
 const cartMoviesList = document.querySelector('#cart-list');
@@ -87,7 +88,13 @@ function cartMoviesHandler() {
     // Видимость списка по нажатию
     cartMoviesList.style.visibility = 'hidden' // Бредик полнейший (без этого хака нет свойства у объекта до нажатия)
     cart.addEventListener('click', (event) => {
+
         const visibility = (cartMoviesList.style.visibility === 'hidden') ? 'visible' : 'hidden';
+
+        if (getStorageFilmIds().length < 1) {
+            createToast('Корзина пуста!', 'info');
+        }
+
         cartMoviesList.style.visibility = visibility;
     })
 }

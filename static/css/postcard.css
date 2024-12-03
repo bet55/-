@@ -1,38 +1,58 @@
-.papa {
+.postcard-container {
     height: 90%;
     position: relative;
 }
 
-.mama {
+.postcard {
     height: 100%;
-    position: relative;
-    /*border-image-width: 5em;*/
-    /*border: 10px solid grey;*/
-    /*border-image: url("../../static/img/border/brd1.png") 50% / 20px;*/
 }
 
 
-.docha {
-    height: 65%;
-    width: 30%;
+.poster {
     position: absolute;
-    top: 25%;
-    left: 15%;
+    height: 45%;
+    /*width: 30%;*/
 
     /*filter: grayscale(0.5) blur(1px) contrast(1.2) sepia(1);*/
     /*-webkit-mask: radial-gradient(#000, #0009);*/
 
-    .carousel-inner {
-        width: 100%;
+    /*border-image-width: 5em;*/
+    /*border: 10px solid grey;*/
+    /*border-image: url("../../static/img/border/brd1.png") 50% / 20px;*/
 
-    }
+}
 
-    .carousel-item {
-        width: 100%;
-    }
 
-    img {
-        width: 100%;
+.poster:nth-child(2) {
+    top: 21%;
+    left: 8%;
+    transform: rotate(-6deg);
+}
+
+.poster:nth-child(3) {
+    top: 30%;
+    left: 30%;
+    transform: rotate(10deg);
+}
+
+.poster:nth-child(4) {
+    top: 52%;
+    left: 20%;
+    transform: rotate(2deg);
+}
+
+.invitation {
+    position: absolute;
+    height: 50%;
+    width: 50%;
+    top: 38%;
+    left: 58%;
+    font-size: 2em;
+    font-weight: bold;
+
+    span{
+        display: block;
+        margin-bottom: 0.8em;
     }
 
 }

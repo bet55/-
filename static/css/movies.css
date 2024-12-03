@@ -18,9 +18,17 @@
     margin: 0.5rem;
     height: 16em;
     width: 10em;
-    border: 0.5em solid var(--black-color);
+    border: 0.5em solid rgba(0, 0, 0, 0);
     border-radius: 2%;
     position: relative;
+
+    &:hover {
+        border: 0.5em solid var(--black-color);
+
+        .poster-settings {
+            visibility: visible;
+        }
+    }
 }
 
 .poster-img {
@@ -29,6 +37,7 @@
 }
 
 .poster-settings {
+    visibility: hidden;
     background-color: var(--black-color);
     height: 2em;
     display: flex;
@@ -51,6 +60,7 @@
     border: 0.5em solid var(--white-color);
     outline: 1em solid var(--black-color);
     margin-top: 1em;
+    object-fit: cover;
 }
 
 .card-title {

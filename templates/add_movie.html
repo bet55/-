@@ -4,7 +4,6 @@
 
 {% block style %}
     <link rel="stylesheet" href="{% static 'css/add_movie.css' %}">
-    <link rel="stylesheet" href="{% static 'css/elements/toast.css' %}">
 {% endblock %}
 
 {% block title %}Фильмы{% endblock %}
@@ -24,9 +23,7 @@
 
 {% endblock %}
 
-{% block fixed %}
-    {% include "elements/toast.html" %}
-{% endblock %}
+{% block fixed %}{% endblock %}
 
 
 {% block script %}
