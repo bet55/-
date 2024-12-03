@@ -1,0 +1,9 @@
+#user-alert {
+    .modal-content {
+        background-color: var(--white-color);
+    }
+
+    .user-alert-btn-close {
+        background-color: var(--red-color);
+    }
+}

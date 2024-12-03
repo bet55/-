@@ -42,7 +42,7 @@
 
 }
 
-#comment-field {
+#rate-comment-field {
     display: flex;
     flex-direction: column;
 
@@ -63,41 +63,42 @@
     visibility: hidden;
 }
 
-#btn-save {
+#rate-btn-save {
     margin-top: 1em;
     height: 3em;
     width: 8em;
 }
 
-#btn-save:hover {
+#rate-btn-save:hover {
     cursor: pointer;
     background-color: #3c763d;
     border: none;
     font-weight: bold;
 }
 
-.rating {
+#rate-stars {
     display: inline-block;
+
+    input {
+        display: none;
+    }
+
+    label {
+        float: right;
+        cursor: pointer;
+        transition: color 0.3s;
+    }
 }
 
-.rating input {
-    display: none;
-}
 
-.rating label {
-    float: right;
-    cursor: pointer;
-    transition: color 0.3s;
-}
-
-.rating label:before {
+#rate-stars label:before {
     content: "\2605";
     font-size: 30px;
 }
 
-.rating input:checked ~ label,
-.rating label:hover,
-.rating label:hover ~ label {
+#rate-stars input:checked ~ label,
+#rate-stars label:hover,
+#rate-stars label:hover ~ label {
     color: #ffd700;
     transition: color 0.3s;
 }

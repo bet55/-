@@ -19,7 +19,7 @@
 <body>
 
 
-<div class="container-fluid text-center">
+<div class="container-fluid text-center" data-bs-theme="light">
 
     <div class="row first-row">
 
@@ -33,24 +33,30 @@
 
         <div class="col-md-3 header-options">
 
+            {% block header-button %} {% endblock %}
+        
             <div id="cart">
                 <img id="cart-img" src="{% static 'img/options_icons/shopping-cart.png' %}" alt="">
-                <ul id="cart-list">
-
-                </ul>
+                <ul id="cart-list"></ul>
             </div>
-
-            <img class="rate-toggle" src="{% static 'img/stickynotes/note2.png' %}" alt="">
 
             <div class="dropdown">
                 <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                     Кто?
                 </button>
                 <ul id="users-selector" class="dropdown-menu">
-                    <li><button class="dropdown-item" data-user-id="1">Лёха</button></li>
-                    <li><button class="dropdown-item" data-user-id="2">Саня</button></li>
-                    <li><button class="dropdown-item" data-user-id="3">Никитос</button></li>
-                    <li><button class="dropdown-item" data-user-id="4">Степан</button></li>
+                    <li>
+                        <button class="dropdown-item" data-user-id="2">Лёха</button>
+                    </li>
+                    <li>
+                        <button class="dropdown-item" data-user-id="3">Саня</button>
+                    </li>
+                    <li>
+                        <button class="dropdown-item" data-user-id="4">Никитос</button>
+                    </li>
+                    <li>
+                        <button class="dropdown-item" data-user-id="5">Степан</button>
+                    </li>
                 </ul>
             </div>
 
@@ -89,7 +95,7 @@
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-{#<script type="module" src="{% static 'js/based_layout.js' %}"></script>#}
+<script type="module" src="{% static 'js/based_layout.js' %}"></script>
 
 {% block script %} {% endblock %}
 

@@ -75,6 +75,7 @@ const removeFromCart = (filmId) => {
 // Обрабатываем кнопку показа списка фильмов из закладок
 function cartMoviesHandler() {
 
+
     // Заполняем список закладок фильмами из локал стораджа
     const filmIds = getStorageFilmIds();
     createFilmsList(filmIds);

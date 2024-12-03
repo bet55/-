@@ -1,14 +1,15 @@
 import {getCookie} from "../../utils/cookie.js";
-import {openModal} from "../rating_modal.js";
+import {showUserRequiredModal} from "../../utils/show_modal.js";
+import {showRatingModal} from "../rating_modal.js";
 
 export const rateMovie = (allMovies, movieId, target, posterContainer) => {
 
     const user = getCookie('user')
 
     if (!user) {
-        alert('Выберите пользователя')
+        showUserRequiredModal();
     } else {
-        openModal(movieId);
+        showRatingModal(movieId);
     }
 
 }

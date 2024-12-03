@@ -3,11 +3,11 @@ import {getCookie} from "../utils/cookie.js";
 
 const modalForm = document.querySelector('#rate-form');
 const starsHint = document.querySelector('#stars-hint');
-const stars = document.querySelectorAll('.rating input');
+const stars = document.querySelectorAll('#rate-stars input');
 const modalOverlay = document.querySelector('#rate-modal');
-const closeButton = document.querySelector('#btn-close');
-const saveButton = document.querySelector('#btn-save');
-const commentField = document.querySelector('#comment-area');
+const closeButton = document.querySelector('#rate-btn-close');
+const saveButton = document.querySelector('#rate-btn-save');
+const commentField = document.querySelector('#rate-comment-area');
 
 // Не отправляем форму
 modalForm.addEventListener('submit', (e) => {
@@ -48,7 +48,7 @@ closeButton.addEventListener('click', (e) => {
 
 
 const closeModal = (movieId, isSaved = false) => {
-
+    console.log('close modla')
     const star = Array.from(stars).filter((star) => Boolean(star.checked) === true).pop();
     const comment = commentField.value;
 
@@ -60,6 +60,7 @@ const closeModal = (movieId, isSaved = false) => {
     if (isSaved && star) {
         const rating = star.value;
         const userId = getCookie('user')
+        console.log('save rating', movieId, userId, rating)
 
         createNoteElement(movieId, userId, rating, comment);
         rateRequest(movieId, userId, rating, comment);
@@ -68,7 +69,7 @@ const closeModal = (movieId, isSaved = false) => {
 
 };
 
-export const openModal = (movieId) => {
+export const showRatingModal = (movieId) => {
 
     modalOverlay.style.display = 'block';
     modalOverlay.dataset.kpId = movieId;

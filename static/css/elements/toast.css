@@ -1,0 +1,19 @@
+
+#toast {
+    position: fixed;
+    right: 5em;
+    top: 20vh;
+
+}
+
+.toast_success {
+    background-color: darkolivegreen;
+}
+
+.toast_error {
+    background-color: var(--red-color);
+}
+
+.toast_info {
+    background-color: steelblue;
+}

@@ -95,7 +95,8 @@ def view_movie_by_id(request, kp_id):
 @api_view(['GET', 'POST'])
 def add_movie(request):
     if request.method == 'GET':
-        return render(request, 'add_movie.html')
+        random_images = Tools.get_random_images()
+        return render(request, 'add_movie.html', context={'random': random_images})
 
     kp_id = ''.join(char for char in list(request.data.get('kp_id', '')) if char.isdigit())
 

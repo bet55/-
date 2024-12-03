@@ -1,0 +1,27 @@
+{% load static %}
+
+<div id="user-alert" class="modal" tabindex="-1">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title"></h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <h2 class="fs-5">Погоди, друг!</h2>
+                <p>Сперва, представься!</p>
+                                <hr>
+                <p>Нажмите кнопку
+                    <button class="btn btn-secondary" data-bs-toggle="popover" title="Popover title"
+                            data-bs-content="Это пример. Сама кнопка на странице вверху.">Кто?
+                    </button>
+                    и выберите пользователя
+                </p>
+                
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn user-alert-btn-close" data-bs-dismiss="modal">Хорошо</button>
+            </div>
+        </div>
+    </div>
+</div>

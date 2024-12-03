@@ -1,3 +1,13 @@
+#rate-toggle {
+    height: 4em;
+
+    &:hover {
+        cursor: pointer;
+    }
+
+
+}
+
 .posters-grid {
     overflow: scroll;
     height: 100%;
@@ -10,6 +20,7 @@
     width: 10em;
     border: 0.5em solid var(--black-color);
     border-radius: 2%;
+    position: relative;
 }
 
 .poster-img {
@@ -26,6 +37,7 @@
 
     img {
         height: 85%;
+
         &:hover {
             cursor: pointer;
         }
@@ -40,6 +52,7 @@
     outline: 1em solid var(--black-color);
     margin-top: 1em;
 }
+
 .card-title {
     margin: 1rem;
     color: var(--red-color);

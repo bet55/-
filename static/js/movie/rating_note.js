@@ -30,7 +30,7 @@ const createNoteElement = (movieId, userId, rating, comment) => {
 }
 
 const removeRateRequest = async (movieId, userId) => {
-    const removeUrl = 'http://localhost:8000/movies/rate/remove';
+    const removeUrl = '/movies/rate/remove';
     const sendData = {
         user: userId,
         film: movieId
@@ -52,7 +52,7 @@ const removeRateRequest = async (movieId, userId) => {
 
 
 const rateRequest = async (movieId, userId, rating, comment) => {
-    const rateUrl = 'http://localhost:8000/movies/rate';
+    const rateUrl = '/movies/rate';
     const sendData = {
         user: userId,
         film: movieId,

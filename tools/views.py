@@ -9,22 +9,6 @@ from django.shortcuts import render
 from tools.serializers import UserSerializer
 
 
-@api_view(['GET'])
-def old_format(request):
-    response_format = request.query_params.get('format')
-    is_archive = 'archive' in request.path
-
-    mv = Movie()
-
-    if response_format == 'json':
-        movies = mv.get_all_movies(is_archive=is_archive)
-        return Response(movies)
-
-    movies = mv.get_all_movies(all_info=False, is_archive=is_archive)
-
-    return render(request, 'movies_old.html',
-                  context={'movies': movies, 'is_archive': is_archive})
-
 
 @api_view(['GET'])
 def view_notes(request):

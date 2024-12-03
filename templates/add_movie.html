@@ -4,22 +4,32 @@
 
 {% block style %}
     <link rel="stylesheet" href="{% static 'css/add_movie.css' %}">
+    <link rel="stylesheet" href="{% static 'css/elements/toast.css' %}">
 {% endblock %}
 
 {% block title %}Фильмы{% endblock %}
 
 {% block center-content %}
-    <div class="input-group">
-        <input type="text" id="form" placeholder="Ссылка на фильм">
 
-        <input type="submit" id="button" value="Добавить">
+    <form id="search-form">
+        <div>
+            <label for="movie-link" class="form-label">Ссылка на фильм</label>
+            <input type="url" class="form-control" id="movie-link" aria-describedby="kpLinkHelp">
+            <div id="kpLinkHelp" class="form-text">https://www.kinopoisk.ru/film/4626783/</div>
+        </div>
 
-    </div>
+        <button id="add-btn" type="button" class="btn">Добавить</button>
 
+    </form>
+
+{% endblock %}
+
+{% block fixed %}
+    {% include "elements/toast.html" %}
 {% endblock %}
 
 
 {% block script %}
-    <script async type="text/javascript" src="{% static 'js/add_movie.js' %}"></script>
+    <script type="module" src="{% static 'js/add_movie.js' %}"></script>
 {% endblock %}
 

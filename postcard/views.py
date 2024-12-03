@@ -4,13 +4,15 @@ from django.shortcuts import render
 from rest_framework.response import Response
 from rest_framework import status
 
+from classes import Tools
 from postcard.models import Postcard
 from postcard.serializers import PostcardSerializer
 
 
 @api_view()
 def view_postcard(request):
-    return render(request, 'postcard.html')
+    random_images = Tools.get_random_images()
+    return render(request, 'postcard.html', context={'random': random_images})
 
 
 class PostCardViewSet(APIView):

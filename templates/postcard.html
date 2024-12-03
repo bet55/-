@@ -10,28 +10,41 @@
 
 {% block center-content %}
 
-    <div class="container">
-        <div class="borders">
-            <div class="posters">
-                {#            <img src="{% static 'img/posters_examples/orig.jpeg' %}" alt="">#}
-                {#            <img src="{% static 'img/posters_examples/orig2.jpeg' %}" alt="">#}
-                {#            <img src="{% static 'img/posters_examples/orig3.jpeg' %}" alt="">#}
-                {#            <img src="{% static 'img/posters_examples/orig4.jpeg' %}" alt="">#}
+    <div class="papa">
+        <img class="mama" src="{% static 'img/postcard/pc18.jpg' %}" alt="">
+
+        <div id="posters-carousel" class="carousel slide docha">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="{% static 'img/posters_examples/frame_posters5.png' %}" class="d-block" alt="...">
+                </div>
+                <div class="carousel-item">
+                    <img src="{% static 'img/posters_examples/frame_posters4.png' %}" class="d-block " alt="...">
+                </div>
+                <div class="carousel-item">
+                    <img src="{% static 'img/posters_examples/frame_posters3.png' %}" class="d-block" alt="...">
+                </div>
+                <div class="carousel-item">
+                    <img src="{% static 'img/posters_examples/frame_posters1.png' %}" class="d-block" alt="...">
+                </div>
             </div>
-            <div class="title">
-                <span class="text-line">скоро...</span>
-                {#            <span class="text-line">КИНОПОКАЗ</span>#}
-            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#posters-carousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#posters-carousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
         </div>
 
 
     </div>
+
 {% endblock %}
 
 
-{#{% include "elements/movies_corf.html" %}#}
-
 
 {% block script %}
-    <script async type="module" src="{% static 'js/postcard.js' %}"></script>
+    {#    <script async type="module" src="{% static 'js/postcard.js' %}"></script>#}
 {% endblock %}
