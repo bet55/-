@@ -1,14 +1,30 @@
-import {setCookie} from "../utils/cookie.js";
+import {setCookie, getCookie} from "../utils/cookie.js";
 
+const usersPanel = document.querySelector('#users-panel');
+const usersSetButton = usersPanel.querySelector('.dropdown-toggle');
 const usersSelector = document.querySelector('#users-selector');
 
+const changeUserView = () => {
+
+    const currentUser = getCookie('user');
+
+    if (!currentUser) {
+        return '';
+    }
+    const userName = usersPanel.querySelector(`button[data-user-id="${currentUser}"]`).textContent;
+    usersSetButton.textContent = userName;
+}
+
 export function settingUserHandler() {
+    changeUserView();
+
     const usersElements = usersSelector.querySelectorAll('.dropdown-item');
 
     usersElements.forEach(e => {
         e.addEventListener('click', e => {
             const user = e.target.dataset.userId;
-            setCookie('user', user)
+            setCookie('user', user);
+            changeUserView();
         })
     })
 

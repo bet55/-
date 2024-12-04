@@ -41,23 +41,18 @@
                 <ul id="cart-list"></ul>
             </div>
 
-            <div class="dropdown">
+            <div id="users-panel" class="dropdown">
                 <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                     Кто?
                 </button>
                 <ul id="users-selector" class="dropdown-menu">
-                    <li>
-                        <button class="dropdown-item" data-user-id="2">Лёха</button>
-                    </li>
-                    <li>
-                        <button class="dropdown-item" data-user-id="3">Саня</button>
-                    </li>
-                    <li>
-                        <button class="dropdown-item" data-user-id="4">Никитос</button>
-                    </li>
-                    <li>
-                        <button class="dropdown-item" data-user-id="5">Степан</button>
-                    </li>
+                    {% for u in users %}
+
+                        <li>
+                            <button class="dropdown-item" data-user-id="{{ u.id }}">{{ u.first_name }}</button>
+                        </li>
+
+                    {% endfor %}
                 </ul>
             </div>
 

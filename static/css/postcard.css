@@ -41,6 +41,30 @@
     transform: rotate(2deg);
 }
 
+.stamp {
+    position: absolute;
+    top: 5%;
+    left: 10%;
+
+    height: 20%;
+}
+
+.postcard-container img:nth-child(5) {
+    top: 50%;
+    left: 25%;
+}
+
+.postcard-container img:nth-child(6) {
+    top: 75%;
+    left: 95%;
+    transform: rotate(6deg);
+
+    @media (min-width: 3000px) {
+        left: 105%;
+    }
+}
+
+
 .invitation {
     position: absolute;
     height: 50%;
@@ -50,9 +74,17 @@
     font-size: 2em;
     font-weight: bold;
 
-    span{
+    span {
         display: block;
         margin-bottom: 0.8em;
+    }
+
+    @media (min-width: 3000px) {
+        font-size: 4em;
+        span {
+            margin: 0 0 1.2em 6em;
+        }
+
     }
 
 }

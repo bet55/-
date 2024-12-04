@@ -15,6 +15,11 @@ body {
     font-size: 3.5rem;
     color: var(--red-color);
     font-weight: bold;
+
+    @media (min-width: 3000px) {
+        font-size: 9em;
+
+    }
 }
 
 .header-img {
@@ -27,32 +32,65 @@ body {
     align-items: center;
     justify-content: center;
 
-    #cart {
-        height: 100%;
-        display: flex;
-        align-items: center;
-        margin: 0 1em 0 1em;
-    }
+}
 
-    #cart-img {
-        height: 4em;
-
-        &:hover {
-            cursor: pointer;
-        }
-
-    }
-
+#users-panel {
+    height: 28%;
+    width: 25%;
+    display: flex;
+    align-items: center;
+    align-content: center;
+    text-align: center;
+    background-color: var(--black-color);
+    border-radius: var(--bs-border-radius);
 
     .dropdown-toggle {
+        height: 100%;
+        width: 100%;
+        text-align: center;
+        font-weight: bold;
         color: var(--white-color);
-        background-color: var(--black-color);
+
+        &:after {
+            content: none;
+        }
     }
 
     .dropdown-menu {
+        color: var(--black-color);
         background-color: var(--white-color);
     }
 
+
+    @media (min-width: 3000px) {
+        height: 29%;
+        width: 29%;
+
+        .dropdown-toggle {
+            font-size: 2.5em;
+        }
+
+        .dropdown-item {
+            height: 2em;
+            font-size: 3em;
+        }
+    }
+}
+
+/* Кнопка корзины - выпадающий список с фильмами */
+#cart {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    margin: 0 1em 0 1em;
+}
+
+#cart-img {
+    height: 40%;
+
+    &:hover {
+        cursor: pointer;
+    }
 
 }
 
@@ -69,10 +107,20 @@ body {
 
     backdrop-filter: blur(15px);
 
-    ul {
-        list-style-type: none;
-        margin: 0;
-        padding: 0;
+
+    span {
+        font-weight: bold;
+        font-size: 1em;
+    }
+
+    img {
+        width: 5em;
+        object-fit: contain;
+    }
+
+    .film-remove {
+        visibility: hidden;
+        cursor: pointer;
     }
 
     li {
@@ -89,28 +137,24 @@ body {
         color: var(--white-color);
         cursor: default;
 
-        span {
+        .film-remove {
             visibility: visible;
         }
 
-        .film-remove {
-            cursor: pointer;
+    }
+
+
+    @media (min-width: 3000px) {
+        right: 8vw;
+        width: 41em;
+
+        span {
+            font-size: 2em;
         }
-    }
 
-
-    span {
-        font-weight: bold;
-        font-size: 20px;
-    }
-
-    img {
-        width: 5em;
-        object-fit: contain;
-    }
-
-    .film-remove {
-        visibility: hidden;
+        img {
+            width: 12em;
+        }
     }
 
 }
@@ -127,10 +171,14 @@ body {
     flex-direction: column;
     justify-content: space-around;
 
-    a {
+    .nav-link {
         font-weight: bold;
         font-size: 2rem;
         color: var(--black-color);
+
+        @media screen and (min-width: 3000px) {
+            font-size: 4rem;
+        }
 
         &:hover {
             color: var(--orange-color);
@@ -141,7 +189,8 @@ body {
 
 }
 
-
 .nav-img {
     height: 45%;
 }
+
+

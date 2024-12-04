@@ -5,14 +5,18 @@ from rest_framework.response import Response
 from rest_framework import status
 
 from classes import Tools
+from lists.models import AppUser
+from lists.serializers import UserSerializer
 from postcard.models import Postcard
 from postcard.serializers import PostcardSerializer
 
 
 @api_view()
 def view_postcard(request):
+    users = AppUser.objects.all()
+    us_sr = UserSerializer(users, many=True)
     random_images = Tools.get_random_images()
-    return render(request, 'postcard.html', context={'random': random_images})
+    return render(request, 'postcard.html', context={'random': random_images, 'users': us_sr.data})
 
 
 class PostCardViewSet(APIView):

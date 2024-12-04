@@ -11,7 +11,6 @@
     margin-top: 1em;
 
     outline: 1em solid black;
-    /*border: 0.5em solid var(--orange-color);*/
     border: 0.5em solid wheat;
 
     > div {
@@ -30,4 +29,18 @@
 #add-btn {
     background-color: var(--orange-color);
     margin: 1em;
+}
+
+@media (min-width: 3000px) {
+    #search-form {
+        font-size: 2em;
+
+        input {
+            font-size: 1em;
+        }
+    }
+
+    #add-btn {
+        font-size: 1em;
+    }
 }

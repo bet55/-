@@ -3,13 +3,13 @@
 {% load static %}
 
 {% block style %}
-    <link rel="stylesheet" href="{% static 'css/cringe.css' %}">
+    <link rel="stylesheet" href="{% static 'css/statistic.css' %}">
 {% endblock %}
 {% block title %}Фильмы{% endblock %}
 
 {% block center-content %}
 
-    <div class="stats">
+    <div id="stats">
         <ul>
             <li>Всего посмотренно фильмов: <span>{{ statistic.count }} </span></li>
             <li>Общая продолжительность: <span>{{ statistic.total_duration }}</span></li>

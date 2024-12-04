@@ -1,3 +1,4 @@
+/* Кнопка в правом верху ========================================================*/
 #rate-toggle {
     height: 4em;
 
@@ -8,6 +9,8 @@
 
 }
 
+
+/* Основной блок с фильмами ========================================================*/
 .posters-grid {
     overflow: scroll;
     height: 100%;
@@ -29,11 +32,23 @@
             visibility: visible;
         }
     }
+
+
+    @media (min-width: 3000px) {
+        height: 32em;
+        width: 20em;
+
+    }
+
 }
 
 .poster-img {
     width: 100%;
     height: 13em;
+
+    @media (min-width: 3000px) {
+        height: 27em;
+    }
 }
 
 .poster-settings {
@@ -52,8 +67,14 @@
         }
     }
 
+    @media (min-width: 3000px) {
+        height: 4em;
+    }
+
 }
 
+
+/* Карточка в правой части ========================================================*/
 .card-img {
     width: 20em;
     height: 27em;
@@ -61,9 +82,20 @@
     outline: 1em solid var(--black-color);
     margin-top: 1em;
     object-fit: cover;
+
+    @media (min-width: 3000px) {
+        width: 42em;
+        height: 60em;
+    }
 }
 
 .card-title {
     margin: 1rem;
     color: var(--red-color);
+
+    @media (min-width: 3000px) {
+        font-size: 5em;
+    }
 }
+
+
