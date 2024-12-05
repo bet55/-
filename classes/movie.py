@@ -10,7 +10,7 @@ class Movie:
     KPEntities = namedtuple('KPEntities', ['movie', 'persons', 'genres'])
 
     def get_movie(self, kp_id: int | str) -> dict:
-        film_model = FilmModel.mgr.filter(kp_id=kp_id)
+        film_model = FilmModel.mgr.get(kp_id=kp_id)
         serialize = FilmSerializer(film_model)
         return serialize.data
 

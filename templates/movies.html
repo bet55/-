@@ -13,7 +13,7 @@
 
 {% block header-button %}
     {% if is_archive %}
-        <img id="rate-toggle" src="{% static 'img/stickynotes/note2.png' %}" alt="">
+        {% include "elements/rating_notes.html" %}
     {% endif %}
 {% endblock %}
 
@@ -64,7 +64,7 @@
 {% endblock %}
 
 {% block right-content %}
-    <div class="col">
+    <div class="card-container">
         <img class="card-img" src="{{ random.card }}">
         <h2 class="card-title"></h2>
         <p class="card-description"></p>

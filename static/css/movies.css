@@ -1,14 +1,3 @@
-/* Кнопка в правом верху ========================================================*/
-#rate-toggle {
-    height: 4em;
-
-    &:hover {
-        cursor: pointer;
-    }
-
-
-}
-
 
 /* Основной блок с фильмами ========================================================*/
 .posters-grid {
@@ -94,8 +83,31 @@
     color: var(--red-color);
 
     @media (min-width: 3000px) {
-        font-size: 5em;
+        font-size: 4.5em;
     }
 }
 
+.card-description {
+    height: 4.5em;
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+    display: inline;
+    -webkit-line-clamp: 3;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    word-wrap: break-word;
+}
+
+.card-container {
+    height: 100%;
+
+    @media (min-width: 3000px) {
+        margin-right: 1em;
+        h3, p {
+            font-size: 3em;
+        }
+    }
+
+}
 

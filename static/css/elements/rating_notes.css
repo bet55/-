@@ -3,10 +3,27 @@
     src: local('Abc'), url('../../fonts/DS Stamper.ttf') format('opentype');
 }
 
+
+#rate-toggle-container {
+    height: 100%;
+    display: flex;
+    align-items: center;
+
+    &:hover {
+        cursor: pointer;
+    }
+
+
+}
+
+#rate-toggle {
+    height: 40%;
+}
+
 .note-container {
     visibility: hidden;
     position: absolute;
-    top:0;
+    top: 0;
     left: 0;
     height: 14em;
     width: 100%;
@@ -14,6 +31,11 @@
 
 
 .note {
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
     font-family: "noteFont", 'sans-serif';
 
     position: absolute;
@@ -21,7 +43,6 @@
     width: 3em;
 
     background: #ffc;
-    display: block;
     box-shadow: 5px 5px 7px rgba(33, 33, 33, .7);
     transform: rotate(-6deg);
     transition: transform .15s linear;
@@ -40,6 +61,15 @@
         font-size: 3em;
     }
 
+    @media (min-width: 3000px) {
+        height: 6em;
+        width: 6em;
+
+        h2 {
+            font-size: 3em;
+        }
+    }
+
 
 }
 
@@ -56,6 +86,11 @@
     top: 2em;
     left: 5em;
     background: var(--yellow-color);
+
+    @media (min-width: 3000px) {
+        top: 4em;
+        left: 11em;
+    }
 }
 
 .note[data-user-id="4"] {
@@ -63,6 +98,11 @@
     top: 6em;
     left: 1em;
     background: var(--white-color);
+
+    @media (min-width: 3000px) {
+        top: 11em;
+        left: 2em;
+    }
 }
 
 .note[data-user-id="5"] {
@@ -70,6 +110,11 @@
     top: 8em;
     left: 5em;
     background: var(--orange-color);
+
+    @media (min-width: 3000px) {
+        top: 14em;
+        left: 10em;
+    }
 }
 
 
