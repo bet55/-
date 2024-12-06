@@ -41,11 +41,11 @@ class Tools:
         return f'/static/img/madness/{random_img}' if random_img else DEFAULT_IMG
 
     async def init_project(self):
-        await self.check_project_pre_creation()
+        # self.check_project_pre_creation()
         await self.create_users()
         await self.save_movies_to_db()
 
-    async def check_project_pre_creation(self):
+    def check_project_pre_creation(self):
         users = AppUser.objects.all()
         if len(users) > 1:
             raise Exception('В системе уже есть пользователи')
@@ -53,7 +53,7 @@ class Tools:
             raise Exception('Сперва создайте супер пользователя')
 
     async def create_users(self):
-        url = 'http://localhost:8000/static/img/avatars/'
+        url = '/static/img/avatars/'
         users = [
             {'username': 'drbloody1', 'first_name': 'Алексей', 'last_name': 'Губин', 'avatar': url + 'drbloody1.jpg'},
             {'username': 'daenillando', 'first_name': 'Александр', 'last_name': 'Бусыгин', 'avatar': url + 'Deputant.png'},
