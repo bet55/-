@@ -60,7 +60,6 @@ const closeModal = (movieId, isSaved = false) => {
     if (isSaved && star) {
         const rating = star.value;
         const userId = getCookie('user')
-        console.log('save rating', movieId, userId, rating)
 
         createNoteElement(movieId, userId, rating, comment);
         rateRequest(movieId, userId, rating, comment);

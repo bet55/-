@@ -98,6 +98,7 @@ body {
     visibility: hidden;
 
     position: absolute;
+    z-index: 2;
 
     top: 20vh;
     right: 6vw;

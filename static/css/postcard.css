@@ -8,53 +8,68 @@
 }
 
 
-.poster {
+#posters {
     position: absolute;
-    height: 45%;
-    /*width: 30%;*/
-
-    /*filter: grayscale(0.5) blur(1px) contrast(1.2) sepia(1);*/
-    /*-webkit-mask: radial-gradient(#000, #0009);*/
-
-    /*border-image-width: 5em;*/
-    /*border: 10px solid grey;*/
-    /*border-image: url("../../static/img/border/brd1.png") 50% / 20px;*/
-
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
 }
 
 
-.poster:nth-child(2) {
-    top: 21%;
+.poster {
+    position: absolute;
+    height: 45%;
+
+    &:hover {
+        filter: hue-rotate(180deg);
+    }
+}
+
+
+/* Постеры фильмов  */
+.poster:nth-child(1) {
+    top: 18%;
     left: 8%;
     transform: rotate(-6deg);
 }
 
-.poster:nth-child(3) {
-    top: 30%;
-    left: 30%;
+.poster:nth-child(2) {
+    top: 20%;
+    left: 35%;
     transform: rotate(10deg);
 }
 
-.poster:nth-child(4) {
-    top: 52%;
-    left: 20%;
-    transform: rotate(2deg);
+.poster:nth-child(3) {
+    top: 48%;
+    left: 12%;
+    transform: rotate(-5deg);
 }
+
+.poster:nth-child(4) {
+    top: 53%;
+    left: 31%;
+    transform: rotate(4deg);
+}
+
+
+/* Декоративные штампы */
+
+
 
 .stamp {
     position: absolute;
-    top: 5%;
-    left: 10%;
-
     height: 20%;
 }
 
-.postcard-container img:nth-child(5) {
+
+.stamp_1 {
     top: 50%;
     left: 25%;
 }
 
-.postcard-container img:nth-child(6) {
+.stamp_2 {
+    position: absolute;
     top: 75%;
     left: 95%;
     transform: rotate(6deg);
@@ -64,19 +79,27 @@
     }
 }
 
-
-.invitation {
+/* Текстовое описание приглашения */
+#invitation {
     position: absolute;
     height: 50%;
     width: 50%;
     top: 38%;
     left: 58%;
-    font-size: 2em;
+    font-size: 1.8em;
     font-weight: bold;
+
 
     span {
         display: block;
-        margin-bottom: 0.8em;
+        margin-left: 0.5em;
+        margin-bottom: 1em;
+
+        overflow: hidden;
+        text-overflow: ellipsis;
+        text-wrap: nowrap;
+        max-width: 100%;
+
     }
 
     @media (min-width: 3000px) {

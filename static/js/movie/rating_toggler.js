@@ -1,26 +1,39 @@
 const rateToggler = document.querySelector('#rate-toggle');
 
 const changeNotesVisibility = () => {
-    let visibility = 'hidden';
+    const rateNotes = document.querySelectorAll('.note-container')
+    let visibility = localStorage.getItem('ratingVisibility') || 'hidden';
+
+    // Сохраняем состояние со слоем оценок
+    if (visibility === 'visible') {
+        rateNotes.forEach(note => {
+            note.style.visibility = visibility;
+        })
+
+    }
+
 
     return () => {
 
-        const rateNotes = document.querySelectorAll('.note-container')
-        visibility = visibility === 'visible' ? 'hidden' : 'visible';
+        visibility = (visibility === 'visible') ? 'hidden' : 'visible';
+
+        localStorage.setItem('ratingVisibility', visibility);
 
         rateNotes.forEach(note => {
             note.style.visibility = visibility
         })
     }
 }
+
+
 const visibilityToggler = changeNotesVisibility()
 
 export function showRatingNotesHandler() {
     if (!rateToggler) {
         return ''
     }
+
     rateToggler.addEventListener('click', (event) => {
-        console.log('show notes!');
         visibilityToggler();
     })
 

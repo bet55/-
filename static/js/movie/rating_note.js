@@ -1,7 +1,6 @@
 const createNoteElement = (movieId, userId, rating, comment) => {
     const userNote = document.querySelector(`.note-container[data-kp-id="${movieId}"] .note[data-user-id="${userId}"]`)
     if (userNote) {
-        console.log('exist')
         const noteH2 = userNote.querySelector('h2');
         // const noteP = userNote.querySelector('p');
         // noteP.textContent = comment;

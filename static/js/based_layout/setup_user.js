@@ -1,4 +1,4 @@
-import {setCookie, getCookie} from "../utils/cookie.js";
+import {setCookie, getCookie, deleteCookie} from "../utils/cookie.js";
 
 const usersPanel = document.querySelector('#users-panel');
 const usersSetButton = usersPanel.querySelector('.dropdown-toggle');
@@ -12,6 +12,12 @@ const changeUserView = () => {
         return '';
     }
     const userName = usersPanel.querySelector(`button[data-user-id="${currentUser}"]`).textContent;
+
+    if (!userName) {
+        deleteCookie('user');
+        return '';
+    }
+
     usersSetButton.textContent = userName;
 }
 

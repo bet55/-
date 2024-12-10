@@ -1,3 +1,3 @@
-import {cartMoviesHandler} from "./utils/movies_cart.js";
+import {cartHandler} from "./postcard/movies_cart.js";
 
-cartMoviesHandler() // корзина с выбранными фильмами
+cartHandler();

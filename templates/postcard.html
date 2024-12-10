@@ -13,21 +13,22 @@
     <div class="postcard-container">
         <img class="postcard" src="{% static 'img/postcard/pc18.jpg' %}" alt="">
 
-        <img class="poster" src="{% static 'img/posters_examples/frame_posters5.png' %}" alt="...">
-        <img class="poster" src="{% static 'img/posters_examples/frame_posters4.png' %}" alt="...">
-        <img class="poster" src="{% static 'img/posters_examples/frame_posters3.png' %}" alt="...">
-
-        <img class="stamp" src="{% static 'img/stamp/stamp5.png' %}" alt="...">
-        <img class="stamp" src="{% static 'img/stamp/stamp13.png' %}" alt="...">
-        
-
-        <div class="invitation">
-            <span>7 декабря в 14:00</span>
-            <span>&nbsp</span>
-            <span>Свидетель</span>
-            <span>Здесь курят</span>
-            <span>Шпион</span>
+        <div id="posters">
+            <img src="{% static 'img/posters_examples/orig_posters1.jpeg' %}" alt="" class="poster">
+            <img src="{% static 'img/posters_examples/orig_posters2.jpeg' %}" alt="" class="poster">
+            <img src="{% static 'img/posters_examples/orig_posters3.jpeg' %}" alt="" class="poster">
         </div>
+
+        <div id="invitation">
+            <span>Скоро ...</span>
+            <span>&nbsp</span>
+        </div>
+
+
+        <img class="stamp stamp_1" src="{% static 'img/stamp/stamp5.png' %}" alt="...">
+        <img class="stamp stamp_2" src="{% static 'img/stamp/stamp13.png' %}" alt="...">
+
+
 
     </div>
 
@@ -36,5 +37,5 @@
 
 
 {% block script %}
-    {#    <script async type="module" src="{% static 'js/postcard.js' %}"></script>#}
+    <script type="module" src="{% static 'js/postcard.js' %}"></script>
 {% endblock %}
