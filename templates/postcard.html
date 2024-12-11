@@ -4,9 +4,15 @@
 
 {% block style %}
     <link rel="stylesheet" href="{% static 'css/postcard.css' %}">
+    <link rel="stylesheet" href="{% static 'css/elements/postcard_save.css' %}">
 {% endblock %}
 
 {% block title %}Фильмы{% endblock %}
+
+{% block header-button %}
+    {% include "elements/postcard_save.html" %}
+{% endblock %}
+
 
 {% block center-content %}
 
@@ -14,13 +20,13 @@
         <img class="postcard" src="{% static 'img/postcard/pc18.jpg' %}" alt="">
 
         <div id="posters">
-            <img src="{% static 'img/posters_examples/orig_posters1.jpeg' %}" alt="" class="poster">
-            <img src="{% static 'img/posters_examples/orig_posters2.jpeg' %}" alt="" class="poster">
-            <img src="{% static 'img/posters_examples/orig_posters3.jpeg' %}" alt="" class="poster">
+{#            <img src="{% static 'img/posters_examples/orig_posters1.jpeg' %}" alt="" class="poster">#}
+{#            <img src="{% static 'img/posters_examples/orig_posters2.jpeg' %}" alt="" class="poster">#}
+{#            <img src="{% static 'img/posters_examples/orig_posters3.jpeg' %}" alt="" class="poster">#}
         </div>
 
         <div id="invitation">
-            <span>Скоро ...</span>
+            <span id="invitation-title" contentEditable="true" spellcheck="false">Скоро ...</span>
             <span>&nbsp</span>
         </div>
 
@@ -31,6 +37,7 @@
 
 
     </div>
+    <iframe name="print_frame" width="0" height="0" frameborder="0" src="about:blank"></iframe>
 
 {% endblock %}
 

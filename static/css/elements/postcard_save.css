@@ -1,0 +1,15 @@
+#postcard-save-container {
+    height: 100%;
+    display: flex;
+    align-items: center;
+
+    &:hover {
+        cursor: pointer;
+    }
+
+
+}
+
+#postcard-save-button {
+    height: 40%;
+}
