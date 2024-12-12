@@ -6,6 +6,5 @@ export const formatTime = (mins) => {
         hours = '~';
         minutes = '~';
     }
-    console.log(hours)
     return `${hours} часа ${minutes} минуты`;
 }

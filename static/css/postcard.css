@@ -1,9 +1,9 @@
-.postcard-container {
+#postcard-container {
     height: 90%;
     position: relative;
 }
 
-.postcard {
+#postcard {
     height: 100%;
 }
 
@@ -16,10 +16,28 @@
     width: 100%;
 }
 
+.poster-container {
+    position: absolute;
+    height: 16em;
+    width: 12em;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.border {
+    width: 100%;
+    height: 100%;
+}
+
 
 .poster {
     position: absolute;
-    height: 45%;
+    top: 0.8em;
+    left: 0.9em;
+    height: 90%;
+    width: 85%;
 
     &:hover {
         filter: hue-rotate(180deg);
@@ -28,25 +46,25 @@
 
 
 /* Постеры фильмов  */
-.poster:nth-child(1) {
+.poster-container:nth-child(1) {
     top: 18%;
     left: 8%;
     transform: rotate(-6deg);
 }
 
-.poster:nth-child(2) {
+.poster-container:nth-child(2) {
     top: 20%;
     left: 35%;
     transform: rotate(10deg);
 }
 
-.poster:nth-child(3) {
+.poster-container:nth-child(3) {
     top: 48%;
     left: 12%;
     transform: rotate(-5deg);
 }
 
-.poster:nth-child(4) {
+.poster-container:nth-child(4) {
     top: 53%;
     left: 31%;
     transform: rotate(4deg);
@@ -54,7 +72,6 @@
 
 
 /* Декоративные штампы */
-
 
 
 .stamp {

@@ -16,13 +16,14 @@
 
 {% block center-content %}
 
-    <div class="postcard-container">
-        <img class="postcard" src="{% static 'img/postcard/pc18.jpg' %}" alt="">
+    <div id="postcard-container">
+        <img id="postcard" src="{% static 'img/postcard/pc18.jpg' %}" alt="">
 
         <div id="posters">
-{#            <img src="{% static 'img/posters_examples/orig_posters1.jpeg' %}" alt="" class="poster">#}
-{#            <img src="{% static 'img/posters_examples/orig_posters2.jpeg' %}" alt="" class="poster">#}
-{#            <img src="{% static 'img/posters_examples/orig_posters3.jpeg' %}" alt="" class="poster">#}
+            {#            <div class="poster-container">#}
+            {#                <img src="{% static 'img/border/frame4.png' %}" alt="" class="border">#}
+            {#                <img src="{% static 'img/posters_examples/orig_posters1.jpeg' %}" alt="" class="poster">#}
+            {#            </div>#}
         </div>
 
         <div id="invitation">
@@ -35,14 +36,14 @@
         <img class="stamp stamp_2" src="{% static 'img/stamp/stamp13.png' %}" alt="...">
 
 
-
     </div>
-    <iframe name="print_frame" width="0" height="0" frameborder="0" src="about:blank"></iframe>
+    
 
 {% endblock %}
 
 
 
 {% block script %}
+    <script type="module" src="https://cdn.jsdelivr.net/npm/html2canvas@1.0.0-rc.5/dist/html2canvas.min.js"></script>
     <script type="module" src="{% static 'js/postcard.js' %}"></script>
 {% endblock %}

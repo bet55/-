@@ -41,19 +41,34 @@
 
                 <div class="poster-settings">
 
-                    <img class="opt opt-booked" src="{% static 'img/options_icons/bookmark4.png' %}" alt="">
+                    <img class="opt opt-booked" src="{% static 'img/options_icons/bookmark4.png' %}" alt=""
+                         data-bs-toggle="tooltip"
+                         data-bs-placement="top"
+                         data-bs-title="Добавить в закладки">
 
                     {% if is_archive %}
-                        <img class="opt opt-archive" src="{% static 'img/options_icons/archive3.png' %}" alt="">
+                        <img class="opt opt-archive" src="{% static 'img/options_icons/archive3.png' %}" alt=""
+                             data-bs-toggle="tooltip"
+                             data-bs-placement="top"
+                             data-bs-title="Добавить в архив">
                     {% else %}
-                        <img class="opt opt-archive" src="{% static 'img/options_icons/archive4.png' %}" alt="">
+                        <img class="opt opt-archive" src="{% static 'img/options_icons/archive4.png' %}" alt=""
+                             data-bs-toggle="tooltip"
+                             data-bs-placement="top"
+                             data-bs-title="Убрать из архива">
                     {% endif %}
 
                     {% if is_archive %}
-                        <img class="opt opt-rate" src="{% static 'img/options_icons/heart4.png' %}" alt="">
+                        <img class="opt opt-rate" src="{% static 'img/options_icons/heart4.png' %}" alt=""
+                             data-bs-toggle="tooltip"
+                             data-bs-placement="top"
+                             data-bs-title="Оценить">
                     {% endif %}
 
-                    <img class="opt opt-remove" src="{% static 'img/options_icons/boom2.png' %}" alt="">
+                    <img class="opt opt-remove" src="{% static 'img/options_icons/boom2.png' %}" alt=""
+                         data-bs-toggle="tooltip"
+                         data-bs-placement="top"
+                         data-bs-title="Удалить">
                 </div>
             </div>
 

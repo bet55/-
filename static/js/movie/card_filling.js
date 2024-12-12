@@ -25,9 +25,16 @@ const showMoviePoster = (movieId, allMovies) => {
 export function fillMovieCard(allMovies) {
 
     moviePosters.addEventListener('click', async (event) => {
-        let target = event.target;
+        const target = event.target;
+        const classList = target.classList;
 
-        if (target.classList.contains('poster-container') || target.classList.contains('poster-img')) {
+        // Проверяем, что нажали на постер или один из перекрывающих элементов
+        const isPosterClicked =
+            classList.contains('poster-container') ||
+            classList.contains('poster-img') ||
+            classList.contains('note-container');
+
+        if (isPosterClicked) {
             const movieId = target.dataset.kpId;
 
             showMoviePoster(movieId, allMovies);
