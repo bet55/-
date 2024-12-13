@@ -31,7 +31,15 @@
     margin: 1em;
 }
 
-@media (min-width: 3000px) {
+@media (min-width: 2500px) {
+    #movie-link {
+        width: 65%;
+    }
+
+    .form-label {
+        margin-bottom: 1em;
+    }
+
     #search-form {
         font-size: 2em;
 
@@ -41,6 +49,21 @@
     }
 
     #add-btn {
+        padding: 0.3em;
         font-size: 1em;
+    }
+}
+
+@media (min-width: 3000px) {
+    #search-form {
+        font-size: 3em;
+
+        input {
+            font-size: 1em;
+        }
+    }
+
+    #add-btn {
+        padding: 0.5em;
     }
 }
