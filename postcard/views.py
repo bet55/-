@@ -11,7 +11,7 @@ from postcard.models import Postcard
 from postcard.serializers import PostcardSerializer
 
 
-@api_view()
+@api_view(['GET'])
 def view_postcard(request):
     users = AppUser.objects.all()
     us_sr = UserSerializer(users, many=True)

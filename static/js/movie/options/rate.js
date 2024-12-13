@@ -9,7 +9,7 @@ export const rateMovie = (allMovies, movieId, target, posterContainer) => {
     if (!user) {
         showUserRequiredModal();
     } else {
-        showRatingModal(movieId);
+        showRatingModal(movieId, allMovies);
     }
 
 }

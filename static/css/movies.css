@@ -95,7 +95,11 @@
 }
 
 .card-description {
-    height: 4.5em;
+    /*height: 4.5em;*/
+
+}
+
+.card-description-hidden {
     overflow: hidden;
     text-overflow: ellipsis;
 

@@ -1,0 +1,46 @@
+{% load static %}
+
+<div id="rate-modal" class="modal" tabindex="-1">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Оцените фильм</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+
+                <div id="rate-poster">
+                    <img src="" alt="">
+                </div>
+                <h2 class="fs-5 rate-title">Кино</h2>
+
+                <div id="rate-stars">
+                    <input type="radio" id="star10" name="rating" value="10"/>
+                    <label for="star10"></label>
+                    <input type="radio" id="star9" name="rating" value="9"/>
+                    <label for="star9"></label>
+                    <input type="radio" id="star8" name="rating" value="8"/>
+                    <label for="star8"></label>
+                    <input type="radio" id="star7" name="rating" value="7"/>
+                    <label for="star7"></label>
+                    <input type="radio" id="star6" name="rating" value="6"/>
+                    <label for="star6"></label>
+                    <input type="radio" id="star5" name="rating" value="5"/>
+                    <label for="star5"></label>
+                    <input type="radio" id="star4" name="rating" value="4"/>
+                    <label for="star4"></label>
+                    <input type="radio" id="star3" name="rating" value="3"/>
+                    <label for="star3"></label>
+                    <input type="radio" id="star2" name="rating" value="2"/>
+                    <label for="star2"></label>
+                    <input type="radio" id="star1" name="rating" value="1"/>
+                    <label for="star1"></label>
+                </div>
+                <div id="stars-hint"><span>0/10</span></div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn rate-btn-save" data-bs-dismiss="modal">Сохранить</button>
+            </div>
+        </div>
+    </div>
+</div>

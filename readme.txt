@@ -1,11 +1,9 @@
 # Старт приложения
-sh init.sh
+sh start.sh
 
 # Переменные окружения для работы
 kp_api_token
 
-# Посмотреть работу с uv в django
-https://blog.pecar.me/uv-with-django
 
 
 Django:
@@ -19,24 +17,13 @@ Django:
 - Response vs render
 
 Front:
-- дефолтный пользователь
 - частичная загрузка постеров
     - https://imagekit.io/blog/lazy-loading-images-complete-guide/
     - https://css-loaders.com/time/
     - https://projects.lukehaas.me/css-loaders/
 
 - класс обработок ошибок
-
-- формирование евента
-
 - проверить верстку для 2к моника
-
-- Кнопка раскрывания информации о фильме
-
-- Сохранение состояние кнопки отображения заметок
-
-- Подписи к кнопкам
-
 - Анимированные иконки
 
 
@@ -48,7 +35,6 @@ Front:
 - postgresql
 - docker
 - edgeDB
-
 
 
 Статистика:

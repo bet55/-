@@ -5,5 +5,10 @@
 
     .user-alert-btn-close {
         background-color: var(--red-color);
+        color: var(--white-color);
+
+        &:hover {
+            background-color: var(--bs-danger);
+        }
     }
 }

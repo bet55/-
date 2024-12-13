@@ -20,9 +20,22 @@ const showMoviePoster = (movieId, allMovies) => {
     cardDuration.textContent = formatTime(allMovies[movieId].duration);
     cardLink.textContent = `https://www.kinopoisk.ru/film/${allMovies[movieId].kp_id}/`
     cardLink.href = `https://www.kinopoisk.ru/film/${allMovies[movieId].kp_id}/`
+
+
 }
 
 export function fillMovieCard(allMovies) {
+
+    // Возможность раскрывать/прятать текст описания
+    cardDescription.addEventListener('click', e => {
+
+        if (cardDescription.classList.contains('card-description-hidden')) {
+            cardDescription.classList.remove('card-description-hidden');
+        } else {
+            cardDescription.classList.add('card-description-hidden');
+        }
+
+    })
 
     moviePosters.addEventListener('click', async (event) => {
         const target = event.target;

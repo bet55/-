@@ -82,7 +82,7 @@
     <div class="card-container">
         <img class="card-img" src="{{ random.card }}">
         <h2 class="card-title"></h2>
-        <p class="card-description"></p>
+        <p class="card-description card-description-hidden"></p>
         <h3 class="card-realise"></h3>
         <p class="card-duration"></p>
         <p class="card-link"><a href=""></a></p>
@@ -91,7 +91,7 @@
 
 
 {% block fixed %}
-    {% include "elements/ratting_modal.html" %}
+    {% include "elements/rating_modal.html" %}
     {% include "elements/user_requirement_modal.html" %}
 {% endblock %}
 

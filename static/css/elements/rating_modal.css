@@ -1,45 +1,12 @@
-#rate-modal {
-    display: none; /* Hidden by default */
-    position: fixed; /* Stay in place */
-    z-index: 1; /* Sit on top */
-    padding-top: 100px; /* Location of the box */
-    left: 0;
-    top: 0;
-    width: 100%; /* Full width */
-    height: 100%; /* Full height */
-    overflow: auto; /* Enable scroll if needed */
-    background-color: rgb(0, 0, 0); /* Fallback color */
-    background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+.modal-content {
+    background-color: var(--white-color);
 }
 
-#rate-modal header {
-    display: grid;
-    grid-template-columns: 5fr 1fr;
 
-    h2 {
-
+#rate-poster {
+    img {
+        height: 10em;
     }
-
-    span {
-        font-size: 2em;
-        justify-self: end;
-    }
-
-    span:hover {
-        cursor: pointer;
-    }
-
-}
-
-#rate-form {
-
-    background-color: #9d9d9d;
-    width: 30%;
-
-
-    margin: auto;
-    padding: 2em;
-
 }
 
 #rate-comment-field {
@@ -63,18 +30,16 @@
     visibility: hidden;
 }
 
-#rate-btn-save {
-    margin-top: 1em;
-    height: 3em;
-    width: 8em;
+.rate-btn-save {
+    color: black;
+    background-color: var(--green-color);
+
+    &:hover {
+        cursor: pointer;
+        background-color: #3c763d;
+    }
 }
 
-#rate-btn-save:hover {
-    cursor: pointer;
-    background-color: #3c763d;
-    border: none;
-    font-weight: bold;
-}
 
 #rate-stars {
     display: inline-block;
@@ -99,6 +64,6 @@
 #rate-stars input:checked ~ label,
 #rate-stars label:hover,
 #rate-stars label:hover ~ label {
-    color: #ffd700;
+    color: rgb(238, 161, 13);
     transition: color 0.3s;
 }
