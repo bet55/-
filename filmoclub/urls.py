@@ -25,4 +25,5 @@ urlpatterns = [
     path('', include('postcard.urls')),
     path('tools/', include('tools.urls')),
     path('statistic/', include('statistic.urls')),
+    path('features/', include('features.urls')),
 ]

@@ -1,0 +1,41 @@
+{% extends "based_layout.html" %}
+
+{% load static %}
+
+{% block style %}
+    <link rel="stylesheet" href="{% static 'css/features/carousel.css' %}">
+{% endblock %}
+
+{% block title %}Рулетка{% endblock %}
+
+
+{% block center-content %}
+    <div id="carousel-container">
+
+
+        <div id="carousel">
+
+            {% for m in movies %}
+                <div class="poster" data-kp-id="{{ m.kp_id }}"><img src="{{ m.poster }}" alt=""></div>
+            {% endfor %}
+
+
+            <div class="arrow">
+                <img src="{% static 'img/carousel/arrow1.png' %}" alt="">
+            </div>
+        </div>
+
+        <div id="result"></div>
+
+        <div id="start">
+            <button>Стартуем</button>
+        </div>
+    </div>
+{% endblock %}
+
+
+{% block script %}
+    <script type="module" src="{% static 'js/features/carousel.js' %}"></script>
+{% endblock %}
+
+

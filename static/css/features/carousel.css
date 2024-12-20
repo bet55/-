@@ -1,0 +1,129 @@
+#carousel-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+#carousel {
+    opacity: 1;
+    position: relative;
+    background-color: darkred;
+    width: 100%;
+    height: 30%;
+    overflow: hidden;
+
+    display: flex;
+}
+
+.poster {
+    border: 4px solid darkred;
+
+
+    img {
+        height: 100%;
+        width: 150px;
+        object-fit: cover;
+    }
+}
+
+.smooth {
+    transition: transform .5s;
+}
+
+.fadeout {
+    animation-duration: 1s;
+    animation-name: fade-out;
+    animation-fill-mode: forwards;
+
+}
+
+/* Удаление постера */
+@keyframes fade-out {
+    from {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0;
+    }
+}
+
+/* Тряска стрелочки */
+@keyframes skew-y-shake {
+    0% {
+        transform: skewY(-15deg);
+    }
+    5% {
+        transform: skewY(15deg);
+    }
+    10% {
+        transform: skewY(-15deg);
+    }
+    15% {
+        transform: skewY(15deg);
+    }
+    20% {
+        transform: skewY(0deg);
+    }
+    100% {
+        transform: skewY(0deg);
+    }
+}
+
+.shake {
+    animation: skew-y-shake 1.3s infinite;
+}
+
+.arrow {
+
+    position: absolute;
+    height: 4em;
+    bottom: 5%;
+    left: 53%;
+
+    img {
+        height: 100%;
+    }
+}
+
+#result {
+    background-image: url("/static/img/carousel/bg2.png");
+    background-size: contain;
+    height: 12em;
+    min-width: 16em;
+
+    border: 4px solid wheat;
+    outline: 5px solid black;
+    display: flex;
+
+    img {
+        height: 100%;
+    }
+}
+
+#start button {
+    border-radius: 8%;
+    background-color: firebrick;
+    color: var(--white-color);
+    padding: 1em;
+
+    &:hover {
+        background-color: darkred;
+        cursor: pointer;
+    }
+}
+
+.disabled {
+    filter: grayscale(1);
+}
+
+.win-poster {
+
+    &:hover {
+        filter: hue-rotate(180deg);
+        cursor: pointer;
+    }
+}
