@@ -8,3 +8,4 @@ app_cache
 *cach*
 db.sqlite3
 start.sh
+start_example.sh

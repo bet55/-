@@ -115,7 +115,7 @@ const roll = async () => {
             p.style.transform = `translatex(${offset}px)`
         });
 
-        //tickSound.play();
+        tickSound.play();
 
 
         // Передвигаем крайний правый постер в конец
@@ -141,7 +141,7 @@ const roll = async () => {
     addWinPoster(winPoster.dataset.kpId, winPoster.querySelector('img').src);
 
     // Звук остановки
-    //endSound.play();
+    endSound.play();
 
     // Удаляем выпавший фильм из карусели
     winPoster.classList.add('fadeout');

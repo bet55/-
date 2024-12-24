@@ -21,24 +21,28 @@ class Tools:
 
     @classmethod
     def random_card_image(self):
-        DEFAULT_IMG = '/static/img/madness/mad16.png'
+        FOLDER = 'static/img/new_year/big_poster'
 
-        folder_path = 'static/img/card_bg'
-        file_names = os.listdir(folder_path)
+        DEFAULT_IMG = f'/{FOLDER}/big_poster14.jpg'
+
+        file_names = os.listdir(FOLDER)
         random_img = random.choice(file_names)
 
-        return f'/static/img/card_bg/{random_img}' if random_img else DEFAULT_IMG
+        return f'/{FOLDER}/{random_img}' if random_img else DEFAULT_IMG
 
     @classmethod
     def random_nav_image(self):
+        FOLDER = 'static/img/new_year/subnavigation'
 
-        DEFAULT_IMG = '/static/retro_images/bird.png'
+        DEFAULT_IMG = f'/{FOLDER}/subnavigation12.gif'
 
-        folder_path = 'static/img/madness'
-        file_names = os.listdir(folder_path)
+        file_names = os.listdir(FOLDER)
         random_img = random.choice(file_names)
 
-        return f'/static/img/madness/{random_img}' if random_img else DEFAULT_IMG
+        #  Пускай, ёлочка чаще появляется
+        random_img = random.choice([random_img, 'subnavigation12.gif'])
+
+        return f'/{FOLDER}/{random_img}' if random_img else DEFAULT_IMG
 
     async def init_project(self):
         # self.check_project_pre_creation()
