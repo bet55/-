@@ -10,21 +10,23 @@ const cardDuration = document.querySelector('.card-duration')
 const cardLink = document.querySelector('.card-link a')
 
 
-const showMoviePoster = (movieId, allMovies) => {
+const showMoviePoster = (movieInfo) => {
 
-    cardImg.src = allMovies[movieId].poster;
+    cardImg.src = movieInfo.poster;
     cardImg.style.visibility = 'visible';
-    cardTitle.textContent = allMovies[movieId].name;
-    cardDescription.textContent = allMovies[movieId].description;
-    cardRealiseDate.textContent = allMovies[movieId].premiere;
-    cardDuration.textContent = formatTime(allMovies[movieId].duration);
-    cardLink.textContent = `https://www.kinopoisk.ru/film/${allMovies[movieId].kp_id}/`
-    cardLink.href = `https://www.kinopoisk.ru/film/${allMovies[movieId].kp_id}/`
+    cardTitle.textContent = movieInfo.name;
+    cardDescription.textContent = movieInfo.description;
+    cardRealiseDate.textContent = movieInfo.premiere;
+    cardDuration.textContent = formatTime(movieInfo.duration);
+    cardLink.textContent = `https://www.kinopoisk.ru/film/${movieInfo.kp_id}/`
+    cardLink.href = `https://www.kinopoisk.ru/film/${movieInfo.kp_id}/`
 
 
 }
 
 export function fillMovieCard(allMovies) {
+
+    console.log(allMovies)
 
     // Возможность раскрывать/прятать текст описания
     cardDescription.addEventListener('click', e => {
@@ -49,8 +51,8 @@ export function fillMovieCard(allMovies) {
 
         if (isPosterClicked) {
             const movieId = target.dataset.kpId;
-
-            showMoviePoster(movieId, allMovies);
+            const movieInfo = allMovies[movieId];
+            showMoviePoster(movieInfo);
         }
 
     })

@@ -1,8 +1,10 @@
 
 
 export const fetchMovies = async () => {
-    const url = document.baseURI.split('/')[2];
-    const getMoviesUrl = `http://${url}/movies?format=json`.replace('#', '');
+    const baseUrl = document.baseURI.split('/', 3).join('/') + '/movies';
+    const url = (document.baseURI.includes('archive')) ? `${baseUrl}/archive` : `${baseUrl}`;
+
+    const getMoviesUrl = `${url}?format=json`.replace('#', '');
     const response = await fetch(getMoviesUrl);
 
     if (!response.ok) {

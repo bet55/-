@@ -31,8 +31,8 @@
     }
 
     @media (min-width: 3500px) {
-        height: 32em;
-        width: 24em;
+        height: 34em;
+        width: 26em;
     }
 }
 
@@ -76,12 +76,13 @@
     top: 20%;
     left: 35%;
     transform: rotate(10deg);
+    z-index: 2;
 }
 
 .poster-container:nth-child(3) {
-    top: 48%;
-    left: 12%;
-    transform: rotate(-5deg);
+    top: 53%;
+    left: 6%;
+    transform: rotate(-7deg);
 }
 
 .poster-container:nth-child(4) {
@@ -135,6 +136,7 @@
     span {
         display: block;
         margin-bottom: 1em;
+        border-bottom: 2px solid black;
 
         overflow: hidden;
         text-overflow: ellipsis;
@@ -143,15 +145,25 @@
 
     }
 
-    @media (min-width: 2500px) {
-        width: 60%;
-        left: 66%;
-        font-size: 2.6em;
+    @media (min-height: 1080px) {
+        left: 65%;
+    }
 
+    @media (min-height: 1200px) {
+        width: 51%;
+        left: 54%;
+        font-size: 2.4em;
+    }
+
+
+    @media (min-height: 1440px) {
+        width: 60%;
+        left: 62%;
+        font-size: 2.6em;
 
     }
 
-    @media (min-width: 3000px) {
+    @media (min-height: 2160px) {
         font-size: 4em;
 
     }

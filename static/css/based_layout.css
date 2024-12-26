@@ -93,6 +93,23 @@ body {
     }
 }
 
+.user-name:nth-child(1) {
+    background-color: var(--red-color);
+}
+
+.user-name:nth-child(2) {
+    background-color: var(--yellow-color);
+}
+
+.user-name:nth-child(3) {
+    background-color: var(--white-color);
+}
+
+.user-name:nth-child(4) {
+    background-color: var(--orange-color);
+}
+
+
 /* Кнопка корзины - выпадающий список с фильмами */
 #cart {
     height: 100%;

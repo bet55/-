@@ -25,15 +25,27 @@
 
             <div class="poster-container" data-kp-id="{{ i.kp_id }}">
 
-{#                <img class="poster-img " src="{{ i.poster }}" alt="" loading="lazy" data-kp-id="{{ i.kp_id }}">#}
+                <img class="poster-img " src="{{ i.poster }}" alt="" loading="lazy" data-kp-id="{{ i.kp_id }}">
 
                 <div class="note-container" data-kp-id="{{ i.kp_id }}">
 
                     {% for note in i.notes %}
-                        <div class="note" data-user-id="{{ note.user }}">
-                            <h2>{{ note.rating }}</h2>
-                            {#                            <p>{{ note.rating }}</p>#}
-                        </div>
+
+                        {% for u in users %}
+                            {% if note.user == u.id %}
+                                <div class="note"
+                                     data-user-id="{{ u.id }}"
+                                     data-bs-toggle="tooltip"
+                                     data-bs-placement="top"
+                                     data-bs-title="{{ u.first_name }}?">
+
+                                    <h2>{{ note.rating }}</h2>
+                                    {# <p>{{ note.rating }}</p>#}
+                                </div>
+                            {% endif %}
+                        {% endfor %}
+
+
                     {% endfor %}
 
                 </div>

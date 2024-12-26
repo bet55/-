@@ -17,7 +17,7 @@
 {% block center-content %}
 
     <div id="postcard-container">
-        <img id="postcard" src="{% static 'img/new_year/postcard.webp' %}" alt="">
+        <img id="postcard" src="{% static 'img/new_year/postcard.jpg' %}" alt="">
 
         <div id="posters">
             {#            <div class="poster-container">#}
@@ -32,18 +32,18 @@
         </div>
 
 
-{#        <img class="stamp stamp_1" src="{% static 'img/stamp/stamp5.png' %}" alt="...">#}
-{#        <img class="stamp stamp_2" src="{% static 'img/stamp/stamp13.png' %}" alt="...">#}
+        {#        <img class="stamp stamp_1" src="{% static 'img/stamp/stamp5.png' %}" alt="...">#}
+        {#        <img class="stamp stamp_2" src="{% static 'img/stamp/stamp13.png' %}" alt="...">#}
 
 
     </div>
-    
+
 
 {% endblock %}
 
 
 
 {% block script %}
-    <script type="module" src="https://cdn.jsdelivr.net/npm/html2canvas@1.0.0-rc.5/dist/html2canvas.min.js"></script>
+{#    <script type="module" src="https://cdn.jsdelivr.net/npm/html2canvas@1.0.0-rc.5/dist/html2canvas.min.js"></script>#}
     <script type="module" src="{% static 'js/postcard.js' %}"></script>
 {% endblock %}

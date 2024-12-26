@@ -7,7 +7,7 @@ const start = document.querySelector('#start button');
 const result = document.querySelector('#result');
 const arrow = document.querySelector('.arrow');
 
-const posterWidth = 150;
+const posterWidth = posters[0].clientWidth;
 const borderWidth = 4 * 2; // слева + справа
 const containerWidth = posterWidth + borderWidth;
 

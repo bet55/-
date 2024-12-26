@@ -24,9 +24,24 @@
 
     img {
         height: 100%;
-        width: 150px;
+        width: 10em;
         object-fit: cover;
     }
+
+    @media (min-height: 1200px) {
+        img {
+            width: 13em;
+        }
+    }
+
+
+    @media (min-height: 2000px) {
+        img {
+            width: 15em;
+        }
+    }
+
+
 }
 
 .smooth {
@@ -102,6 +117,20 @@
     img {
         height: 100%;
     }
+
+
+    @media (min-height: 1200px) {
+        height: 14em;
+        min-width: 25em;
+
+    }
+
+    @media (min-height: 2000px) {
+        height: 25em;
+        min-width: 45em;
+
+    }
+
 }
 
 #start button {
@@ -113,6 +142,14 @@
     &:hover {
         background-color: darkred;
         cursor: pointer;
+    }
+
+    @media (min-height: 1200px) {
+        font-size: 2em;
+    }
+
+    @media (min-height: 2000px) {
+        font-size: 3em;
     }
 }
 
