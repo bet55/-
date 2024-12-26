@@ -8,8 +8,10 @@ const result = document.querySelector('#result');
 const arrow = document.querySelector('.arrow');
 
 const posterWidth = posters[0].clientWidth;
-const borderWidth = 4 * 2; // слева + справа
+const borderWidth = Number(getComputedStyle(posters[0]).borderTopWidth.slice(0, -2)) * 2; // слева + справа
 const containerWidth = posterWidth + borderWidth;
+
+console.log(borderWidth, 'border')
 
 let offset = posters.length * containerWidth;
 let frames = 2; // сколько прокруток до сокрытия постера
@@ -32,6 +34,7 @@ let sleepTime = 500;
 function randomTicksCount(postersCount) {
     const min = postersCount * 0.8;
     const max = postersCount * 2.2;
+    console.log(min, max)
     const randomInt = Math.floor(Math.random() * (max - min) + min);
 
     return randomInt;
@@ -91,6 +94,8 @@ const roll = async () => {
 
     // Сколько круток будет
     const ticksCount = randomTicksCount(posters.length);
+
+    console.log(posters.length, ticksCount, delta)
 
     // Отключаем кнопку старта
     toggleButtons();
